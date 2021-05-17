@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class ModuloUsuario
+    public class ModuloUsuario : BusinessEntity
     {
         public int IdUsuario { get; set; }
         public int IdModulo { get; set; }
