@@ -1,3 +1,5 @@
 *.vs
 Business.Entities/obj/Debug/Business.Entities.csprojAssemblyReference.cache
 *.cache
+Business.Entities/obj/Debug/Business.Entities.csprojAssemblyReference.cache
+*.cache
