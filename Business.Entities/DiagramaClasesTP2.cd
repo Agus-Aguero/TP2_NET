@@ -49,13 +49,6 @@
       <FileName>Plan.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Business.Entities.Especialidad">
-    <Position X="10.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Especialidad.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Business.Entities.Personas">
     <Position X="4.5" Y="3.75" Width="2" />
     <NestedTypes>
@@ -84,18 +77,32 @@
       <FileName>AlumnoInscripcion.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Business.Entities.DocenteCurso">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Business.Entities.DocenteCurso.TipoCargos" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DocenteCurso.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAACAAACAAAAAAAAABAAAAAQAAAIA=</HashCode>
+      <FileName>DocenteCurso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.Entities.Especialidad">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Especialidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Business.Entities.Curso">
     <Position X="9" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQIAAIAAIAAAACACAAAAAAABgAAAAAAEAAAAAAAABAA=</HashCode>
       <FileName>Curso.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Business.Entities.DocenteCurso">
-    <Position X="10.75" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DocenteCurso.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
