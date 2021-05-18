@@ -7,5 +7,17 @@ namespace Business.Entities
 {
     public class Materia : BusinessEntity
     {
+        private string _Descripcion;
+        private int _HSSemanales;
+        private int _HSTotales;
+        private int _IDPlan;
+
+        public int Descripcion { get; set; }
+        public int HSSemanales { get; set; }
+        public int HSTotales { get; set; }
+        public string IDPlan { get; set; }
+
+
+
     }
 }
