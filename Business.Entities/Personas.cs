@@ -26,7 +26,7 @@ namespace Business.Entities
         public int Legajo { get { return _Legajo;} set { _Legajo = value; } }
         public string Nombre { get { return _Nombre;} set { _Nombre = value; } }
         public string Telefono { get { return _Telefono;} set { _Telefono = value; } }
-        public TipoPersonas TipoPersona { get { return _TipoPersona;} set { _TipoPerson = value; } }
+        public TipoPersonas TipoPersona { get { return _TipoPersona;} set { _TipoPersona = value; } }
 
         public class TipoPersonas
         {
