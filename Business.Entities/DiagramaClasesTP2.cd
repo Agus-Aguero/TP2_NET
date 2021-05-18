@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Business.Entities.ModuloUsuario" Collapsed="true">
-    <Position X="8.75" Y="0.5" Width="1.5" />
+    <Position X="8.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAwAACAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAA=</HashCode>
       <FileName>ModuloUsuario.cs</FileName>
