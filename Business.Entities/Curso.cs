@@ -7,6 +7,7 @@ namespace Business.Entities
 {
     public class Curso : BusinessEntity
     {
+
         private int _AnioCalendario;
         private int _Cupo;
         private string _Descripcion;
@@ -18,5 +19,6 @@ namespace Business.Entities
         public string Descripcion { get { return _Descripcion} set { _Descripcion = value } };
         public int IDComision { get { return _IDComision} set { _IDComision = value } };
         public int IDMateria { get { return _IDMateria} set { _IDMateria = value } };
+
     }
 }

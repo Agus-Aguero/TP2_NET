@@ -18,15 +18,15 @@ namespace Business.Entities
         private string _Telefono;
         private TipoPersonas _TipoPersona;
 
-        public string Apellido { get; set; }
-        public string Direccion { get; set; }
-        public string Email { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public int IDPlan { get; set; }
-        public int Legajo { get; set; }
-        public string Nombre { get; set; }
-        public string Telefono { get; set; }
-        public TipoPersonas TipoPersona { get; set; }
+        public string Apellido { get { return _Apellido;} set { _Apellido = value; } }
+        public string Direccion { get { return _Direccion;} set { _Direccion = value; } }
+        public string Email { get { return _Email;} set { _Email = value; } }
+        public DateTime FechaNacimiento { get { return _FechaNacimiento;} set { _FechaNacimiento = value; } }
+        public int IDPlan { get { return _IDPlan;} set { _IDPlan = value; } }
+        public int Legajo { get { return _Legajo;} set { _Legajo = value; } }
+        public string Nombre { get { return _Nombre;} set { _Nombre = value; } }
+        public string Telefono { get { return _Telefono;} set { _Telefono = value; } }
+        public TipoPersonas TipoPersona { get { return _TipoPersona;} set { _TipoPerson = value; } }
 
         public class TipoPersonas
         {
