@@ -8,12 +8,42 @@ namespace Business.Entities
 {
     public class ModuloUsuario : BusinessEntity
     {
-        public int IdUsuario { get; set; }
-        public int IdModulo { get; set; }
-        public bool PermiteAlta { get; set; }
-        public bool PermiteBaja { get; set; }
-        public bool PermiteModificacion { get; set; }
-        public bool PermiteConsulta { get; set; }
+        private int _IdUsuario;
+        private int _IdModulo;
+        private bool _PermitirAlta;
+        private bool _PermiteBaja;
+        private bool _PermiteModificacion;
+        private bool _PermiteConsulta;
+        public int IdUsuario 
+        {
+            get {return _IdUsuario; }
+            set {_IdUsuario=value; }
+        }
+        public int IdModulo 
+        {
+            get {return _IdModulo; }
+            set {_IdModulo=value; }
+        }
+        public bool PermiteAlta
+        {
+            get {return _PermitirAlta; }
+            set {_PermitirAlta=value; } 
+        }
+        public bool PermiteBaja 
+        {
+            get {return _PermiteBaja; }
+            set {_PermiteBaja=value; }
+        }
+        public bool PermiteModificacion 
+        {
+            get {return _PermiteModificacion; }
+            set {_PermiteModificacion=value; }
+        }
+        public bool PermiteConsulta
+        {
+            get {return _PermiteConsulta; }
+            set {_PermiteConsulta=value; }
+        }
 
 
 
