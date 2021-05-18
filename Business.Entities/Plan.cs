@@ -8,6 +8,13 @@ namespace Business.Entities
 {
     public class Plan: BusinessEntity
     {
-
+        private string _Descripcion;
+        private int _IdEspecialidades;
+        public string Descripcion {
+             get{ return _Descripcion; } 
+             set{_Descripcion=value;}}
+        public int IdEspecialidades {
+             get{ return _IdEspecialidades; } 
+             set{_IdEspecialidades=value;}}
     }
 }

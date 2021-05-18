@@ -8,12 +8,19 @@ namespace Business.Entities
 {
     public class Usuario : BusinessEntity
     {
-        public string NombreUsuario { get; set; }
-        public string Clave { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Email { get; set; }
-        public bool Habilitado { get; set; }
+        private string _NombreUsuario;
+        private string _Clave ;
+        private string _Nombre ;
+        private string _Apellido ;
+        private string _Email ;
+        private bool _Habilitado ;
+
+        public string NombreUsuario { get{return _NombreUsuario;} set{_NombreUsuario=value;} }
+        public string Clave { get{return _Clave;} set{_Clave=value;} }
+        public string Nombre { get{return _Nombre;} set{Nombre=value;} }
+        public string Apellido { get{return _Apellido;} set{_Apellido=value;} }
+        public string Email { get{return _Email;} set{_Email=value;} }
+        public bool Habilitado { get{return _Habilitado;} set{_Habilitado=value;} }
 
 
     }
