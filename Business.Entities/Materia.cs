@@ -12,12 +12,10 @@ namespace Business.Entities
         private int _HSTotales;
         private int _IDPlan;
 
-        public int Descripcion { get; set; }
-        public int HSSemanales { get; set; }
-        public int HSTotales { get; set; }
-        public string IDPlan { get; set; }
-
-
+        public int Descripcion { get return { _Descripcion; } set { _Descripcion = value; } }
+        public int HSSemanales { get return { _HSSemanales; } set { _HSSemanales = value; } }
+        public int HSTotales { get return { _HSTotales; } set { _HSTotales = value; } }
+        public string IDPlan { get return { _IDPlan; } set { _IDPlan = value; } }
 
     }
 }
