@@ -10,33 +10,39 @@ namespace Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        public UsuarioLogic()
-            {}
+        public UsuarioLogic( Data.Database.UsuarioAdapter usuarioData)
+        {
 
-        
+            UsuarioData = usuarioData;
+
+        }
+
+        #region Propiedades
         public Data.Database.UsuarioAdapter UsuarioData { get; set; }
 
+        #endregion
 
         #region Metodos
-        /*
+        
         public Usuario GetOne(int ID)
-        { 
-
-        }*/
+        {
+            return UsuarioData.GetOne(ID);
+        }
 
         public List<Usuario> GetAll()
         {
-                                    // REVISAR SI ESTO ESTA BIEN 
-
-            List<Usuario> usuarios = new List<Usuario>();
-            return usuarios;
+            return UsuarioData.GetAll();
         }
 
-        public void Save()
-        { }
+        public void Save(Business.Entities.Usuario usuario )
+        {
+            UsuarioData.Save(usuario);
+        }
 
-        public void Delete()
-        { }
+        public void Delete(int ID)
+        {
+            UsuarioData.Delete(ID);
+        }
 
         #endregion
 
