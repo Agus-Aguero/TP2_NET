@@ -7,3 +7,9 @@ D:\Documents\UTN\3ro\net\TP2\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.csproj.Gene
 D:\Documents\UTN\3ro\net\TP2\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.csproj.CoreCompileInputs.cache
 D:\Documents\UTN\3ro\net\TP2\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.exe
 D:\Documents\UTN\3ro\net\TP2\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.csprojAssemblyReference.cache
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.cache
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.csproj.CoreCompileInputs.cache
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Desktop\obj\Debug\UI.Desktop.pdb

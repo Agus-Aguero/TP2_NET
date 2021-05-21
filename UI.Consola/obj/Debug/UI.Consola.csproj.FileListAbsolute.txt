@@ -1,0 +1,2 @@
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Consola\obj\Debug\UI.Consola.csprojAssemblyReference.cache
+C:\Users\agus_\Documents\GitHub\TP2_NET\UI.Consola\obj\Debug\UI.Consola.csproj.CoreCompileInputs.cache
