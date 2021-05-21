@@ -1,2 +1,0 @@
-C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\obj\Release\Business.Logic.csprojAssemblyReference.cache
-C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\obj\Release\Business.Logic.csproj.CoreCompileInputs.cache
