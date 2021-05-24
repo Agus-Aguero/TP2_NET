@@ -10,11 +10,17 @@ namespace Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        public UsuarioLogic( Data.Database.UsuarioAdapter usuarioData)
+        /*public UsuarioLogic( Data.Database.UsuarioAdapter usuarioData)
         {
 
             UsuarioData = usuarioData;
 
+        }*/ // REVISAR
+
+        public UsuarioLogic()
+        {
+            UsuarioAdapter usuarioData = new UsuarioAdapter();
+            UsuarioData = usuarioData;
         }
 
         #region Propiedades
@@ -26,6 +32,7 @@ namespace Business.Logic
         
         public Usuario GetOne(int ID)
         {
+            
             return UsuarioData.GetOne(ID);
         }
 

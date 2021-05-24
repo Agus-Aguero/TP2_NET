@@ -1,2 +1,11 @@
 C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\obj\Debug\Business.Logic.csprojAssemblyReference.cache
 C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\obj\Debug\Business.Logic.csproj.CoreCompileInputs.cache
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\bin\Debug\Business.Logic.dll
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\bin\Debug\Business.Logic.pdb
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\bin\Debug\Business.Entities.dll
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\bin\Debug\Data.Database.dll
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\bin\Debug\Business.Entities.pdb
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\bin\Debug\Data.Database.pdb
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\obj\Debug\Business.Logic.csproj.CopyComplete
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\obj\Debug\Business.Logic.dll
+C:\Users\agus_\Documents\GitHub\TP2_NET\Business.Logic\obj\Debug\Business.Logic.pdb
