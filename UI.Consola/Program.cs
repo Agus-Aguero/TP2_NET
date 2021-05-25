@@ -12,7 +12,7 @@ namespace UI.Consola
         {
 
             new Usuarios().Menu();
-            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 }

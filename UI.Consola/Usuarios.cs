@@ -10,10 +10,12 @@ namespace UI.Consola
 {
     public class Usuarios
     {
-       /* public Usuarios (Business.Logic.UsuarioLogic usuarioNegocio)
-        {
-            UsuarioNegocio = usuarioNegocio;
-        }*/ // REVISAR 
+        /* public Usuarios (Business.Logic.UsuarioLogic usuarioNegocio)
+         {
+             UsuarioNegocio = usuarioNegocio;
+         }*/ // REVISAR 
+
+        public bool StopMenu = true;
 
         public Usuarios()
         {
@@ -26,62 +28,83 @@ namespace UI.Consola
         #region Metodos
         public void Menu()
         {
-            Console.WriteLine("Menu de opciones:");
-            Console.WriteLine("1- Listado general");
-            Console.WriteLine("2- Consulta");
-            Console.WriteLine("3- Agregar");
-            Console.WriteLine("4- Modificar");
-            Console.WriteLine("5- Eliminar");
-            Console.WriteLine("6- Salir");
-            Console.Write("Ingrese su opcion: ");
+            do {
+                Console.Clear();
+                Console.WriteLine("Menu de opciones:");
+                Console.WriteLine("");
+                Console.WriteLine("***********************");
+                Console.WriteLine("");
+                Console.WriteLine("1-\tListado general");
+                Console.WriteLine("2-\tConsulta");
+                Console.WriteLine("3-\tAgregar");
+                Console.WriteLine("4-\tModificar");
+                Console.WriteLine("5-\tEliminar");
+                Console.WriteLine("6-\tSalir");
+                Console.WriteLine("");
+                Console.WriteLine("***********************");
+                Console.WriteLine("");
+                Console.Write("Ingrese su opcion: ");
 
-            int opt = Convert.ToInt32(Console.ReadLine());
+                int opt = Convert.ToInt32(Console.ReadLine());
 
-            switch (opt)
-            {
-                case 1:
-                    {
+                switch (opt)
+                {
+                    case 1:
                         ListadoGeneral();
                         break;
-                    }
-                    
-                case 2:
-                    {
+                    case 2:
                         Consultar();
                         break;
-                    }
-                case 3:break;
-                case 4:
-                    {
+                    case 3:
+                        Agregar();
+                        break;
+                    case 4:
                         Modificar();
                         break;
-                    }
-                    
-                case 5:break;
-                case 6:break;
+                    case 5:
+                        Eliminar();
+                        break;
+                    case 6:
+                        StopMenu = false;
+                        break;
+                    default:
+                        Console.WriteLine("Opcion incorrecta");
+                        break;
+                }
 
-                default: Console.WriteLine("Opcion incorrecta");
-                    break;
-            }
-
+            } while (StopMenu != false);
         }
 
         public void ListadoGeneral()
         {
-
             Console.Clear();
+            Console.WriteLine("***********************");
+            Console.WriteLine("");
+            Console.WriteLine("Listado general");
+            Console.WriteLine("");
+            Console.WriteLine("***********************");
+            Console.WriteLine("");
+           
             foreach (Usuario usr in UsuarioNegocio.GetAll())
             {
                 MostrarDatos(usr);
             }
+            Console.ReadKey();
 
         }
 
         public void Consultar()
         {
+            Console.Clear();
+            Console.WriteLine("***********************");
+            Console.WriteLine("");
+            Console.WriteLine("Consultar usuario");
+            Console.WriteLine("");
+            Console.WriteLine("***********************");
+            Console.WriteLine("");
+
             try
             {
-                Console.Clear();
                 Console.Write("Ingrese el ID del usuario a consultar: ");
                 int ID = int.Parse(Console.ReadLine());
                 this.MostrarDatos(UsuarioNegocio.GetOne(ID));
@@ -104,14 +127,44 @@ namespace UI.Consola
         }
 
         public void Agregar()
-        { }
+        {
+            Console.Clear();
+
+            Console.WriteLine("Agregar usuario:");
+            Console.WriteLine("");
+            Console.WriteLine("***********************");
+            Console.WriteLine("");
+
+            Usuario usuario = new Usuario();
+
+            Console.Write("Ingrese nombre: ");
+            usuario.Nombre = Console.ReadLine();
+            Console.Write("Ingrese apellido: ");
+            usuario.Apellido = Console.ReadLine();
+            Console.Write("Ingrese nombre de usuario: ");
+            usuario.NombreUsuario = Console.ReadLine();
+            Console.Write("Ingrese Email: ");
+            usuario.EMail = Console.ReadLine();
+            Console.Write("Ingrese habilitación de usuario (1-Si/otro-No): ");
+            usuario.Habilitado = (Console.ReadLine() == "1");
+            usuario.State = BusinessEntity.States.New;
+            UsuarioNegocio.Save(usuario);
+            Console.WriteLine();
+            Console.WriteLine("ID: {0}", usuario.ID);
+        }
 
         public void Modificar()
         {
+            Console.Clear();
+
+            Console.WriteLine("Modificar usuario:");
+            Console.WriteLine("");
+            Console.WriteLine("***********************");
+            Console.WriteLine("");
+
             try
             {
-                Console.Clear();
-                Console.WriteLine("Ingrese el ID del usuario a modificar: ");
+                Console.Write("Ingrese el ID del usuario a modificar: ");
                 int ID = int.Parse(Console.ReadLine());
                 Usuario usuario = UsuarioNegocio.GetOne(ID);
                 Console.Write("Ingrese el nombre: ");
@@ -149,7 +202,37 @@ namespace UI.Consola
         }
 
         public void Eliminar()
-        { }
+        {
+            Console.Clear();
+
+            Console.WriteLine("Eliminar usuario:");
+            Console.WriteLine("");
+            Console.WriteLine("***********************");
+            Console.WriteLine("");
+            try
+            {
+                Console.Write("Ingrese el ID del usuario a elminar: ");
+                int ID = int.Parse(Console.ReadLine());
+                UsuarioNegocio.Delete(ID);
+
+            }
+            catch(FormatException fe)
+            {
+                Console.WriteLine();
+                Console.WriteLine("La ID ingresada debe ser un numero entero.");
+
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine(e.Message);
+            }   
+            finally
+            {
+                Console.WriteLine("Presione una tecla para continuar.");
+                Console.ReadKey();
+            }
+        }
 
         public void MostrarDatos(Usuario usr)
         {
