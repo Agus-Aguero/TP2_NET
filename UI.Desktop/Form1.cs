@@ -37,14 +37,18 @@ namespace UI.Desktop
         {
             if(this.txtUsuario.Text == "Admin" && this.txtPass.Text == "admin")
             {
-                MessageBox.Show("Usted ha ingresado  al sistema correctamente."
-                    , "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Academia_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
