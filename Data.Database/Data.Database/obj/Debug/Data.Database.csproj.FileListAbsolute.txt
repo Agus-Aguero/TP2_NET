@@ -1,2 +1,0 @@
-C:\Users\agus_\Documents\GitHub\TP2_NET\Data.Database\Data.Database\obj\Debug\Data.Database.csprojAssemblyReference.cache
-C:\Users\agus_\Documents\GitHub\TP2_NET\Data.Database\Data.Database\obj\Debug\Data.Database.csproj.CoreCompileInputs.cache

@@ -6,7 +6,25 @@ using System.Data.SqlClient;
 namespace Data.Database
 {
     public class Adapter
+
     {
+
+        protected SqlDataAdapter _sqlDataAdapter;
+        protected SqlConnection _conn ;
+
+
+        public SqlDataAdapter sqlDataAdapter
+        {
+            get { return _sqlDataAdapter; }
+            set { _sqlDataAdapter = value; }
+        }
+
+        public SqlConnection Conn
+        {
+            get { return _conn; }
+            set { _conn = value; }
+        }
+
         //private SqlConnection sqlConnection = new SqlConnection("ConnectionString;");
 
         protected void OpenConnection()

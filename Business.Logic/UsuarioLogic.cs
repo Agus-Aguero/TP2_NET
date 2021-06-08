@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Business.Logic
             UsuarioData = usuarioData;
         }
 
+
         #region Propiedades
         public Data.Database.UsuarioAdapter UsuarioData { get; set; }
 
@@ -39,6 +41,14 @@ namespace Business.Logic
         public List<Usuario> GetAll()
         {
             return UsuarioData.GetAll();
+        }
+        public DataTable GetAllDataTable()
+        {
+            return UsuarioData.GetAllDataTable();
+        }
+        public void GuardarCambios(DataTable dataTable)
+        {
+             UsuarioData.GuardarCambios(dataTable);
         }
 
         public void Save(Business.Entities.Usuario usuario )

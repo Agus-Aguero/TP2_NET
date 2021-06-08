@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 using Business.Entities;
 
@@ -59,10 +61,91 @@ namespace Data.Database
         }
         #endregion
 
+
+        #region constructor
+        public UsuarioAdapter()
+        {
+            this.Conn = new SqlConnection(
+"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Academia;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            /*
+             * Este connection string es para conectarse con la base de datos academia en el servidor
+             * del departamento sistemas desde una PC de los laboratorios de sistemas,
+             * si realiza este Laboratorio desde su PC puede probar el siguiente connection string
+             * 
+             * "Data Source=localhost;Initial Catalog=academia;Integrated Security=true;"
+             * 
+             * Si realiza esta práctica sobre el MS SQL SERVER 2005 Express Edition entonce debe 
+             * utilizar el siguiente connection string
+             * 
+             * "Data Source=localhost\SQLEXPRESS;Initial Catalog=academia;Integrated Security=true;"
+             */
+
+            this.sqlDataAdapter = new SqlDataAdapter("select * from usuarios", this.Conn);
+
+            this.sqlDataAdapter.UpdateCommand =
+            new SqlCommand(" UPDATE usuarios " +
+            " SET tipo_doc = @tipo_doc, nro_doc = @nro_doc, fecha_nac = @fecha_nac, " +
+            " apellido = @apellido, nombre = @nombre, direccion = @direccion, " +
+            " telefono = @telefono, email = @email, celular = @celular, usuario = @usuario, " +
+            " clave = @clave WHERE id=@id ", this.Conn);
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@tipo_doc", SqlDbType.Int, 1, "tipo_doc");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@nro_doc", SqlDbType.Int, 1, "nro_doc");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@fecha_nac", SqlDbType.DateTime, 1, "fecha_nac");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@apellido", SqlDbType.VarChar, 50, "apellido");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@nombre", SqlDbType.VarChar, 50, "nombre");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@direccion", SqlDbType.VarChar, 50, "direccion");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@telefono", SqlDbType.VarChar, 50, "telefono");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@email", SqlDbType.VarChar, 50, "email");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@celular", SqlDbType.VarChar, 50, "celular");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@usuario", SqlDbType.VarChar, 50, "usuario");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@clave", SqlDbType.VarChar, 50, "clave");
+            this.sqlDataAdapter.UpdateCommand.Parameters.Add("@id", SqlDbType.Int, 1, "id");
+            this.sqlDataAdapter.InsertCommand =
+            new SqlCommand(" INSERT INTO usuarios(tipo_doc,nro_doc,fecha_nac,apellido, " +
+                " nombre,direccion,telefono,email,celular,usuario,clave) " +
+                " VALUES (@tipo_doc,@nro_doc,@fecha_nac,@apellido,@nombre,@direccion, " +
+                " @telefono,@email,@celular, @usuario, @clave  )", this.Conn);
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@tipo_doc", SqlDbType.Int, 1, "tipo_doc");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@nro_doc", SqlDbType.Int, 1, "nro_doc");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@fecha_nac", SqlDbType.DateTime, 1, "fecha_nac");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@apellido", SqlDbType.VarChar, 50, "apellido");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@nombre", SqlDbType.VarChar, 50, "nombre");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@direccion", SqlDbType.VarChar, 50, "direccion");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@telefono", SqlDbType.VarChar, 50, "telefono");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@email", SqlDbType.VarChar, 50, "email");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@celular", SqlDbType.VarChar, 50, "celular");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@usuario", SqlDbType.VarChar, 50, "usuario");
+            this.sqlDataAdapter.InsertCommand.Parameters.Add("@clave", SqlDbType.VarChar, 50, "clave");
+
+
+
+            this.sqlDataAdapter.DeleteCommand =
+                         new SqlCommand(" DELETE FROM usuarios WHERE id=@id ", this.Conn);
+            this.sqlDataAdapter.DeleteCommand.Parameters.Add("@id", SqlDbType.Int, 1, "id");
+        }
+      
+
+        #endregion
+         
+
         public List<Usuario> GetAll()
         {
             return new List<Usuario>(Usuarios);
         }
+        //se Usa en el ejercicio lab 3.2,ver si lo tenemos que usar en el TP
+        public DataTable GetAllDataTable()
+        {
+            DataTable dtUsuarios = new DataTable();
+            this.sqlDataAdapter.Fill(dtUsuarios);
+            return dtUsuarios;
+        }
+        public void GuardarCambios(DataTable dtUsuarios)
+        {
+            this.sqlDataAdapter.Update(dtUsuarios);
+            dtUsuarios.AcceptChanges();
+        }
+        //se Usa en el ejercicio lab 3.2
+
 
         public Business.Entities.Usuario GetOne(int ID)
         {
