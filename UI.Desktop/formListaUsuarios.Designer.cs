@@ -32,9 +32,14 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.btn_Guardar = new System.Windows.Forms.Button();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_nac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +54,15 @@ namespace UI.Desktop
             // 
             // dgvUsuarios
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.apellido,
+            this.Direccion,
+            this.Nombre,
+            this.fecha_nac});
             this.dgvUsuarios.Location = new System.Drawing.Point(25, 35);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(763, 331);
@@ -64,6 +77,30 @@ namespace UI.Desktop
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = true;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "apellido";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // fecha_nac
+            // 
+            this.fecha_nac.DataPropertyName = "fecha_nac";
+            this.fecha_nac.HeaderText = "Fecha de nacimiento";
+            this.fecha_nac.Name = "fecha_nac";
             // 
             // formListaUsuarios
             // 
@@ -86,5 +123,9 @@ namespace UI.Desktop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Button btn_Guardar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_nac;
     }
 }
