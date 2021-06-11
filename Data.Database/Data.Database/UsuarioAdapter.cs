@@ -65,9 +65,7 @@ namespace Data.Database
         #region constructor
         public UsuarioAdapter()
         {
-            this.Conn = new SqlConnection(
-"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Academia;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            /*
+           /*
              * Este connection string es para conectarse con la base de datos academia en el servidor
              * del departamento sistemas desde una PC de los laboratorios de sistemas,
              * si realiza este Laboratorio desde su PC puede probar el siguiente connection string
@@ -130,7 +128,7 @@ namespace Data.Database
 
         public List<Usuario> GetAll()
         {
-            return new List<Usuario>(Usuarios);
+           return new List<Usuario>(Usuarios);
         }
         //se Usa en el ejercicio lab 3.2,ver si lo tenemos que usar en el TP
         public DataTable GetAllDataTable()

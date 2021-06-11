@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data.Database
 {
@@ -11,7 +12,14 @@ namespace Data.Database
 
         protected SqlDataAdapter _sqlDataAdapter;
         protected SqlConnection _conn ;
+        public Adapter()
+        {
+            this._conn=new SqlConnection(ConfigurationManager.ConnectionStrings["academiaConnectionString"].ConnectionString);
+          
 
+
+
+        }
 
         public SqlDataAdapter sqlDataAdapter
         {
