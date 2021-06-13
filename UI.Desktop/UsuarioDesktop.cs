@@ -21,23 +21,35 @@ namespace UI.Desktop
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
-            
+            // Internamete debe setear a ModoForm en el modo enviado, este constructor
+            // servirá para las altas. ?
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
-            UsuarioLogic usuarioLogic= new UsuarioLogic();
+            // En este nuevo constructor seteamos el modo que ha sido especificado en
+            // el parámetro
+            UsuarioLogic usuarioLogic = new UsuarioLogic();
 
-           this.UsuarioActual=usuarioLogic.GetOne(ID);
-            MapearADatos();
+            this.UsuarioActual = usuarioLogic.GetOne(ID);
+            
+            MapearDeDatos();
         }
 
         public override void MapearDeDatos() {
-            //completar el mapeo de los demás controles.
+            
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtNombre.Text = this.UsuarioActual.Nombre;
-                }
-        public override void MapearADatos() { }
+            this.txtApellido.Text = this.UsuarioActual.Apellido;
+            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+            this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
+            this.txtEmail.Text = this.UsuarioActual.EMail;
+
+            // 14.Dentro del mismo método setearemos el texto del botón Aceptar en
+            // función del Modo del formulario de esta forma:
+
+        }
+        public override void MapearADatos() {}
        
         public override void GuardarCambios() { }
      
