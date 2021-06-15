@@ -29,15 +29,15 @@ namespace Business.Entities
         {
             this.State = States.New;
         }
-
         public enum States
         {
-            New=1, 
-            Deleted=2, 
-            Modified=3, 
-            Unmodified=4
+            New = 1,
+            Deleted = 2,
+            Modified = 3,
+            Unmodified = 4
         }
 
 
     }
+
 }

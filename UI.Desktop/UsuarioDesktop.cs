@@ -71,7 +71,23 @@ namespace UI.Desktop
             // función del Modo del formulario de esta forma:
 
         }
-        public override void MapearADatos() {}
+        public override void MapearADatos()
+        {
+            this.UsuarioActual.State = BusinessEntity.States.Modified;
+            if (this._Modo == ModoForm.Alta)
+            {
+                this.UsuarioActual = new Usuario();
+                this.UsuarioActual.State = BusinessEntity.States.New;
+            }
+            
+            this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+            this.UsuarioActual.Nombre = this.txtNombre.Text;
+            this.UsuarioActual.Apellido= this.txtApellido.Text;
+            this.UsuarioActual.NombreUsuario= this.txtUsuario.Text;
+            this.UsuarioActual.Clave= this.txtConfirmarClave.Text;
+            this.UsuarioActual.EMail= this.txtEmail.Text;
+
+        }
        
         public override void GuardarCambios() { }
      
