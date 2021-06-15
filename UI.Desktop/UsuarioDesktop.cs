@@ -15,6 +15,9 @@ namespace UI.Desktop
     public partial class UsuarioDesktop : ApplicationForm
     {
         public Usuario UsuarioActual { get; set; }
+
+        private ModoForm _Modo { get; set; }
+
         public UsuarioDesktop()
         {
             InitializeComponent();
@@ -23,11 +26,13 @@ namespace UI.Desktop
         {
             // Internamete debe setear a ModoForm en el modo enviado, este constructor
             // servirá para las altas. ?
+            _Modo = modo;
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
             // En este nuevo constructor seteamos el modo que ha sido especificado en
             // el parámetro
+           _Modo = modo;
             UsuarioLogic usuarioLogic = new UsuarioLogic();
 
             this.UsuarioActual = usuarioLogic.GetOne(ID);
@@ -36,7 +41,24 @@ namespace UI.Desktop
         }
 
         public override void MapearDeDatos() {
-            
+
+            switch (_Modo)
+            {
+                case ModoForm.Alta:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Baja:
+                    this.btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Modificacion:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Consulta:
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+                default:
+                    break;
+            }
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtNombre.Text = this.UsuarioActual.Nombre;
