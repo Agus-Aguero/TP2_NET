@@ -89,8 +89,68 @@ namespace UI.Desktop
 
         }
        
-        public override void GuardarCambios() { }
-     
-        public override bool Validar() { return false; }
+        public override void GuardarCambios()
+        {
+            this.MapearADatos();
+            UsuarioLogic usuarioLogic = new UsuarioLogic();
+
+            usuarioLogic.Save(UsuarioActual);
+
+        }
+
+        public override bool Validar() 
+        {
+            bool estado=true;
+            string error_msj="Completar:\n";
+            if (this.txtNombre.Text == String.Empty)
+            {
+                estado = false;
+                error_msj+= "Nombre\n";
+            }
+
+            if (this.txtApellido.Text == String.Empty)
+            {
+                estado = false;
+                error_msj += "Apellido\n";
+            }
+
+            if (this.txtUsuario.Text == String.Empty)
+            {
+                estado = false;
+                error_msj += "Usuario\n";
+            }
+
+            if (!IsValidEmail(this.txtEmail.Text)) //this.txtEmail.Text == String.Empty)
+            {
+                error_msj+= String.IsNullOrEmpty(this.txtEmail.Text) ? "Email\n" : "Email no valido\n";
+                estado = false;             
+            }
+
+            if (String.IsNullOrEmpty(this.txtClave.Text)|| this.txtClave.Text.Length<= 8 || this.txtClave.Text != this.txtConfirmarClave.Text )
+            {
+                error_msj += String.IsNullOrEmpty(this.txtClave.Text) ? "Clave\n" : this.txtClave.Text.Length <= 8 ?
+                    "Debe tener mas de 8" : "Debe coincidir con Confirmar Clave"; 
+                estado = false;
+            }
+
+            if (!estado)
+            {
+                Notificar(error_msj, MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
+
+            return estado; 
+        }
+
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+           if (Validar())
+            {
+                GuardarCambios();
+                this.Close();
+            }
+
+           
+        }
     }
 }
