@@ -15,10 +15,6 @@ namespace Data.Database
         public Adapter()
         {
             this._conn=new SqlConnection(ConfigurationManager.ConnectionStrings["academiaConnectionString"].ConnectionString);
-          
-
-
-
         }
 
         public SqlDataAdapter sqlDataAdapter
