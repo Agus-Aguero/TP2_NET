@@ -51,7 +51,7 @@ namespace Business.Logic
              UsuarioData.GuardarCambios(dataTable);
         }
 
-        public void Save(Business.Entities.Usuario usuario )
+        public void Save(Usuario usuario )
         {
             UsuarioData.Save(usuario);
         }

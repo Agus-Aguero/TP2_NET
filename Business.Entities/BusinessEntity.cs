@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class BusinessEntity
+    public   class BusinessEntity
     {
         /* Esta clase contrendra los elementos basicos que compartiran las entidades
          de nuestro sistema y luego heredaran de ella */
@@ -29,15 +29,17 @@ namespace Business.Entities
         {
             this.State = States.New;
         }
-        public enum States
-        {
-            New = 1,
-            Deleted = 2,
-            Modified = 3,
-            Unmodified = 4
-        }
 
+     
 
     }
+    public enum States
+    {
+        New = 1,
+        Deleted = 2,
+        Modified = 3,
+        Unmodified = 4
+    }
+
 
 }

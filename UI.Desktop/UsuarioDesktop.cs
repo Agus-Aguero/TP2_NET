@@ -73,13 +73,8 @@ namespace UI.Desktop
         }
         public override void MapearADatos()
         {
-            this.UsuarioActual.State = BusinessEntity.States.Modified;
-            if (this._Modo == ModoForm.Alta)
-            {
-                this.UsuarioActual = new Usuario();
-                this.UsuarioActual.State = BusinessEntity.States.New;
-            }
-            
+            this.UsuarioActual = new Usuario();
+            this.UsuarioActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
             this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
             this.UsuarioActual.Nombre = this.txtNombre.Text;
             this.UsuarioActual.Apellido= this.txtApellido.Text;
