@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public   class BusinessEntity
+    public class BusinessEntity
     {
         /* Esta clase contrendra los elementos basicos que compartiran las entidades
          de nuestro sistema y luego heredaran de ella */
-
+        
+                
         private int _ID;
         public int ID
         {
@@ -40,6 +41,5 @@ namespace Business.Entities
         Modified = 3,
         Unmodified = 4
     }
-
 
 }

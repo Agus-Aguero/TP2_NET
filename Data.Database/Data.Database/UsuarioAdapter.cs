@@ -128,7 +128,49 @@ namespace Data.Database
 
         public List<Usuario> GetAll()
         {
-           return new List<Usuario>(Usuarios);
+           //return new List<Usuario>(Usuarios);
+            try
+            {
+
+                List<Usuario> usuarios = new List<Usuario>();
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("Select * From usuarios", this._conn);
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+
+                while (drUsuarios.Read())
+                {
+                    /*
+                     *Creamos un objeto Usuario de la capa de entidades par coipiar
+                     *lo datos de la fila del DataReader al objeto de entidades
+                     */
+
+                Usuario usr = new Usuario();
+
+                usr.ID = (int)drUsuarios["id_usuarios"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.EMail = (string)drUsuarios["email"];
+
+                    usuarios.Add(usr);
+                }
+                //cerramos el DataReade y la conexcion a la BD
+                drUsuarios.Close();
+                this.CloseConnection();
+                // devolvemos el objeto
+                return usuarios;
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+               new Exception("Error al recuperar lista de usuarios", Ex);
+                throw ExcepcionManejada;
+            }
+
+         
         }
         //se Usa en el ejercicio lab 3.2,ver si lo tenemos que usar en el TP
         public DataTable GetAllDataTable()
@@ -139,23 +181,166 @@ namespace Data.Database
         }
         public void GuardarCambios(DataTable dtUsuarios)
         {
+           
             this.sqlDataAdapter.Update(dtUsuarios);
+
             dtUsuarios.AcceptChanges();
         }
         //se Usa en el ejercicio lab 3.2
 
 
-        public Business.Entities.Usuario GetOne(int ID)
+        public Usuario GetOne(int ID)
         {
-            return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
+            Usuario usr = new Usuario();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("Select * From usuarios", this._conn);
+                cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+
+                while (drUsuarios.Read())
+                {
+                    /*
+                     *Creamos un objeto Usuario de la capa de entidades par coipiar
+                     *lo datos de la fila del DataReader al objeto de entidades
+                     */
+
+
+                    usr.ID = (int)drUsuarios["id_usuarios"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.EMail = (string)drUsuarios["email"];
+
+                }
+                //cerramos el DataReade y la conexcion a la BD
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+               new Exception("Error al recuperar lista de usuarios", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usr;
         }
 
         public void Delete(int ID)
         {
-            Usuarios.Remove(this.GetOne(ID));
+            // Usuarios.Remove(this.GetOne(ID));
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdDelete =
+                    new SqlCommand("delete usuarios where id_usuario=@id", _conn);
+                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+
+                cmdDelete.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al eliminar usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
         }
 
-        public void Save(Usuario usuario)
+
+
+        public void Update(Usuario usuario)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave =
+                   new SqlCommand("UPDATE usuarios SET nombre_usuario=@nombre_usuario,clave=@clave,"
+                   +"habilitado=@habilitado,nombre=@nombre,apellido=@apellido,email=@email"+
+                   "where @id=id_usuario"
+                   , _conn);
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
+                cmdSave.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.EMail;
+                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
+                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
+                cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al editar usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+        }
+
+        protected void Insert(Usuario usuario)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand(
+                    "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email) " +
+                    "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) " +
+                    "select @@identity",
+                    _conn);
+                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+                cmdSave.Parameters.Add("@habilitado", SqlDbType.VarChar, 50).Value = usuario.Habilitado;
+                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
+                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
+                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
+                usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al crear usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
+        public void Save (Usuario usuario)
+        {
+            if (usuario.State == States.Deleted)
+            {
+                this.Delete(usuario.ID);
+            }
+            else if(usuario.State == States.New)
+            {
+                this.Update(usuario);
+            }
+            else if (usuario.State == States.Modified)
+            {
+                this.Update(usuario);
+            }
+            usuario.State = States.Unmodified;
+        }
+
+       /* public void Save(Usuario usuario)
         {
             if (usuario.State == States.New)
             {
@@ -179,6 +364,6 @@ namespace Data.Database
                 Usuarios[Usuarios.FindIndex(delegate(Usuario u) { return u.ID == usuario.ID; })]=usuario;
             }
             usuario.State = States.Unmodified;            
-        }
+        }*/
     }
 }

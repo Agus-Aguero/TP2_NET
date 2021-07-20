@@ -9,12 +9,13 @@ namespace Data.Database
     public class Adapter
 
     {
+        const string consKeyDefaultCnnString = "academiaConnectionString";
 
         protected SqlDataAdapter _sqlDataAdapter;
         protected SqlConnection _conn ;
         public Adapter()
         {
-            this._conn=new SqlConnection(ConfigurationManager.ConnectionStrings["academiaConnectionString"].ConnectionString);
+            this._conn=new SqlConnection(ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString);
         }
 
         public SqlDataAdapter sqlDataAdapter
@@ -33,12 +34,15 @@ namespace Data.Database
 
         protected void OpenConnection()
         {
-            throw new Exception("Metodo no implementado");
+            var cadenaCon  = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
+            this._conn= new SqlConnection(cadenaCon);
+            this._conn.Open();
         }
 
         protected void CloseConnection()
         {
-            throw new Exception("Metodo no implementado");
+            this._conn.Close();
+            _conn = null;
         }
 
         protected SqlDataReader ExecuteReader(String commandText)
