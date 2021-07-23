@@ -32,7 +32,7 @@ namespace UI.Desktop
             UsuarioLogic uLogic = new UsuarioLogic();
             this.dgvUsuarios.AutoGenerateColumns = false;
             //this.dgvUsuarios.DataSource = uLogic.GetAll();
-            this.dgvUsuarios.DataSource = uLogic.GetAllDataTable();
+            this.dgvUsuarios.DataSource = uLogic.GetAll();
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
@@ -59,8 +59,7 @@ namespace UI.Desktop
 
         private void tstEditar_Click(object sender, EventArgs e)
         {
-            //int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            int ID = 1;
+            int ID = Convert.ToInt32(this.dgvUsuarios.Rows[this.dgvUsuarios.CurrentRow.Index].Cells[0].Value);
             UsuarioDesktop formUsuario = new UsuarioDesktop(ID,ApplicationForm.ModoForm.Modificacion);
             formUsuario.ShowDialog();
             this.Listar();
@@ -68,7 +67,7 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+            int ID = Convert.ToInt32(this.dgvUsuarios.Rows[this.dgvUsuarios.CurrentRow.Index].Cells[0].Value);
 
             UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
             formUsuario.ShowDialog();

@@ -14,51 +14,7 @@ namespace Data.Database
         // Al modificar este proyecto para que acceda a la base de datos esta será eliminada
         private static List<Usuario> _Usuarios;
 
-        private static List<Usuario> Usuarios
-        {
-            get
-            {
-                if (_Usuarios == null)
-                {
-                    _Usuarios = new List<Business.Entities.Usuario>();
-                    Business.Entities.Usuario usr;
-                    usr = new Business.Entities.Usuario();
-                    usr.ID = 1;
-                    usr.State = States.Unmodified;
-                    usr.Nombre = "Casimiro";
-                    usr.Apellido = "Cegado";
-                    usr.NombreUsuario = "casicegado";
-                    usr.Clave = "miro";
-                    usr.EMail = "casimirocegado@gmail.com";
-                    usr.Habilitado = true;
-                    _Usuarios.Add(usr);
-
-                    usr = new Business.Entities.Usuario();
-                    usr.ID = 2;
-                    usr.State = States.Unmodified;
-                    usr.Nombre = "Armando Esteban";
-                    usr.Apellido = "Quito";
-                    usr.NombreUsuario = "aequito";
-                    usr.Clave = "carpintero";
-                    usr.EMail = "armandoquito@gmail.com";
-                    usr.Habilitado = true;
-                    _Usuarios.Add(usr);
-
-                    usr = new Business.Entities.Usuario();
-                    usr.ID = 3;
-                    usr.State = States.Unmodified;
-                    usr.Nombre = "Alan";
-                    usr.Apellido = "Brado";
-                    usr.NombreUsuario = "alanbrado";
-                    usr.Clave = "abrete sesamo";
-                    usr.EMail = "alanbrado@gmail.com";
-                    usr.Habilitado = true;
-                    _Usuarios.Add(usr);
-
-                }
-                return _Usuarios;
-            }
-        }
+        
         #endregion
 
 
@@ -85,7 +41,7 @@ namespace Data.Database
             " SET tipo_doc = @tipo_doc, nro_doc = @nro_doc, fecha_nac = @fecha_nac, " +
             " apellido = @apellido, nombre = @nombre, direccion = @direccion, " +
             " telefono = @telefono, email = @email, celular = @celular, usuario = @usuario, " +
-            " clave = @clave WHERE id=@id ", this.Conn);
+            " clave = @clave WHERE id = @id ", this.Conn);
             this.sqlDataAdapter.UpdateCommand.Parameters.Add("@tipo_doc", SqlDbType.Int, 1, "tipo_doc");
             this.sqlDataAdapter.UpdateCommand.Parameters.Add("@nro_doc", SqlDbType.Int, 1, "nro_doc");
             this.sqlDataAdapter.UpdateCommand.Parameters.Add("@fecha_nac", SqlDbType.DateTime, 1, "fecha_nac");
@@ -134,9 +90,10 @@ namespace Data.Database
 
                 List<Usuario> usuarios = new List<Usuario>();
                 this.OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("Select * From usuarios", this._conn);
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", this._conn);
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
+            
 
                 while (drUsuarios.Read())
                 {
@@ -145,10 +102,10 @@ namespace Data.Database
                      *lo datos de la fila del DataReader al objeto de entidades
                      */
 
-                Usuario usr = new Usuario();
+                    Usuario usr = new Usuario();
 
-                usr.ID = (int)drUsuarios["id_usuarios"];
-                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.ID = (int)drUsuarios["id"];
+                    usr.NombreUsuario = (string)drUsuarios["usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Nombre = (string)drUsuarios["nombre"];
@@ -195,7 +152,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("Select * From usuarios", this._conn);
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", this._conn);
                 cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
@@ -207,14 +164,16 @@ namespace Data.Database
                      *lo datos de la fila del DataReader al objeto de entidades
                      */
 
-
-                    usr.ID = (int)drUsuarios["id_usuarios"];
-                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    usr.Clave = (string)drUsuarios["clave"];
-                    usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    usr.Nombre = (string)drUsuarios["nombre"];
-                    usr.Apellido = (string)drUsuarios["apellido"];
-                    usr.EMail = (string)drUsuarios["email"];
+                    if ((int)drUsuarios["id"] == ID)
+                    {
+                        usr.ID = (int)drUsuarios["id"];
+                        usr.NombreUsuario = (string)drUsuarios["usuario"];
+                        usr.Clave = (string)drUsuarios["clave"];
+                        usr.Habilitado = (bool)drUsuarios["habilitado"];
+                        usr.Nombre = (string)drUsuarios["nombre"];
+                        usr.Apellido = (string)drUsuarios["apellido"];
+                        usr.EMail = (string)drUsuarios["email"];
+                    }    
 
                 }
                 //cerramos el DataReade y la conexcion a la BD
@@ -242,7 +201,7 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdDelete =
-                    new SqlCommand("delete usuarios where id_usuario=@id", _conn);
+                    new SqlCommand("delete usuarios where id = @id", _conn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
 
                 cmdDelete.ExecuteNonQuery();
@@ -266,18 +225,18 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave =
-                   new SqlCommand("UPDATE usuarios SET nombre_usuario=@nombre_usuario,clave=@clave,"
-                   +"habilitado=@habilitado,nombre=@nombre,apellido=@apellido,email=@email"+
-                   "where @id=id_usuario"
+                SqlCommand cmdUpdate =
+                   new SqlCommand("UPDATE usuarios SET usuario = @usuario,clave = @clave,habilitado = @habilitado,nombre = @nombre,apellido = @apellido,email = @email WHERE @id = id"
                    , _conn);
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
-                cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdSave.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.EMail;
-                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
-                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
-                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-                cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                cmdUpdate.Parameters.Add("@habilitado", SqlDbType.VarChar).Value = usuario.Habilitado;
+                cmdUpdate.Parameters.Add("@email", SqlDbType.VarChar).Value = usuario.EMail;
+                cmdUpdate.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
+                cmdUpdate.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
+                cmdUpdate.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+
+                cmdUpdate.ExecuteNonQuery();
 
             }
             catch (Exception Ex)
@@ -299,11 +258,9 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                    "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email) " +
-                    "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) " +
-                    "select @@identity",
+                    "insert into usuarios(usuario,clave,habilitado,nombre,apellido,email) values(@usuario, @clave, @habilitado, @nombre, @apellido, @email) select @@identity",
                     _conn);
-                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.VarChar, 50).Value = usuario.Habilitado;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
@@ -331,7 +288,7 @@ namespace Data.Database
             }
             else if(usuario.State == States.New)
             {
-                this.Update(usuario);
+                this.Insert(usuario);
             }
             else if (usuario.State == States.Modified)
             {
