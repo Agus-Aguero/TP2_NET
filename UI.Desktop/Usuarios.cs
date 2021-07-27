@@ -17,7 +17,7 @@ namespace UI.Desktop
         public Usuarios()
         {
             InitializeComponent();
-            GenerarColumnas();
+           GenerarColumnas();
             this.dgvUsuarios.AutoGenerateColumns = false;
 
         }
@@ -102,7 +102,7 @@ namespace UI.Desktop
             DataGridViewTextBoxColumn colUsuario = new DataGridViewTextBoxColumn();
             colUsuario.Name = "usuario";
             colUsuario.HeaderText = "Usuario";
-            colUsuario.DataPropertyName = "usuario";
+            colUsuario.DataPropertyName = "NombreUsuario";
             colUsuario.DisplayIndex = 0;
             this.dgvUsuarios.Columns.Add(colUsuario);
 
@@ -119,6 +119,13 @@ namespace UI.Desktop
             colClave.DataPropertyName = "clave";
             colClave.DisplayIndex = 0;
             this.dgvUsuarios.Columns.Add(colClave);
+
+            DataGridViewCheckBoxColumn colHabilitado = new DataGridViewCheckBoxColumn();
+            colHabilitado.Name = "habilitado";
+            colHabilitado.HeaderText = "Habilitado";
+            colHabilitado.DataPropertyName = "Habilitado";
+            colHabilitado.DisplayIndex = 0;
+            this.dgvUsuarios.Columns.Add(colHabilitado);
 
         }
     }

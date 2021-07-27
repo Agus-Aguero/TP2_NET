@@ -104,8 +104,8 @@ namespace Data.Database
 
                     Usuario usr = new Usuario();
 
-                    usr.ID = (int)drUsuarios["id"];
-                    usr.NombreUsuario = (string)drUsuarios["usuario"];
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Nombre = (string)drUsuarios["nombre"];
@@ -164,10 +164,10 @@ namespace Data.Database
                      *lo datos de la fila del DataReader al objeto de entidades
                      */
 
-                    if ((int)drUsuarios["id"] == ID)
+                    if ((int)drUsuarios["id_usuario"] == ID)
                     {
-                        usr.ID = (int)drUsuarios["id"];
-                        usr.NombreUsuario = (string)drUsuarios["usuario"];
+                        usr.ID = (int)drUsuarios["id_usuario"];
+                        usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                         usr.Clave = (string)drUsuarios["clave"];
                         usr.Habilitado = (bool)drUsuarios["habilitado"];
                         usr.Nombre = (string)drUsuarios["nombre"];
@@ -226,7 +226,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdUpdate =
-                   new SqlCommand("UPDATE usuarios SET usuario = @usuario,clave = @clave,habilitado = @habilitado,nombre = @nombre,apellido = @apellido,email = @email WHERE @id = id"
+                   new SqlCommand("UPDATE usuarios SET nombre_usuario = @usuario,clave = @clave,habilitado = @habilitado,nombre = @nombre,apellido = @apellido,email = @email WHERE @id = id_usuario"
                    , _conn);
                 cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
                 cmdUpdate.Parameters.Add("@habilitado", SqlDbType.VarChar).Value = usuario.Habilitado;
@@ -258,9 +258,9 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                    "insert into usuarios(usuario,clave,habilitado,nombre,apellido,email) values(@usuario, @clave, @habilitado, @nombre, @apellido, @email) select @@identity",
+                    "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email) values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) select @@identity",
                     _conn);
-                cmdSave.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.VarChar, 50).Value = usuario.Habilitado;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
