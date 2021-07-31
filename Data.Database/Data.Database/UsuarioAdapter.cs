@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using Academia.EntityFramework;
 using Business.Entities;
 
 namespace Data.Database
@@ -87,6 +88,18 @@ namespace Data.Database
            //return new List<Usuario>(Usuarios);
             try
             {
+              
+                    var genericRepository = new GenericRepository<usuarios>();
+                    usuarios usuarios1 = new usuarios();
+                    usuarios1.apellido = "dsadsd";
+                    usuarios1.nombre = "dsadsd";
+                    usuarios1.nombre_usuario = "dsadsd";
+                    usuarios1.habilitado = true;
+                    usuarios1.email = "dsadsdda@gmail.com";
+                    usuarios1.clave = "sajdajiodoasdm";
+                    genericRepository.Insert(usuarios1);
+
+                
 
                 List<Usuario> usuarios = new List<Usuario>();
                 this.OpenConnection();

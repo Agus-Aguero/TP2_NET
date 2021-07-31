@@ -16,6 +16,8 @@
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -48,6 +51,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Academia.EntityFramework\Academia.EntityFramework.csproj">
+      <Project>{dfc568c4-9724-47bd-85f5-fcf8d881037f}</Project>
+      <Name>Academia.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Business.Entities\Business.Entities.csproj">
       <Project>{ab6ee94b-b627-4d1a-a182-f44e30104d46}</Project>
       <Name>Business.Entities</Name>
