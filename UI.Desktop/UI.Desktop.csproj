@@ -130,6 +130,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Academia.EntityFramework\Academia.EntityFramework.csproj">
+      <Project>{dfc568c4-9724-47bd-85f5-fcf8d881037f}</Project>
+      <Name>Academia.EntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
       <Project>{ab6ee94b-b627-4d1a-a182-f44e30104d46}</Project>
       <Name>Business.Entities</Name>

@@ -4,22 +4,19 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Academia.EntityFramework;
 using Business.Entities;
 using Data.Database;
 
 namespace Business.Logic
 {
-    public class UsuarioLogic : BusinessLogic
+    public class UsuarioLogic : BusinessLogic<usuarios>
     {
-        /*public UsuarioLogic( Data.Database.UsuarioAdapter usuarioData)
-        {
-
-            UsuarioData = usuarioData;
-
-        }*/ // REVISAR
+        
 
         public UsuarioLogic()
         {
+            
             UsuarioAdapter usuarioData = new UsuarioAdapter();
             UsuarioData = usuarioData;
         }
@@ -38,9 +35,10 @@ namespace Business.Logic
             return UsuarioData.GetOne(ID);
         }
 
-        public List<Usuario> GetAll()
+        public List<usuarios> GetAll()
         {
-            return UsuarioData.GetAll();
+            var Usuarios = this.repository.GetAll();
+            return Usuarios.ToList();
         }
         public DataTable GetAllDataTable()
         {
@@ -53,6 +51,34 @@ namespace Business.Logic
 
         public void Save(Usuario usuario )
         {
+            var user = new usuarios();
+            user.apellido = usuario.Apellido;
+            user.nombre = usuario.Nombre;
+            user.id_usuario = usuario.ID;
+            user.nombre_usuario = usuario.NombreUsuario;
+            user.clave = usuario.Clave;
+            user.email = usuario.EMail;
+            user.habilitado = usuario.Habilitado;
+
+            switch (usuario.State)
+            {
+                case States.New:
+                    repository.Insert(user);
+                    break;
+                case States.Deleted:
+                    repository.Delete(user);
+                    break;
+                case States.Modified:
+                    repository.Update(user);
+                    break;
+                default:
+                    break;
+            }
+
+            if (usuario.State== States.New)
+            {
+                repository.Insert(user);
+            }
             UsuarioData.Save(usuario);
         }
 

@@ -310,30 +310,5 @@ namespace Data.Database
             usuario.State = States.Unmodified;
         }
 
-       /* public void Save(Usuario usuario)
-        {
-            if (usuario.State == States.New)
-            {
-                int NextID = 0;
-                foreach (Usuario usr in Usuarios)
-                {
-                    if (usr.ID > NextID)
-                    {
-                        NextID = usr.ID;
-                    }
-                }
-                usuario.ID = NextID + 1;
-                Usuarios.Add(usuario);
-            }
-            else if (usuario.State == States.Deleted)
-            {
-                this.Delete(usuario.ID);
-            }
-            else if (usuario.State == States.Modified)
-            {
-                Usuarios[Usuarios.FindIndex(delegate(Usuario u) { return u.ID == usuario.ID; })]=usuario;
-            }
-            usuario.State = States.Unmodified;            
-        }*/
     }
 }

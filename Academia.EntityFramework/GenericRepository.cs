@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -15,31 +16,15 @@ namespace Academia.EntityFramework
 
         public GenericRepository()
         {
-            this.context = new AcademiaDbContext();
+            this.context = new AcademiaDbContext(); // Tiene todas las entidades de la base. Es como la base
             this.dbSet = context.Set<TEntity>();
         }
 
-        public virtual IEnumerable<TEntity> GetAll(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
+        public virtual IEnumerable<TEntity> GetAll()
         {
             IQueryable<TEntity> query = dbSet;
-
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
-
-          
-
-            if (orderBy != null)
-            {
-                return orderBy(query).ToList();
-            }
-            else
-            {
                 return query.ToList();
-            }
+            
         }
 
         public virtual TEntity Get(int id)
@@ -50,7 +35,7 @@ namespace Academia.EntityFramework
         public virtual void Insert(TEntity entity)
         {
             dbSet.Add(entity);
-            context.SaveChangesAsync();
+            context.SaveChanges();
 
         }
 
@@ -80,5 +65,7 @@ namespace Academia.EntityFramework
             context.SaveChangesAsync();
 
         }
+
+
     }
 }
