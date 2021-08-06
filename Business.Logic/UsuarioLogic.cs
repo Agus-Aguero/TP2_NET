@@ -38,6 +38,7 @@ namespace Business.Logic
         public List<usuarios> GetAll()
         {
             var Usuarios = this.repository.GetAll();
+
             return Usuarios.ToList();
         }
         public DataTable GetAllDataTable()
@@ -75,11 +76,6 @@ namespace Business.Logic
                     break;
             }
 
-            if (usuario.State== States.New)
-            {
-                repository.Insert(user);
-            }
-            UsuarioData.Save(usuario);
         }
 
         public void Delete(int ID)
