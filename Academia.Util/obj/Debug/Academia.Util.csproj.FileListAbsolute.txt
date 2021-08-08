@@ -3,3 +3,9 @@ C:\Users\Leand\source\repos\TP2V2\Academia.Util\bin\Debug\Academia.Util.pdb
 C:\Users\Leand\source\repos\TP2V2\Academia.Util\obj\Debug\Academia.Util.csproj.CoreCompileInputs.cache
 C:\Users\Leand\source\repos\TP2V2\Academia.Util\obj\Debug\Academia.Util.dll
 C:\Users\Leand\source\repos\TP2V2\Academia.Util\obj\Debug\Academia.Util.pdb
+C:\Users\Leand\.net\CursoApi\FirstApi\Agus-Aguero\TP2_NET\Academia.Util\bin\Debug\Academia.Util.dll
+C:\Users\Leand\.net\CursoApi\FirstApi\Agus-Aguero\TP2_NET\Academia.Util\bin\Debug\Academia.Util.pdb
+C:\Users\Leand\.net\CursoApi\FirstApi\Agus-Aguero\TP2_NET\Academia.Util\obj\Debug\Academia.Util.csprojAssemblyReference.cache
+C:\Users\Leand\.net\CursoApi\FirstApi\Agus-Aguero\TP2_NET\Academia.Util\obj\Debug\Academia.Util.csproj.CoreCompileInputs.cache
+C:\Users\Leand\.net\CursoApi\FirstApi\Agus-Aguero\TP2_NET\Academia.Util\obj\Debug\Academia.Util.dll
+C:\Users\Leand\.net\CursoApi\FirstApi\Agus-Aguero\TP2_NET\Academia.Util\obj\Debug\Academia.Util.pdb
