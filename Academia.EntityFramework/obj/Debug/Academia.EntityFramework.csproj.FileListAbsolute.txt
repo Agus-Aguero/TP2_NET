@@ -1,0 +1,16 @@
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\Academia.EntityFramework.dll.config
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\Academia.EntityFramework.dll
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\Academia.EntityFramework.pdb
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\Academia.Entities.dll
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\EntityFramework.dll
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\Academia.Util.dll
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\Academia.Entities.pdb
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\EntityFramework.xml
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\bin\Debug\Academia.Util.pdb
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\obj\Debug\Academia.EntityFramework.csprojAssemblyReference.cache
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\obj\Debug\Academia.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\obj\Debug\Academia.EntityFramework.csproj.CopyComplete
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\obj\Debug\Academia.EntityFramework.dll
+C:\Users\Leand\source\repos\TP2V2\Academia.EntityFramework\obj\Debug\Academia.EntityFramework.pdb
