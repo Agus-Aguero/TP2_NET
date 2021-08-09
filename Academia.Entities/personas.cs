@@ -5,7 +5,7 @@ namespace Academia.Entities
     using System.ComponentModel.DataAnnotations;
  
 
-    public partial class personas
+    public partial class personas:Entity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public personas()
