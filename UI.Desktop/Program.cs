@@ -18,6 +18,7 @@ namespace UI.Desktop
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Usuarios());
             //Application.Run(new Especialidades());
+            //Application.Run(new Cursos());
         }
     }
 }

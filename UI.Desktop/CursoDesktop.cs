@@ -1,40 +1,40 @@
-﻿using System;
-
-
+﻿using Academia.Entities;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Academia.Entities;
-using Academia.Util;
 using Academia.Logic;
-using static UI.Desktop.ApplicationForm;
+using Academia.Util;
 
 namespace UI.Desktop
 {
-    public partial class EspecialidadDesktop : ApplicationForm
+    public partial class CursoDesktop : ApplicationForm
     {
-
-        public especialidades EspecialidadActual { get; set; }
+        public cursos CursoActual { get; set; }
 
         private ModoForm _Modo { get; set; }
-
-        public EspecialidadDesktop()
+        public CursoDesktop()
         {
             InitializeComponent();
         }
-
-        public EspecialidadDesktop(ModoForm modo) : this()
+        public CursoDesktop(ModoForm modo) : this()
         {
             _Modo = modo;
         }
-        public EspecialidadDesktop(int ID, ModoForm modo) : this()
+        public CursoDesktop(int ID, ModoForm modo) : this()
         {
             _Modo = modo;
-            EspecialidadLogic especialidadLogic = new EspecialidadLogic();
+            CursoLogic cursoLogic = new CursoLogic();
 
-            this.EspecialidadActual = especialidadLogic.Get(ID);
+            this.CursoActual = cursoLogic.Get(ID);
 
             MapearDeDatos();
         }
-
         public override void MapearDeDatos()
         {
 
@@ -55,9 +55,11 @@ namespace UI.Desktop
                 default:
                     break;
             }
-            this.txtID.Text = this.EspecialidadActual.id_especialidad.ToString();
-            this.txtDescripcion.Text = this.EspecialidadActual.desc_especialidad;
-
+            this.txtID.Text = this.CursoActual.id_curso.ToString();
+            this.txtAnioCalendario.Text = this.CursoActual.anio_calendario.ToString();
+            this.txtCupo.Text = this.CursoActual.cupo.ToString();
+            this.txtIdComision.Text = this.CursoActual.id_comision.ToString();
+            this.txtIdMateria.Text = this.CursoActual.id_materia.ToString();
         }
 
         public override void MapearADatos()
@@ -66,18 +68,21 @@ namespace UI.Desktop
             switch (this._Modo)
             {
                 case ModoForm.Alta:
-                    this.EspecialidadActual = new especialidades();
-                    this.EspecialidadActual.State = States.New;
+                    this.CursoActual = new cursos();
+                    this.CursoActual.State = States.New;
                     break;
                 case ModoForm.Baja:
-                    this.EspecialidadActual.State = States.Deleted;
+                    this.CursoActual.State = States.Deleted;
                     break;
                 case ModoForm.Modificacion:
-                    this.EspecialidadActual.State = States.Modified;
+                    this.CursoActual.State = States.Modified;
                     break;
             }
 
-            this.EspecialidadActual.desc_especialidad = this.txtDescripcion.Text;
+            this.CursoActual.anio_calendario = Int32.Parse(this.txtAnioCalendario.Text);
+            this.CursoActual.cupo = Int32.Parse(this.txtCupo.Text);
+            this.CursoActual.id_materia = Int32.Parse(this.txtIdMateria.Text);
+            this.CursoActual.id_comision = Int32.Parse(this.txtIdComision.Text);
 
 
         }
@@ -85,30 +90,17 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             this.MapearADatos();
-            EspecialidadLogic especialidadLogic = new EspecialidadLogic();
+            CursoLogic cursoLogic = new CursoLogic();
 
-            especialidadLogic.Save(EspecialidadActual);
-
+            cursoLogic.Save(CursoActual);
         }
 
         public override bool Validar()
         {
             bool estado = true;
-            string error_msj = "Completar:\n";
-            if (this.txtDescripcion.Text == String.Empty)
-            {
-                estado = false;
-                error_msj += "Descripción\n";
-            }
-
-            if (!estado)
-            {
-                Notificar(error_msj, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+  
             return estado;
         }
-
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="ComisionesLogic.cs" />
+    <Compile Include="CursoLogic.cs" />
     <Compile Include="EspecialidadLogic.cs" />
     <Compile Include="IAppLogic.cs" />
     <Compile Include="MateriaLogic.cs" />
