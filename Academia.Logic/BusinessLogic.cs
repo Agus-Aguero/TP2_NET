@@ -48,18 +48,22 @@ namespace Academia.Logic
                     repository.Delete(entity);
                     break;
                 case States.Modified:
-                    repository.Update(entity);
+                    Update(entity);
                     break;
                 default:
                     break;
             }
         }
-
-
-        public virtual void Delete(int ID)
+        public virtual TEntity Update(TEntity entity)
         {
+            repository.Update(entity);
+            return entity;
+
         }
 
-
+        public void Delete(int ID)
+        {
+            repository.Delete(ID);
+        }
     }
 }

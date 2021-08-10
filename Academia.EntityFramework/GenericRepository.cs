@@ -1,12 +1,14 @@
 ﻿
+using Academia.Entities;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 
 namespace Academia.EntityFramework
 {
-    public class GenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> where TEntity : Entity
     {
         internal Academia context;
         internal DbSet<TEntity> dbSet;
@@ -40,26 +42,23 @@ namespace Academia.EntityFramework
         {
             TEntity entityToDelete = dbSet.Find(id);
             Delete(entityToDelete);
-            context.SaveChangesAsync();
 
         }
 
         public virtual void Delete(TEntity entityToDelete)
         {
-            if (context.Entry(entityToDelete).State == EntityState.Detached)
-            {
-                dbSet.Attach(entityToDelete);
-            }
+            
             dbSet.Remove(entityToDelete);
-            context.SaveChangesAsync();
+            context.SaveChanges();
 
         }
 
         public virtual void Update(TEntity entityToUpdate)
         {
-            dbSet.Attach(entityToUpdate);
-            context.Entry(entityToUpdate).State = EntityState.Modified;
-            context.SaveChangesAsync();
+            this.dbSet.AddOrUpdate(entityToUpdate);
+            context.SaveChanges();
+
+
 
         }
 

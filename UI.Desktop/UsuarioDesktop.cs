@@ -59,6 +59,7 @@ namespace UI.Desktop
             this.txtNombre.Text = this.UsuarioActual.nombre;
             this.txtApellido.Text = this.UsuarioActual.apellido;
             this.txtUsuario.Text = this.UsuarioActual.nombre_usuario;
+            this.txtClave.Text = this.UsuarioActual.clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.clave;
             this.txtEmail.Text = this.UsuarioActual.email;
 
@@ -82,14 +83,13 @@ namespace UI.Desktop
                     this.UsuarioActual.State = States.Modified;
                     break;
             }
-            //this.UsuarioActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
+            this.UsuarioActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
             this.UsuarioActual.habilitado = this.chkHabilitado.Checked;
             this.UsuarioActual.nombre = this.txtNombre.Text;
-            this.UsuarioActual.apellido= this.txtApellido.Text;
-            this.UsuarioActual.nombre_usuario= this.txtUsuario.Text;
-            this.UsuarioActual.clave= this.txtConfirmarClave.Text;
-            this.UsuarioActual.email= this.txtEmail.Text;
-
+            this.UsuarioActual.apellido = this.txtApellido.Text;
+            this.UsuarioActual.nombre_usuario = this.txtUsuario.Text;
+            this.UsuarioActual.clave = this.txtConfirmarClave.Text;
+            this.UsuarioActual.email = this.txtEmail.Text;
         }
        
         public override void GuardarCambios()

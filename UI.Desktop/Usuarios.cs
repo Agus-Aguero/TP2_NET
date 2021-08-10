@@ -14,11 +14,13 @@ namespace UI.Desktop
 {
     public partial class Usuarios : Form
     {
+        public UsuarioLogic uLogic { get; set; }
         public Usuarios()
         {
             InitializeComponent();
            GenerarColumnas();
             this.dgvUsuarios.AutoGenerateColumns = false;
+             uLogic = new UsuarioLogic();
 
         }
 
@@ -29,7 +31,6 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            UsuarioLogic uLogic = new UsuarioLogic();
             this.dgvUsuarios.AutoGenerateColumns = false;
             //this.dgvUsuarios.DataSource = uLogic.GetAll();
             this.dgvUsuarios.DataSource = uLogic.GetAll();
@@ -68,9 +69,7 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvUsuarios.Rows[this.dgvUsuarios.CurrentRow.Index].Cells[0].Value);
-
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formUsuario.ShowDialog();
+            uLogic.Delete(ID);
             this.Listar();
         }
 
