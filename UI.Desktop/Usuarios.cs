@@ -32,7 +32,8 @@ namespace UI.Desktop
         public void Listar()
         {
             this.dgvUsuarios.AutoGenerateColumns = false;
-            //this.dgvUsuarios.DataSource = uLogic.GetAll();
+            this.dgvUsuarios.DataSource =null;
+            var usuarios = uLogic.GetAll();
             this.dgvUsuarios.DataSource = uLogic.GetAll();
         }
 
