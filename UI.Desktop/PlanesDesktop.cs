@@ -87,7 +87,31 @@ namespace UI.Desktop
             }
             this.PlanActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
             this.PlanActual.desc_plan = this.txtDescripcion.Text;
-           // Tendria que poner el id de especialidad?
+            this.PlanActual.id_especialidad = Convert.ToInt32(this.txtIDEsp.Text); // Consultar si esta bien
+        }
+
+        public override bool Validar()
+        {
+            bool estado = true;
+            string error_msj = "Completar:\n";
+            if (this.txtDescripcion.Text == String.Empty)
+            {
+                estado = false;
+                error_msj += "Descripcion\n";
+            }
+
+            if (this.txtIDEsp.Text == String.Empty)
+            {
+                estado = false;
+                error_msj += "Id especialidad\n";
+            }
+
+            if (!estado)
+            {
+                Notificar(error_msj, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return estado;
         }
         public override void GuardarCambios()
         {
@@ -96,6 +120,19 @@ namespace UI.Desktop
 
             planLogic.Save(PlanActual);
 
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                GuardarCambios();
+                this.Close();
+            }
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
