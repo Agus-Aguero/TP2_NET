@@ -37,8 +37,8 @@ namespace UI.Desktop
             this.lblIdComision = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtAnioCalendario = new System.Windows.Forms.TextBox();
-            this.txtIdComision = new System.Windows.Forms.TextBox();
-            this.txtIdMateria = new System.Windows.Forms.TextBox();
+            this.comboComision = new System.Windows.Forms.ComboBox();
+            this.comboMateria = new System.Windows.Forms.ComboBox();
             this.txtCupo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -54,9 +54,9 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.lblCupo, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtAnioCalendario, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdComision, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.comboComision, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblIdComision, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdMateria, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboMateria, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtCupo, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblIdMateria, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblId, 0, 0);
@@ -131,19 +131,19 @@ namespace UI.Desktop
             this.txtAnioCalendario.Size = new System.Drawing.Size(265, 20);
             this.txtAnioCalendario.TabIndex = 5;
             // 
-            // txtIdComision
+            // comboComision
             // 
-            this.txtIdComision.Location = new System.Drawing.Point(76, 81);
-            this.txtIdComision.Name = "txtIdComision";
-            this.txtIdComision.Size = new System.Drawing.Size(265, 20);
-            this.txtIdComision.TabIndex = 9;
+            this.comboComision.Location = new System.Drawing.Point(76, 81);
+            this.comboComision.Name = "comboComision";
+            this.comboComision.Size = new System.Drawing.Size(265, 20);
+            this.comboComision.TabIndex = 9;
             // 
-            // txtIdMateria
+            // comboMateria
             // 
-            this.txtIdMateria.Location = new System.Drawing.Point(76, 107);
-            this.txtIdMateria.Name = "txtIdMateria";
-            this.txtIdMateria.Size = new System.Drawing.Size(265, 20);
-            this.txtIdMateria.TabIndex = 10;
+            this.comboMateria.Location = new System.Drawing.Point(76, 107);
+            this.comboMateria.Name = "comboMateria";
+            this.comboMateria.Size = new System.Drawing.Size(265, 20);
+            this.comboMateria.TabIndex = 10;
             // 
             // txtCupo
             // 
@@ -186,9 +186,16 @@ namespace UI.Desktop
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
+            //populating comisiones&materias ComboBox
+            this.populatingComisiones();
+            this.populatingMaterias();
+            //
+
         }
 
         #endregion
+
+
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblId;
@@ -199,8 +206,8 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtAnioCalendario;
         private System.Windows.Forms.TextBox txtCupo;
-        private System.Windows.Forms.TextBox txtIdMateria;
-        private System.Windows.Forms.TextBox txtIdComision;
+        private System.Windows.Forms.ComboBox comboMateria;
+        private System.Windows.Forms.ComboBox comboComision;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

@@ -58,8 +58,8 @@ namespace UI.Desktop
             this.txtID.Text = this.CursoActual.id_curso.ToString();
             this.txtAnioCalendario.Text = this.CursoActual.anio_calendario.ToString();
             this.txtCupo.Text = this.CursoActual.cupo.ToString();
-            this.txtIdComision.Text = this.CursoActual.id_comision.ToString();
-            this.txtIdMateria.Text = this.CursoActual.id_materia.ToString();
+            this.comboComision.Text = this.CursoActual.id_comision.ToString();
+            this.comboMateria.Text = this.CursoActual.id_materia.ToString();
         }
 
         public override void MapearADatos()
@@ -81,8 +81,8 @@ namespace UI.Desktop
 
             this.CursoActual.anio_calendario = Int32.Parse(this.txtAnioCalendario.Text);
             this.CursoActual.cupo = Int32.Parse(this.txtCupo.Text);
-            this.CursoActual.id_materia = Int32.Parse(this.txtIdMateria.Text);
-            this.CursoActual.id_comision = Int32.Parse(this.txtIdComision.Text);
+            this.CursoActual.id_materia = Convert.ToInt32(this.comboMateria.SelectedValue);
+            this.CursoActual.id_comision = Convert.ToInt32(this.comboComision.SelectedValue);
 
 
         }
@@ -117,5 +117,27 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        //populating
+        private void populatingComisiones()
+        {
+            ComisionesLogic comLogic = new ComisionesLogic();
+            var comisiones = comLogic.GetAll();
+            this.comboComision.DataSource = comLogic.GetAll();
+            this.comboComision.DisplayMember = "desc_comision";
+            this.comboComision.ValueMember = "id_comision";
+        }
+
+        private void populatingMaterias()
+        {
+            MateriaLogic matLogic = new MateriaLogic();
+            var materias = matLogic.GetAll();
+            this.comboMateria.DataSource = matLogic.GetAll();
+            this.comboMateria.DisplayMember = "desc_materia";
+            this.comboMateria.ValueMember = "id_materia";
+        }
+        //
+
+
     }
 }
