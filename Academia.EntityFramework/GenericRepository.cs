@@ -54,9 +54,11 @@ namespace Academia.EntityFramework
                 var dbSet = context.Set<TEntity>();
                 TEntity entityToDelete = dbSet.Find(id);
                 dbSet.Remove(entityToDelete);
+                context.SaveChanges();
+
 
             }
-      
+
 
         }
 
