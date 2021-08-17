@@ -63,7 +63,6 @@ namespace UI.Desktop
                     break;
             }
             this.txtID.Text = this.PlanActual.id_plan.ToString();
-
             this.txtDescripcion.Text = this.PlanActual.desc_plan;
             this.txtIDEsp.Text = this.PlanActual.id_especialidad.ToString();
 

@@ -20,12 +20,16 @@ namespace UI.Desktop
             InitializeComponent();
             GenerarColumnas();
             this.dgvPlanes.AutoGenerateColumns = false;
-            PlanesLogic pLogic = new PlanesLogic();
+            
         }
 
         public void Listar()
         {
-            
+            PlanesLogic pLogic = new PlanesLogic();
+            this.dgvPlanes.AutoGenerateColumns = false;
+            this.dgvPlanes.DataSource = null;
+           // var planes = pLogic.GetAll();
+            this.dgvPlanes.DataSource = pLogic.GetAll();
         }
 
         private void Planes_Load(object sender, EventArgs e)

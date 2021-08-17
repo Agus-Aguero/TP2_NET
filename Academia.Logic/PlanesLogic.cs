@@ -10,7 +10,7 @@ namespace Academia.Logic
 {
     public class PlanesLogic:BusinessLogic<planes>
     {
-        public PlanesLogic()
+      public PlanesLogic()
         {
             this.repository = new PlanRepository();
         }
