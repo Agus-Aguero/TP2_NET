@@ -85,7 +85,7 @@ namespace UI.Desktop
             this.tlUsuarios.Size = new System.Drawing.Size(800, 425);
             this.tlUsuarios.TabIndex = 1;
             // 
-            // dgvUsuarios
+            // dgvModulos
             // 
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
@@ -94,7 +94,7 @@ namespace UI.Desktop
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
             this.dgvUsuarios.MultiSelect = false;
-            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Name = "dgvModulos";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(794, 390);

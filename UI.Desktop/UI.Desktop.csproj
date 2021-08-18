@@ -113,6 +113,18 @@
     <Compile Include="formMain.Designer.cs">
       <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materias.Designer.cs">
+      <DependentUpon>Materias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MateriasDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriasDesktop.Designer.cs">
+      <DependentUpon>MateriasDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Planes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,11 +139,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModuloDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloDesktop.Designer.cs">
+      <DependentUpon>ModuloDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UsuarioDesktop.Designer.cs">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos.Designer.cs">
+      <DependentUpon>Modulos.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
@@ -157,6 +181,9 @@
     <EmbeddedResource Include="formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materias.resx">
+      <DependentUpon>Materias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,8 +200,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ModuloDesktop.resx">
+      <DependentUpon>ModuloDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos.resx">
+      <DependentUpon>Modulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

@@ -23,7 +23,7 @@ namespace UI.Desktop
         {
             InitializeComponent();
             this.oUsuario = new UsuarioLogic();
-            //this.dgvUsuarios.DataSource = this.oUsuario.GetAllDataTable();
+            //this.dgvModulos.DataSource = this.oUsuario.GetAllDataTable();
 
         }
 
