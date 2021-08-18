@@ -20,12 +20,13 @@ namespace UI.Desktop
             InitializeComponent();
             GenerarColumnas();
             this.dgvPlanes.AutoGenerateColumns = false;
-            
+            this.pLogic = new PlanesLogic();
+
         }
 
         public void Listar()
         {
-            PlanesLogic pLogic = new PlanesLogic();
+            
             this.dgvPlanes.AutoGenerateColumns = false;
             this.dgvPlanes.DataSource = null;
            // var planes = pLogic.GetAll();
@@ -54,7 +55,7 @@ namespace UI.Desktop
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
             colId.HeaderText = "ID";
-            colId.DataPropertyName = "id_planes";
+            colId.DataPropertyName = "id_plan";
             colId.DisplayIndex = 0;
             this.dgvPlanes.Columns.Add(colId);
 
