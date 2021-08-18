@@ -44,13 +44,13 @@ namespace UI.Desktop
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Lista de Usuarios";
+            this.label1.Text = "Lista de Modulos";
             // 
-            // dgvUsuarios
+            // dgvModulos
             // 
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(25, 35);
-            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Name = "dgvModulos";
             this.dgvUsuarios.Size = new System.Drawing.Size(763, 331);
             this.dgvUsuarios.TabIndex = 1;
             // 
@@ -73,7 +73,7 @@ namespace UI.Desktop
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.label1);
             this.Name = "formListaUsuarios";
-            this.Text = "Usuarios";
+            this.Text = "Modulos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
