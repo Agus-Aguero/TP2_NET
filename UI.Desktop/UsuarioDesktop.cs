@@ -56,12 +56,9 @@ namespace UI.Desktop
             }
             this.txtID.Text = this.UsuarioActual.id_usuario.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.habilitado;
-            this.txtNombre.Text = this.UsuarioActual.nombre;
-            this.txtApellido.Text = this.UsuarioActual.apellido;
             this.txtUsuario.Text = this.UsuarioActual.nombre_usuario;
             this.txtClave.Text = this.UsuarioActual.clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.clave;
-            this.txtEmail.Text = this.UsuarioActual.email;
 
             // 14.Dentro del mismo método setearemos el texto del botón Aceptar en
             // función del Modo del formulario de esta forma:
@@ -85,11 +82,8 @@ namespace UI.Desktop
             }
             this.UsuarioActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
             this.UsuarioActual.habilitado = this.chkHabilitado.Checked;
-            this.UsuarioActual.nombre = this.txtNombre.Text;
-            this.UsuarioActual.apellido = this.txtApellido.Text;
             this.UsuarioActual.nombre_usuario = this.txtUsuario.Text;
             this.UsuarioActual.clave = this.txtConfirmarClave.Text;
-            this.UsuarioActual.email = this.txtEmail.Text;
         }
        
         public override void GuardarCambios()

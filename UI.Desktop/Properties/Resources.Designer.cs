@@ -63,6 +63,86 @@ namespace UI.Desktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _134216_menu_lines_hamburger_icon {
+            get {
+                object obj = ResourceManager.GetObject("134216_menu_lines_hamburger_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3018587_admin_administrator_ajax_options_permission_icon {
+            get {
+                object obj = ResourceManager.GetObject("3018587_admin_administrator_ajax_options_permission_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _309036_student_education_study_icon {
+            get {
+                object obj = ResourceManager.GetObject("309036_student_education_study_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _309041_users_group_people_icon {
+            get {
+                object obj = ResourceManager.GetObject("309041_users_group_people_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _309041_users_group_people_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("309041_users_group_people_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3289566_assistant_educator_professor_showing_teacher_icon {
+            get {
+                object obj = ResourceManager.GetObject("3289566_assistant_educator_professor_showing_teacher_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4213449_building_college_education_library_school_icon {
+            get {
+                object obj = ResourceManager.GetObject("4213449_building_college_education_library_school_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6599584_course_discovery_e_book_e_learning_explore_icon {
+            get {
+                object obj = ResourceManager.GetObject("6599584_course_discovery_e-book_e-learning_explore_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap create {
             get {
                 object obj = ResourceManager.GetObject("create", resourceCulture);

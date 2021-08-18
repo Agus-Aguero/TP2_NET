@@ -55,6 +55,19 @@
   <ItemGroup>
     <Compile Include="Academia.cs" />
     <Compile Include="GenericRepository.cs" />
+    <Compile Include="Migrations\202108180141395_editUsuarios.cs" />
+    <Compile Include="Migrations\202108180141395_editUsuarios.designer.cs">
+      <DependentUpon>202108180141395_editUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108182307541_se_agrego_campo_nuevo.cs" />
+    <Compile Include="Migrations\202108182307541_se_agrego_campo_nuevo.designer.cs">
+      <DependentUpon>202108182307541_se_agrego_campo_nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108182313074_eliminacionCampo.cs" />
+    <Compile Include="Migrations\202108182313074_eliminacionCampo.designer.cs">
+      <DependentUpon>202108182313074_eliminacionCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PlanRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioRepository.cs" />
@@ -68,6 +81,17 @@
       <Project>{3940d94d-1f16-4d9d-8a9d-8b1793a76bbd}</Project>
       <Name>Academia.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202108180141395_editUsuarios.resx">
+      <DependentUpon>202108180141395_editUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108182307541_se_agrego_campo_nuevo.resx">
+      <DependentUpon>202108182307541_se_agrego_campo_nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108182313074_eliminacionCampo.resx">
+      <DependentUpon>202108182313074_eliminacionCampo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

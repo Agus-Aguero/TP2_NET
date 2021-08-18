@@ -140,17 +140,7 @@ namespace Academia.EntityFramework
                 .Property(e => e.clave)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<usuarios>()
-                .Property(e => e.nombre)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<usuarios>()
-                .Property(e => e.apellido)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<usuarios>()
-                .Property(e => e.email)
-                .IsUnicode(false);
+       
 
             modelBuilder.Entity<usuarios>()
                 .HasMany(e => e.modulos_usuarios)
