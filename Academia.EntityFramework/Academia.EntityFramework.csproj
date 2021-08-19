@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Academia.cs" />
+    <Compile Include="DocenteCursoRepository.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="Migrations\202108180141395_editUsuarios.cs" />
     <Compile Include="Migrations\202108180141395_editUsuarios.designer.cs">

@@ -54,6 +54,8 @@ namespace UI.Desktop
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.docenteCursolbl = new System.Windows.Forms.Label();
             this.PanelRight.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,6 +73,7 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelRight
@@ -84,6 +87,8 @@ namespace UI.Desktop
             this.PanelRight.Controls.Add(this.flowLayoutPanel5);
             this.PanelRight.Controls.Add(this.flowLayoutPanel6);
             this.PanelRight.Controls.Add(this.flowLayoutPanel2);
+            this.PanelRight.Controls.Add(this.pictureBox7);
+            this.PanelRight.Controls.Add(this.docenteCursolbl);
             this.PanelRight.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PanelRight.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelRight.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -393,6 +398,33 @@ namespace UI.Desktop
             this.label1.TabIndex = 26;
             this.label1.Text = "Modulos";
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::UI.Desktop.Properties.Resources._3018587_admin_administrator_ajax_options_permission_icon;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 284);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.pictureBox7.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 37;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // docenteCursolbl
+            // 
+            this.docenteCursolbl.AutoSize = true;
+            this.docenteCursolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.docenteCursolbl.ForeColor = System.Drawing.Color.AliceBlue;
+            this.docenteCursolbl.Location = new System.Drawing.Point(0, 322);
+            this.docenteCursolbl.Margin = new System.Windows.Forms.Padding(0);
+            this.docenteCursolbl.Name = "docenteCursolbl";
+            this.docenteCursolbl.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
+            this.docenteCursolbl.Size = new System.Drawing.Size(295, 40);
+            this.docenteCursolbl.TabIndex = 38;
+            this.docenteCursolbl.Text = "Docente Curso";
+            this.docenteCursolbl.Click += new System.EventHandler(this.docenteCursolbl_Click);
+            // 
             // Menu
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -400,6 +432,7 @@ namespace UI.Desktop
             this.Controls.Add(this.PanelRight);
             this.Name = "Menu";
             this.PanelRight.ResumeLayout(false);
+            this.PanelRight.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -423,6 +456,7 @@ namespace UI.Desktop
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,5 +488,7 @@ namespace UI.Desktop
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label docenteCursolbl;
     }
 }

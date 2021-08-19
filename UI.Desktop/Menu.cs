@@ -81,9 +81,20 @@ namespace UI.Desktop
 
         private void tableLayoutPanel1_MouseDown(object sender, MouseEventArgs e)
         {
-           var img = (PictureBox)sender;
+            var img = (PictureBox)sender;
             img.BackColor = Color.FromArgb(220, 110, 40); // this should be pink-ish
             img.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void docenteCursolbl_Click(object sender, EventArgs e)
+        {
+            var docenteCursoForm = new DocentesCursos();
+            docenteCursoForm.ShowDialog();
         }
     }
 }

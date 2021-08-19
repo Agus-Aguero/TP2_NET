@@ -61,7 +61,7 @@ namespace UI.Desktop
             this.txtId.Text = this.DocenteCursoActual.id_dictado.ToString();
             this.txtCargo.Text = this.DocenteCursoActual.cargo.ToString();
             this.comboCurso.Text = this.DocenteCursoActual.id_curso.ToString(); ;
-            this.comboDocente.Text = this.DocenteCursoActual.id_docente.ToString();
+            this.comboDocente.Text = this.DocenteCursoActual.personas.apellido.ToString();
         }
 
         public override void MapearADatos()
@@ -118,7 +118,6 @@ namespace UI.Desktop
         private void populatingDocentes()
         {
             PersonaLogic perLogic = new PersonaLogic();
-            var personas = perLogic.GetAll();
             this.comboDocente.DataSource = perLogic.GetAll();
             this.comboDocente.DisplayMember = "apellido";
             this.comboDocente.ValueMember = "id_persona";
@@ -127,7 +126,6 @@ namespace UI.Desktop
         private void populatingCursos()
         {
             CursoLogic cLogic = new CursoLogic();
-            var docentesCursos = cLogic.GetAll();
             this.comboCurso.DataSource = cLogic.GetAll();
             this.comboCurso.DisplayMember = "id_curso";
             this.comboCurso.ValueMember = "id_curso";
