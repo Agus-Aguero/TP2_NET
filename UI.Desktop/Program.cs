@@ -18,10 +18,10 @@ namespace UI.Desktop
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Usuarios());
              // Application.Run(new Menu());
-            //Application.Run(new Materias());
-            Application.Run(new Comisiones());
+           // Application.Run(new Materias());
+           Application.Run(new Comisiones());
             // Application.Run(new Planes());
-            // Application.Run(new Especialidades());
+             // Application.Run(new Especialidades());
             //Application.Run(new Cursos());
         }
     }

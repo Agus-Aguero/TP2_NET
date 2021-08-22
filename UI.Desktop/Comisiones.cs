@@ -57,7 +57,7 @@ namespace UI.Desktop
             DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
             colDesc.Name = "descripcion";
             colDesc.HeaderText = "Descripcion";
-            colDesc.DataPropertyName = "desc_materia";
+            colDesc.DataPropertyName = "desc_comision";
             colDesc.DisplayIndex = 1;
             this.dgvComisiones.Columns.Add(colDesc);
 
@@ -73,16 +73,16 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            ComisionDesktop formPlanes = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
-            formPlanes.ShowDialog();
+            ComisionDesktop formComisiones = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
+            formComisiones.ShowDialog();
             this.Listar();
         }
 
         private void tstEditar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvComisiones.Rows[this.dgvComisiones.CurrentRow.Index].Cells[0].Value);
-            ComisionDesktop formPlanes = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formPlanes.ShowDialog();
+            ComisionDesktop formComisiones = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formComisiones.ShowDialog();
             this.Listar();
         }
 

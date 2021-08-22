@@ -10,9 +10,9 @@ namespace Academia.Logic
     public class MateriaLogic:BusinessLogic<materias>
     {
 
-        public override void Save(materias entity)
+       /* public override void Save(materias entity)
         {
             
-        }
+        }*/
     }
 }
