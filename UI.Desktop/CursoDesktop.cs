@@ -121,7 +121,7 @@ namespace UI.Desktop
         //populating
         private void populatingComisiones()
         {
-            ComisionesLogic comLogic = new ComisionesLogic();
+            ComisionLogic comLogic = new ComisionLogic();
             var comisiones = comLogic.GetAll();
             this.comboComision.DataSource = comLogic.GetAll();
             this.comboComision.DisplayMember = "desc_comision";

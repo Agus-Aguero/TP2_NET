@@ -13,30 +13,30 @@ using Academia.Util;
 
 namespace UI.Desktop
 {
-    public partial class MateriasDesktop : ApplicationForm
+    public partial class ComisionDesktop : ApplicationForm
     {
-        public materias MateriaActual { get; set; }
+        public comisiones ComisionActual { get; set; }
         private ModoForm _Modo { get; set; }
-        public MateriasDesktop()
+        public ComisionDesktop()
         {
             InitializeComponent();
         }
 
-        public MateriasDesktop(ModoForm modo) : this()
+        public ComisionDesktop(ModoForm modo) : this()
         {
             // Internamete debe setear a ModoForm en el modo enviado, este constructor
             // servirá para las altas.
             _Modo = modo;
         }
 
-        public MateriasDesktop(int ID, ModoForm modo) : this()
+        public ComisionDesktop(int ID, ModoForm modo) : this()
         {
             // En este nuevo constructor seteamos el modo que ha sido especificado en
             // el parámetro
             _Modo = modo;
-            MateriaLogic materiaLogic = new MateriaLogic();
+            ComisionLogic comisionLogic = new ComisionLogic();
 
-            this.MateriaActual = materiaLogic.Get(ID);
+            this.ComisionActual = comisionLogic.Get(ID);
 
             MapearDeDatos();
         }
@@ -61,10 +61,9 @@ namespace UI.Desktop
                 default:
                     break;
             }
-            this.txtDescripcion.Text = this.MateriaActual.desc_materia;
-            this.txtHSSemanal.Text = this.MateriaActual.hs_semanales.ToString();
-            this.txtHSTotales.Text = this.MateriaActual.hs_totales.ToString();
-            this.txtIDPlan.Text = this.MateriaActual.id_plan.ToString();
+            this.txtDescripcion.Text = this.ComisionActual.desc_comision;
+            this.txtAnioEsp.Text = this.ComisionActual.anio_especialidad.ToString();
+            this.txtIDPlan.Text = this.ComisionActual.id_plan.ToString();
         }
 
         public override void MapearADatos()
@@ -72,20 +71,20 @@ namespace UI.Desktop
             switch (this._Modo)
             {
                 case ModoForm.Alta:
-                    this.MateriaActual = new materias();
-                    this.MateriaActual.State = States.New;
+                    this.ComisionActual = new comisiones();
+                    this.ComisionActual.State = States.New;
                     break;
                 case ModoForm.Baja:
-                    this.MateriaActual.State = States.Deleted;
+                    this.ComisionActual.State = States.Deleted;
                     break;
                 case ModoForm.Modificacion:
-                    this.MateriaActual.State = States.Modified;
+                    this.ComisionActual.State = States.Modified;
                     break;
             }
-            this.MateriaActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
-            this.MateriaActual.desc_materia = this.txtDescripcion.Text;
-            this.MateriaActual.hs_semanales = Convert.ToInt32(this.txtHSSemanal.Text);
-            this.MateriaActual.hs_totales = Convert.ToInt32(this.txtHSTotales.Text);
+            this.ComisionActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
+            this.ComisionActual.desc_comision = this.txtDescripcion.Text;
+            this.ComisionActual.anio_especialidad = Convert.ToInt32(this.txtAnioEsp.Text);
+            this.ComisionActual.id_plan = Convert.ToInt32(this.txtIDPlan.Text);
         }
 
         public override bool Validar()
@@ -98,16 +97,10 @@ namespace UI.Desktop
                 error_msj += "Descripcion\n";
             }
 
-            if (this.txtHSSemanal.Text == String.Empty)
+            if (this.txtAnioEsp.Text == String.Empty)
             {
                 estado = false;
-                error_msj += "HS semanales\n";
-            }
-
-            if (this.txtHSTotales.Text == String.Empty)
-            {
-                estado = false;
-                error_msj += "Hs totales\n";
+                error_msj += "Año Especialidad\n";
             }
 
             if (this.txtIDPlan.Text == String.Empty)
@@ -127,9 +120,9 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             this.MapearADatos();
-            MateriaLogic materiaLogic = new MateriaLogic();
+            ComisionLogic comisionLogic = new ComisionLogic();
 
-            materiaLogic.Save(MateriaActual);
+            comisionLogic.Save(ComisionActual);
 
         }
 
@@ -145,6 +138,7 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
 
     }
 }

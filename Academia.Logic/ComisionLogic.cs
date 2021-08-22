@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Academia.Logic
 {
-    public class ComisionesLogic : BusinessLogic<comisiones>
+    public class ComisionLogic : BusinessLogic<comisiones>
     {
     }
 }
