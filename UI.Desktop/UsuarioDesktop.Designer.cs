@@ -48,6 +48,8 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ModuloListCheck = new System.Windows.Forms.CheckedListBox();
+            this.lblModulos = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -212,7 +214,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(317, 176);
+            this.btnAceptar.Location = new System.Drawing.Point(331, 346);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
@@ -222,7 +224,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(414, 176);
+            this.btnCancelar.Location = new System.Drawing.Point(436, 346);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
@@ -234,11 +236,30 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // ModuloListCheck
+            // 
+            this.ModuloListCheck.FormattingEnabled = true;
+            this.ModuloListCheck.Location = new System.Drawing.Point(196, 181);
+            this.ModuloListCheck.Name = "ModuloListCheck";
+            this.ModuloListCheck.Size = new System.Drawing.Size(405, 139);
+            this.ModuloListCheck.TabIndex = 3;
+            // 
+            // lblModulos
+            // 
+            this.lblModulos.AutoSize = true;
+            this.lblModulos.Location = new System.Drawing.Point(193, 159);
+            this.lblModulos.Name = "lblModulos";
+            this.lblModulos.Size = new System.Drawing.Size(47, 13);
+            this.lblModulos.TabIndex = 4;
+            this.lblModulos.Text = "Modulos";
+            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 234);
+            this.ClientSize = new System.Drawing.Size(798, 426);
+            this.Controls.Add(this.lblModulos);
+            this.Controls.Add(this.ModuloListCheck);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -248,6 +269,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -272,5 +294,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblModulos;
+        public System.Windows.Forms.CheckedListBox ModuloListCheck;
     }
 }

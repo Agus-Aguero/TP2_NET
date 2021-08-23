@@ -4,12 +4,15 @@ using System.Windows.Forms;
 using Academia.Entities;
 using Academia.Util;
 using Academia.Logic;
+using System.Collections.Generic;
 
 namespace UI.Desktop
 {
     public partial class UsuarioDesktop : ApplicationForm
     {
         public usuarios UsuarioActual { get; set; }
+        public IEnumerable<modulos>  Modulos { get; set; }
+
 
         private ModoForm _Modo { get; set; }
 
@@ -22,16 +25,34 @@ namespace UI.Desktop
             // Internamete debe setear a ModoForm en el modo enviado, este constructor
             // servirá para las altas.
             _Modo = modo;
+            ModuloLogic ModuloLogic = new ModuloLogic();
+
+            this.Modulos = ModuloLogic.GetAll();
+            ListBox listaModulos = new ListBox();
+            listaModulos.DataSource = this.Modulos;
+            ((ListBox)ModuloListCheck).DataSource = this.Modulos;
+            ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
+            ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
+
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
             // En este nuevo constructor seteamos el modo que ha sido especificado en
             // el parámetro
            _Modo = modo;
-            UsuarioLogic usuarioLogic = new UsuarioLogic();
+            UsuarioLogic usuarioLogic = new UsuarioLogic(); 
+            ModuloLogic ModuloLogic = new ModuloLogic();
+
 
             this.UsuarioActual = usuarioLogic.Get(ID);
-            
+            this.Modulos=ModuloLogic.GetAll();
+            ListBox listaModulos = new ListBox();
+            listaModulos.DataSource = this.Modulos;
+            ((ListBox)ModuloListCheck).DataSource = this.Modulos;
+            ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
+            ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
+
+
             MapearDeDatos();
         }
 
@@ -59,14 +80,15 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.nombre_usuario;
             this.txtClave.Text = this.UsuarioActual.clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.clave;
+           
 
-            // 14.Dentro del mismo método setearemos el texto del botón Aceptar en
-            // función del Modo del formulario de esta forma:
+
+
 
         }
         public override void MapearADatos()
         {
-            
+
             switch (this._Modo)
             {
                 case ModoForm.Alta:
@@ -84,8 +106,14 @@ namespace UI.Desktop
             this.UsuarioActual.habilitado = this.chkHabilitado.Checked;
             this.UsuarioActual.nombre_usuario = this.txtUsuario.Text;
             this.UsuarioActual.clave = this.txtConfirmarClave.Text;
-        }
-       
+            this.UsuarioActual.modulos_usuarios = new List<modulos_usuarios>();
+            foreach (modulos modulo in this.ModuloListCheck.CheckedItems)
+            {
+                this.UsuarioActual.modulos_usuarios.Add(new modulos_usuarios { id_modulo = modulo.id_modulo, id_usuario = this.UsuarioActual.id_usuario, alta = true, modificacion = true });
+            }
+
+
+       }
         public override void GuardarCambios()
         {
             this.MapearADatos();

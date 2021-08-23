@@ -23,7 +23,7 @@ namespace Academia.Logic
         #region Metodos
         public override usuarios Get(int ID)
         {
-            return base.Get(ID);
+            return this.repository.Get(ID);
         }
         #endregion
 

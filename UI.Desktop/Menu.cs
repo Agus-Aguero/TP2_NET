@@ -96,5 +96,19 @@ namespace UI.Desktop
             var docenteCursoForm = new DocentesCursos();
             docenteCursoForm.ShowDialog();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            var modulos = new Modulos();
+            modulos.ShowDialog();
+        }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+            var usuarios = new Usuarios();
+            usuarios.ShowDialog();
+
+
+        }
     }
 }

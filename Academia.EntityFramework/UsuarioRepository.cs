@@ -17,6 +17,7 @@ namespace Academia.EntityFramework
             {
               
                 context.usuarios.AddOrUpdate(entityToUpdate);
+                context.modulos_usuarios.AddRange(entityToUpdate.modulos_usuarios.ToList());
                 context.SaveChanges();
 
             }
@@ -28,7 +29,8 @@ namespace Academia.EntityFramework
             {
 
                 return context.usuarios.Where(usu => usu.id_usuario == id)
-                                .Include(usus => usus.personas).FirstOrDefault();
+                                .Include(usus => usus.personas)
+                                .Include(usuarios => usuarios.modulos_usuarios).FirstOrDefault();
 
             }
         }
