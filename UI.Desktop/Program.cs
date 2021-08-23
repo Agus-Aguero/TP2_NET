@@ -21,7 +21,7 @@ namespace UI.Desktop
             //Application.Run(new Materias());
             //Application.Run(new Comisiones());
             // Application.Run(new Planes());
-            // Application.Run(new Especialidades());
+             // Application.Run(new Especialidades());
             //Application.Run(new Cursos());
         }
     }

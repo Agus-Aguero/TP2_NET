@@ -47,49 +47,55 @@ namespace UI.Desktop
 
         private void GenerarColumnas()
         {
-           
+            DataGridViewTextBoxColumn colIdMateria = new DataGridViewTextBoxColumn();
+            colIdMateria.Name = "Id Materia";
+            colIdMateria.HeaderText = "Id Materia";
+            colIdMateria.DataPropertyName = "id_materia";
+            colIdMateria.DisplayIndex = 0;
+            this.dgvMaterias.Columns.Add(colIdMateria);
+
             DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
             colDesc.Name = "descripcion";
             colDesc.HeaderText = "Descripcion";
             colDesc.DataPropertyName = "desc_materia";
-            colDesc.DisplayIndex = 0;
+            colDesc.DisplayIndex = 1;
             this.dgvMaterias.Columns.Add(colDesc);
 
             DataGridViewTextBoxColumn colHsSemanal = new DataGridViewTextBoxColumn();
             colHsSemanal.Name = "HS Semanal";
             colHsSemanal.HeaderText = "HS Semanales";
             colHsSemanal.DataPropertyName = "hs_semanales";
-            colHsSemanal.DisplayIndex = 1;
+            colHsSemanal.DisplayIndex = 2;
             this.dgvMaterias.Columns.Add(colHsSemanal);
 
             DataGridViewTextBoxColumn colHsTotales = new DataGridViewTextBoxColumn();
             colHsTotales.Name = "HS Totales";
             colHsTotales.HeaderText = "Total de horas";
             colHsTotales.DataPropertyName = "hs_totales";
-            colHsTotales.DisplayIndex = 2;
+            colHsTotales.DisplayIndex = 3;
             this.dgvMaterias.Columns.Add(colHsTotales);
 
             DataGridViewTextBoxColumn colIdPlan = new DataGridViewTextBoxColumn();
             colIdPlan.Name = "Id Plan";
             colIdPlan.HeaderText = "Id Plan";
             colIdPlan.DataPropertyName = "id_plan";
-            colIdPlan.DisplayIndex = 3;
+            colIdPlan.DisplayIndex = 4;
             this.dgvMaterias.Columns.Add(colIdPlan);
 
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            PlanesDesktop formPlanes = new PlanesDesktop(ApplicationForm.ModoForm.Alta);
-            formPlanes.ShowDialog();
+            MateriasDesktop formMaterias = new MateriasDesktop(ApplicationForm.ModoForm.Alta);
+            formMaterias.ShowDialog();
             this.Listar();
         }
 
         private void tstEditar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvMaterias.Rows[this.dgvMaterias.CurrentRow.Index].Cells[0].Value);
-            MateriasDesktop formPlanes = new MateriasDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formPlanes.ShowDialog();
+            MateriasDesktop formMaterias = new MateriasDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formMaterias.ShowDialog();
             this.Listar();
         }
 

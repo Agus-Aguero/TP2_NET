@@ -61,6 +61,7 @@ namespace UI.Desktop
                 default:
                     break;
             }
+            this.txtID.Text = this.MateriaActual.id_materia.ToString();
             this.txtDescripcion.Text = this.MateriaActual.desc_materia;
             this.txtHSSemanal.Text = this.MateriaActual.hs_semanales.ToString();
             this.txtHSTotales.Text = this.MateriaActual.hs_totales.ToString();
@@ -146,5 +147,6 @@ namespace UI.Desktop
             this.Close();
         }
 
+        
     }
 }
