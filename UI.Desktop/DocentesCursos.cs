@@ -14,8 +14,10 @@ namespace UI.Desktop
 {
     public partial class DocentesCursos : Form
     {
+        public DocenteCursoLogic dcLogic { get; set; }
         public DocentesCursos()
         {
+            dcLogic = new DocenteCursoLogic();
             InitializeComponent();
             GenerarColumnas();
             this.dgvDocentesCursos.AutoGenerateColumns = false;
@@ -23,7 +25,6 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            DocenteCursoLogic dcLogic = new DocenteCursoLogic();
             this.dgvDocentesCursos.AutoGenerateColumns = false;
             this.dgvDocentesCursos.DataSource = dcLogic.GetAll();
         }
@@ -57,8 +58,7 @@ namespace UI.Desktop
         {
             int ID = Convert.ToInt32(this.dgvDocentesCursos.Rows[this.dgvDocentesCursos.CurrentRow.Index].Cells[0].Value);
 
-            DocenteCursoDesktop formEspecialidad = new DocenteCursoDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formEspecialidad.ShowDialog();
+            dcLogic.Delete(ID);
             this.Listar();
         }
 
@@ -71,7 +71,7 @@ namespace UI.Desktop
         {
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
-            colId.HeaderText = "ID";
+            colId.HeaderText = "Dictado";
             colId.DataPropertyName = "id_dictado";
             colId.DisplayIndex = 0;
             this.dgvDocentesCursos.Columns.Add(colId);
@@ -79,14 +79,14 @@ namespace UI.Desktop
             DataGridViewTextBoxColumn colIdCurso = new DataGridViewTextBoxColumn();
             colIdCurso.Name = "curso";
             colIdCurso.HeaderText = "Curso";
-            colIdCurso.DataPropertyName = "id_curso";
+            colIdCurso.DataPropertyName = "desc_materia";
             colIdCurso.DisplayIndex = 0;
             this.dgvDocentesCursos.Columns.Add(colIdCurso);
 
             DataGridViewTextBoxColumn colIdDocente = new DataGridViewTextBoxColumn();
-            colIdDocente.Name = "docente";
+            colIdDocente.Name = "apellido";
             colIdDocente.HeaderText = "Docente";
-            colIdDocente.DataPropertyName = "id_docente";
+            colIdDocente.DataPropertyName = "nombre_docente";
             colIdDocente.DisplayIndex = 0;
             this.dgvDocentesCursos.Columns.Add(colIdDocente);
 

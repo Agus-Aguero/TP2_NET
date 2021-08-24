@@ -30,6 +30,7 @@ namespace Academia.EntityFramework
             {
 
                 return context.docentes_cursos.Include(docCur => docCur.cursos)
+                                              .Include(docCur => docCur.cursos.materias)
                                               .Include(docCur => docCur.personas).ToList();
             }
         }
