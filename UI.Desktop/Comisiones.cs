@@ -30,7 +30,7 @@ namespace UI.Desktop
             this.dgvComisiones.DataSource = cLogic.GetAll();
         }
 
-        private void Materias_Load(object sender, EventArgs e)
+        private void Comisiones_Load(object sender, EventArgs e)
         {
             Listar();
         }
@@ -47,25 +47,32 @@ namespace UI.Desktop
 
         private void GenerarColumnas()
         {
+            DataGridViewTextBoxColumn colID = new DataGridViewTextBoxColumn();
+            colID.Name = "ID";
+            colID.HeaderText = "ID Comision";
+            colID.DataPropertyName = "id_comision";
+            colID.DisplayIndex = 0;
+            this.dgvComisiones.Columns.Add(colID);
+
             DataGridViewTextBoxColumn colAnioEsp = new DataGridViewTextBoxColumn();
             colAnioEsp.Name = "Año especialidad";
             colAnioEsp.HeaderText = "Año Especialidad";
             colAnioEsp.DataPropertyName = "anio_especialidad";
-            colAnioEsp.DisplayIndex = 0;
+            colAnioEsp.DisplayIndex = 1;
             this.dgvComisiones.Columns.Add(colAnioEsp);
 
             DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
             colDesc.Name = "descripcion";
             colDesc.HeaderText = "Descripcion";
             colDesc.DataPropertyName = "desc_comision";
-            colDesc.DisplayIndex = 1;
+            colDesc.DisplayIndex = 2;
             this.dgvComisiones.Columns.Add(colDesc);
 
             DataGridViewTextBoxColumn colIdPlan = new DataGridViewTextBoxColumn();
             colIdPlan.Name = "Id Plan";
             colIdPlan.HeaderText = "Id Plan";
             colIdPlan.DataPropertyName = "id_plan";
-            colIdPlan.DisplayIndex = 2;
+            colIdPlan.DisplayIndex = 3;
             this.dgvComisiones.Columns.Add(colIdPlan);
 
         }

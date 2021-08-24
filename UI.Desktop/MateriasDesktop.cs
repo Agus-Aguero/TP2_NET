@@ -87,6 +87,7 @@ namespace UI.Desktop
             this.MateriaActual.desc_materia = this.txtDescripcion.Text;
             this.MateriaActual.hs_semanales = Convert.ToInt32(this.txtHSSemanal.Text);
             this.MateriaActual.hs_totales = Convert.ToInt32(this.txtHSTotales.Text);
+            this.MateriaActual.id_plan = Convert.ToInt32(this.txtIDPlan.Text);
         }
 
         public override bool Validar()
