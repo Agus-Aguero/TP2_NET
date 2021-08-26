@@ -49,6 +49,7 @@ namespace UI.Desktop
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.docenteCursolbl = new System.Windows.Forms.Label();
+            this.lblEspecialidad = new System.Windows.Forms.Label();
             this.PanelRight.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,12 +75,13 @@ namespace UI.Desktop
             this.PanelRight.Controls.Add(this.flowLayoutPanel6);
             this.PanelRight.Controls.Add(this.flowLayoutPanel2);
             this.PanelRight.Controls.Add(this.docenteCursolbl);
+            this.PanelRight.Controls.Add(this.lblEspecialidad);
             this.PanelRight.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PanelRight.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelRight.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.PanelRight.Location = new System.Drawing.Point(0, 0);
             this.PanelRight.Name = "PanelRight";
-            this.PanelRight.Size = new System.Drawing.Size(300, 677);
+            this.PanelRight.Size = new System.Drawing.Size(304, 677);
             this.PanelRight.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -257,6 +259,7 @@ namespace UI.Desktop
             this.lblDocentes.Size = new System.Drawing.Size(256, 40);
             this.lblDocentes.TabIndex = 29;
             this.lblDocentes.Text = "Docentes";
+            this.lblDocentes.Click += new System.EventHandler(this.lblDocentes_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -294,6 +297,20 @@ namespace UI.Desktop
             this.docenteCursolbl.TabIndex = 38;
             this.docenteCursolbl.Text = "Docente Curso";
             this.docenteCursolbl.Click += new System.EventHandler(this.docenteCursolbl_Click);
+            // 
+            // lblEspecialidad
+            // 
+            this.lblEspecialidad.AutoSize = true;
+            this.lblEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspecialidad.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lblEspecialidad.Location = new System.Drawing.Point(0, 324);
+            this.lblEspecialidad.Margin = new System.Windows.Forms.Padding(0);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
+            this.lblEspecialidad.Size = new System.Drawing.Size(297, 40);
+            this.lblEspecialidad.TabIndex = 39;
+            this.lblEspecialidad.Text = "Especialidades";
+            this.lblEspecialidad.Click += new System.EventHandler(this.especialidadLbl_Click);
             // 
             // Menu
             // 
@@ -346,5 +363,6 @@ namespace UI.Desktop
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label docenteCursolbl;
+        private System.Windows.Forms.Label lblEspecialidad;
     }
 }

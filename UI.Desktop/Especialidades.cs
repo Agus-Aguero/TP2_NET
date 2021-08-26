@@ -14,8 +14,11 @@ namespace UI.Desktop
 {
     public partial class Especialidades : Form
     {
+        public EspecialidadLogic eLogic { get; set; }
+
         public Especialidades()
         {
+            eLogic = new EspecialidadLogic();
             InitializeComponent();
             GenerarColumnas();
             this.dgvEspecialidades.AutoGenerateColumns = false;
@@ -24,7 +27,6 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            EspecialidadLogic eLogic = new EspecialidadLogic();
             this.dgvEspecialidades.AutoGenerateColumns = false;
             this.dgvEspecialidades.DataSource = eLogic.GetAll();
         }
@@ -57,9 +59,7 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvEspecialidades.Rows[this.dgvEspecialidades.CurrentRow.Index].Cells[0].Value);
-
-            EspecialidadDesktop formEspecialidad = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formEspecialidad.ShowDialog();
+            eLogic.Delete(ID);
             this.Listar();
         }
 

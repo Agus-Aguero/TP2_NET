@@ -110,5 +110,16 @@ namespace UI.Desktop
 
 
         }
+
+        private void especialidadLbl_Click(object sender, EventArgs e)
+        {
+            var especialidades = new Especialidades();
+            especialidades.ShowDialog();
+        }
+
+        private void lblDocentes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
