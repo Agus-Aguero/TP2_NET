@@ -39,9 +39,10 @@ namespace Academia.EntityFramework
         {
             using (var context = new Academia())
             {
-                var u = context.usuarios.Where(usu => usu.nombre_usuario == username;
-                return new usuarios();
+                usuarios usuario = context.usuarios.Where(usu => usu.nombre_usuario == username).FirstOrDefault();
+                return usuario;
             }
+
         }
     }
 }
