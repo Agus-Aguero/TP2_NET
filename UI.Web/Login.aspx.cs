@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Academia.Entities;
 using Academia.Logic;
+using Academia.EntityFramework;
+
 
 namespace UI.Web
 {
@@ -18,10 +20,9 @@ namespace UI.Web
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            
-            UsuarioLogic uLogic = new UsuarioLogic();
-            var usuarios = uLogic.GetAll();
-            
+            UsuarioRepository usuarioRepository = new UsuarioRepository();
+            usuarios usuario = usuarioRepository.findByUserName(1);
+            Page.Response.Write(usuario.ToString());
         }
     }
 }

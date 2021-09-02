@@ -34,5 +34,14 @@ namespace Academia.EntityFramework
 
             }
         }
+
+        public usuarios findByUserName(string username)
+        {
+            using (var context = new Academia())
+            {
+                var u = context.usuarios.Where(usu => usu.nombre_usuario == username;
+                return new usuarios();
+            }
+        }
     }
 }
