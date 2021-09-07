@@ -14,10 +14,13 @@
 </head>
 
 <body class="container bg-light">
+    <form id="form1" runat="server">
     <div class="row d-flex">
         <div class="col text-center">
              Menú de Usuario
         </div>
     </div>
+        <asp:Label ID="lblPrueba" runat="server" Text="Label"></asp:Label>
+    </form>
 </body>
 </html>

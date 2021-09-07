@@ -17,7 +17,7 @@
         <form id="form1" runat="server">
             <label>Nombre de usuario</label>
             <br />
-            <asp:TextBox ID="txtUser" runat="server" />
+            <asp:TextBox ID="txtUser" runat="server" /> 
             <br />
             <label>Contraseña</label>
             <br />

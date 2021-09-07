@@ -31,14 +31,16 @@ namespace UI.Web
         {
             UsuarioRepository usuarioRepository = new UsuarioRepository();
             usuarios usuario = usuarioRepository.findByUserName(username);
-            if (usuario.clave == password)
+
+            if(usuario != null && usuario.clave == password)
             {
+                Session["usuario"] = usuario;
                 Page.Response.Redirect("MenuUsuario.aspx");
-            }
-            else
+            } else 
             {
-                Page.Response.Redirect("https://youtu.be/_dBz4dTZocg?t=265");
+                Page.Response.Write("Nombre de usuario y/o contraseña inválido");
             }
+
         }
     }
 }
