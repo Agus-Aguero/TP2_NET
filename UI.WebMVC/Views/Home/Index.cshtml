@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Login Page";
+}
+
+@using Academia.Entities
+@model usuarios
+
+<div class="jumbotron">
+    <h1>:)</h1>
+    <p class="lead">Ingreso al sistema</p>
+</div>
+
+<div class="row ">
+    <div class="col-md-4 align-self-center">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Home",  FormMethod.Post))
+            {
+                <h4>Utilice una cuenta local para iniciar sesión.</h4>
+                <hr />
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.nombre_usuario)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.clave)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Iniciar sesión" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
