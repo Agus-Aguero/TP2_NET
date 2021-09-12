@@ -44,6 +44,7 @@ namespace UI.WebMVC.Controllers
             }
             else
             {
+                ViewBag.ErrorMessage = "No pudimos validar su usuario y/o contraseña. Intente nuevamente.";
                 return View("Index");
             }
         }
