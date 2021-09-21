@@ -18,4 +18,11 @@ namespace Academia.Util
         Lunes,
         Martes
     }
+
+    public enum TipoPersona
+    {
+        Docente,
+        Alumno,
+        Admin
+    }
 }

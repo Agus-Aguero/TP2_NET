@@ -1,5 +1,6 @@
 namespace Academia.Entities
 {
+    using Academia.Util;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -39,7 +40,7 @@ namespace Academia.Entities
 
         public int? legajo { get; set; }
 
-        public int tipo_persona { get; set; }
+        public TipoPersona tipo_persona { get; set; }
 
         public int id_plan { get; set; }
 

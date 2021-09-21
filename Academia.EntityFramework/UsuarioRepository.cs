@@ -39,10 +39,18 @@ namespace Academia.EntityFramework
         {
             using (var context = new Academia())
             {
-                usuarios usuario = context.usuarios.Where(usu => usu.nombre_usuario == username).FirstOrDefault();
+                usuarios usuario = context.usuarios.Include(usu => usu.personas).
+                                                    Include(usu => usu.modulos_usuarios).
+                                                    Where(usu => usu.nombre_usuario == username).
+                                                    FirstOrDefault();
                 return usuario;
             }
 
+        }
+
+        public string getInscripcionesAlumno(int ID)
+        {
+            return "1";
         }
     }
 }

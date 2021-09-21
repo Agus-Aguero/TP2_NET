@@ -1,4 +1,5 @@
 ﻿using Academia.Entities;
+using Academia.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,15 @@ using System.Threading.Tasks;
 
 namespace Academia.Logic
 {
-    public class MateriaLogic:BusinessLogic<materias>
+    public class MateriaLogic: BusinessLogic <materias>
     {
-
-       /* public override void Save(materias entity)
+        public MateriaLogic()
         {
-            
-        }*/
+            this.repository = new MateriaRepository();
+        }
+        public override IEnumerable<materias> GetAll()
+        {
+            return this.repository.GetAll();
+        }
     }
 }
