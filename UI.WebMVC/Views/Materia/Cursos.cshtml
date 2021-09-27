@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Academia.Entities.cursos>
+
+@{
+    ViewBag.Title = "Cursos";
+}
+
+<h2>Cursos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_comision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materias.desc_materia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anio_calendario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cupo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_comision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materias.desc_materia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anio_calendario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cupo)
+        </td>
+        <td>
+            @Html.ActionLink("Inscribirme", "Edit", new { id=item.id_curso }) |
+        </td>
+    </tr>
+}
+
+</table>

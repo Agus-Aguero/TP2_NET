@@ -10,3 +10,11 @@
     <h1>Hola @Model.nombre_usuario !</h1>
     <p class="lead">ALUMNO: Bienvenido al sistema</p>
 </div>
+
+<div class="row">
+    <ul class="">
+        <a href=""></a>
+        <li>@Html.ActionLink("Inscribirme", "Index", "Materia")</li>
+        <li>@Html.ActionLink("Cursos inscriptos", "Inscripciones", "Usuario", new { id = Model.id_persona }, null)</li>
+    </ul>
+</div>

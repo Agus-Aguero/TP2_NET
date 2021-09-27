@@ -12,6 +12,13 @@ namespace UI.WebMVC.Controllers
 {
     public class UsuarioController : Controller
     {
+        public UsuarioLogic uLogic { get; set; }
+        public UsuarioRepository uRepository { get; set; }
+        public UsuarioController()
+        {
+            uLogic = new UsuarioLogic();
+            uRepository = new UsuarioRepository();
+        }
         // GET: Usuario
         public ActionResult Index()
         {
@@ -113,6 +120,12 @@ namespace UI.WebMVC.Controllers
                 ViewBag.ErrorMessage = "No pudimos validar su usuario y/o contraseña. Intente nuevamente.";
                 return View("Index");
             }
+        }
+
+        public ActionResult Inscripciones(int id)
+        {
+            IEnumerable<alumnos_inscripciones> inscripciones = uRepository.getInscripcionesAlumno(id);
+            return View(inscripciones);
         }
     }
 }

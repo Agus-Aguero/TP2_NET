@@ -182,6 +182,8 @@
     <Content Include="Views\Usuario\Alumno.cshtml" />
     <Content Include="Views\Materia\Index.cshtml" />
     <Content Include="Views\Usuario\Docente.cshtml" />
+    <Content Include="Views\Usuario\Inscripciones.cshtml" />
+    <Content Include="Views\Materia\Cursos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

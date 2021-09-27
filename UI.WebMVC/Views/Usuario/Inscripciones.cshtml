@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Academia.Entities.alumnos_inscripciones>
+
+@{
+    ViewBag.Title = "Inscripciones";
+}
+
+<h2>Inscripciones</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cursos.id_curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.personas.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.condicion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nota)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cursos.id_curso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.personas.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.condicion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nota)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_inscripcion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_inscripcion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_inscripcion })
+        </td>
+    </tr>
+}
+
+</table>

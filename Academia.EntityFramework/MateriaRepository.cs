@@ -19,5 +19,24 @@ namespace Academia.EntityFramework
                 return materias;
             }
         }
+
+        public IEnumerable<cursos> GetCursos(int idMateria)
+        {
+            materias materia = this.Get(idMateria);
+            return materia.cursos;
+        }
+
+        public override materias Get(int id)
+
+        {
+            using (var context = new Academia())
+            {
+
+                return context.materias.Where(mat => mat.id_materia == id)
+                                .Include(mat => mat.cursos)
+                                .FirstOrDefault();
+
+            }
+        }
     }
 }

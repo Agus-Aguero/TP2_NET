@@ -12,9 +12,12 @@ namespace UI.WebMVC.Controllers
     public class MateriaController : Controller
     {
         public MateriaLogic mLogic { get; set; }
+        public MateriaRepository mRepository { get; set; }
+
         public MateriaController()
         {
             mLogic = new MateriaLogic();
+            mRepository = new MateriaRepository();
         }
 
         // GET: Materia
@@ -94,6 +97,18 @@ namespace UI.WebMVC.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult Cursos(int idMateria)
+        {
+            IEnumerable<cursos> cursos = mRepository.GetCursos(idMateria);
+            return View(cursos);
+        }
+
+        public ActionResult InscribirUsuario()
+        {
+            IEnumerable<alumnos_inscripciones> inscripciones;
+            return View("Inscripciones");
         }
     }
 }
