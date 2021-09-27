@@ -9,37 +9,33 @@ using Academia.EntityFramework;
 
 namespace UI.WebMVC.Controllers
 {
-    public class MateriaController : Controller
+    public class CursoController : Controller
     {
-        public MateriaLogic mLogic { get; set; }
-        public MateriaRepository mRepository { get; set; }
+        public CursoRepository cursoRepository { get; set; }
 
-        public MateriaController()
+        public CursoController()
         {
-            mLogic = new MateriaLogic();
-            mRepository = new MateriaRepository();
+            cursoRepository = new CursoRepository();
         }
-
-        // GET: Materia
+        // GET: Curso
         public ActionResult Index()
         {
-            var materias = mLogic.GetAll();
-            return View(materias);
+            return View();
         }
 
-        // GET: Materia/Details/5
+        // GET: Curso/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Materia/Create
+        // GET: Curso/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Materia/Create
+        // POST: Curso/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -55,13 +51,13 @@ namespace UI.WebMVC.Controllers
             }
         }
 
-        // GET: Materia/Edit/5
+        // GET: Curso/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Materia/Edit/5
+        // POST: Curso/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -77,13 +73,13 @@ namespace UI.WebMVC.Controllers
             }
         }
 
-        // GET: Materia/Delete/5
+        // GET: Curso/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Materia/Delete/5
+        // POST: Curso/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
@@ -99,12 +95,10 @@ namespace UI.WebMVC.Controllers
             }
         }
 
-        public ActionResult Cursos(int idMateria)
+        public ActionResult InscribirAlumno(int idAlumno, int idCurso)
         {
-            IEnumerable<cursos> cursos = mRepository.GetCursos(idMateria);
-            return View(cursos);
+            alumnos_inscripciones inscripcion = cursoRepository.Inscribir(idAlumno, idCurso);
+            return View("~/Views/Inscripcion/Inscripcion.cshtml",inscripcion);
         }
-
-
     }
 }

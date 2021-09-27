@@ -1,0 +1,50 @@
+﻿@model Academia.Entities.alumnos_inscripciones
+
+@{
+    ViewBag.Title = "Inscripcion";
+}
+
+<h2>Inscripcion</h2>
+
+<div>
+    <h4>alumnos_inscripciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cursos.id_curso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cursos.id_curso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.personas.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.personas.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.condicion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.condicion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nota)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_inscripcion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

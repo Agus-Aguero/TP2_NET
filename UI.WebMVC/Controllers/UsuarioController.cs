@@ -106,6 +106,7 @@ namespace UI.WebMVC.Controllers
 
             if (usuario != null && usuario.clave == userDataFromPost.clave)
             {
+                TempData["Usuario"] = usuario;
                 if(usuario.personas.tipo_persona == TipoPersona.Docente)
                 {
                     return View("Docente", usuario);

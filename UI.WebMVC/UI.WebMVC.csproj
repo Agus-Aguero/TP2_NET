@@ -135,7 +135,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InscripcionController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,10 +186,12 @@
     <Content Include="Views\Usuario\Docente.cshtml" />
     <Content Include="Views\Usuario\Inscripciones.cshtml" />
     <Content Include="Views\Materia\Cursos.cshtml" />
+    <Content Include="Views\Inscripcion\Inscripcion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Curso\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
