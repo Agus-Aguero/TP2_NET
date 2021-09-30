@@ -39,22 +39,22 @@ namespace Academia.EntityFramework
         {
             using (var context = new Academia())
             {
-                usuarios usuario = context.usuarios.Include(usu => usu.personas).
-                                                    Include(usu => usu.modulos_usuarios).
-                                                    Where(usu => usu.nombre_usuario == username).
-                                                    FirstOrDefault();
+                usuarios usuario = context.usuarios
+                    .Include(usus => usus.personas)
+                    .Where(usu => usu.nombre_usuario == username)
+                    .FirstOrDefault();
                 return usuario;
             }
 
         }
-
         public IEnumerable<alumnos_inscripciones> getInscripcionesAlumno(int alumnoId)
         {
             using (var context = new Academia())
             {
                 IEnumerable<alumnos_inscripciones> inscripciones = context.alumnos_inscripciones.Include(insc => insc.personas).
-                                                    Include(insc => insc.cursos).
-                                                    Where(insc => insc.id_alumno == alumnoId).ToList();
+                                                    Include(insc => insc.cursos)
+                                                    .Include(ins=>ins.cursos.materias)
+                                                    .Where(insc => insc.id_alumno == alumnoId).ToList();
                 return inscripciones;
             }
         }
