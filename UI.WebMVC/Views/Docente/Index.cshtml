@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Academia.Entities.docentes_cursos>
+
+@{
+    ViewBag.Title = "Index";
+}
+@if(HttpContext.Current.Session["User"] != null){
+    var usu = (Academia.Entities.usuarios)HttpContext.Current.Session["User"];
+    <p>Hola:@usu.nombre_usuario</p>
+
+}
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cursos.id_curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.personas.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cursos.id_curso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.personas.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cargo)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.id_dictado }) |
+            </td>
+        </tr>
+    }
+
+</table>

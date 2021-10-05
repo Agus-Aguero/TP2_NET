@@ -25,4 +25,10 @@ namespace Academia.Util
         Alumno,
         Admin
     }
+    public enum TipoCargo
+    {
+        Auxiliar,
+        Titular,
+        Practica
+    }
 }

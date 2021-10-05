@@ -1,5 +1,6 @@
 namespace Academia.Entities
 {
+    using Academia.Util;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,7 +13,7 @@ namespace Academia.Entities
 
         public int id_docente { get; set; }
 
-        public int cargo { get; set; }
+        public TipoCargo cargo { get; set; }
 
         public virtual cursos cursos { get; set; }
 

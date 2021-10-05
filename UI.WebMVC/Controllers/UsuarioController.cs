@@ -22,7 +22,7 @@ namespace UI.WebMVC.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
         // GET: Usuario/Details/5
@@ -107,9 +107,10 @@ namespace UI.WebMVC.Controllers
             if (usuario != null && usuario.clave == userDataFromPost.clave)
             {
                 TempData["Usuario"] = usuario;
+                Session["User"] = usuario;
                 if(usuario.personas.tipo_persona == TipoPersona.Docente)
                 {
-                    return View("Docente", usuario);
+                    return new RedirectResult("~/Docente");
 
                 } else
                 {
