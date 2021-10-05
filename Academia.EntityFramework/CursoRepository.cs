@@ -27,6 +27,10 @@ namespace Academia.EntityFramework
 
             inscripcionRepository.Insert(inscripcion);
 
+            cursos curso = this.Get(idCurso);
+            curso.cupo--;
+            this.Update(curso);
+
             return inscripcion;
         }
 

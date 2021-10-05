@@ -6,22 +6,19 @@
 
 <h2>Inscripciones</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.cursos.id_curso)
+            Nº Curso
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.personas.nombre)
+            Asignatura
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.condicion)
+            Condicion
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nota)
+            Nota
         </th>
         <th></th>
     </tr>
@@ -40,11 +37,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.nota)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_inscripcion }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_inscripcion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_inscripcion })
-        </td>
+  
     </tr>
 }
 
