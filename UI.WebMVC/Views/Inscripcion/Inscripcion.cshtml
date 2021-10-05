@@ -6,28 +6,27 @@
 
 <h2>Inscripcion</h2>
 
-<div>
-    <h4>alumnos_inscripciones</h4>
+<div class="">
+    <h2>Comprobante Nº: @Html.DisplayFor(model => model.id_inscripcion)</h2>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.cursos.id_curso)
+            Nº Curso
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.cursos.id_curso)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.personas.nombre)
+            Legajo
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.personas.nombre)
+            @Html.DisplayFor(model => model.personas.legajo)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.condicion)
+            Condición
         </dt>
 
         <dd>
@@ -35,7 +34,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nota)
+            Nota
         </dt>
 
         <dd>
@@ -44,7 +43,3 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_inscripcion }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

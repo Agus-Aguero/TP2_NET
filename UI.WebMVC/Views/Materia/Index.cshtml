@@ -1,27 +1,24 @@
 ﻿@model IEnumerable<Academia.Entities.materias>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Asignaturas";
 }
 
-<h2>Index</h2>
+<h2>Asignaturas</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.planes.desc_plan)
+            Plan
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.desc_materia)
+           Asignatura
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.hs_semanales)
+           Hs semanales
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.hs_totales)
+           Hs totales
         </th>
         <th></th>
     </tr>
@@ -42,9 +39,7 @@
                 @Html.DisplayFor(modelItem => item.hs_totales)
             </td>
             <td>
-                @Html.ActionLink("Inscribirme", "Cursos", new { idMateria = item.id_materia }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id_materia }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id_materia })
+                @Html.ActionLink("Inscribirme", "Cursos", new { idMateria = item.id_materia }) 
             </td>
         </tr>
     }

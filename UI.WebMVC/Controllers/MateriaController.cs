@@ -101,10 +101,11 @@ namespace UI.WebMVC.Controllers
 
         public ActionResult Cursos(int idMateria)
         {
+            materias materia = mRepository.Get(idMateria);
             IEnumerable<cursos> cursos = mRepository.GetCursos(idMateria);
+            ViewBag.Materia = materia;
             return View(cursos);
         }
-
 
     }
 }
