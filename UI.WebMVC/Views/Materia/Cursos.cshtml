@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "Cursos";
-    var usuario = TempData["Usuario"] as Academia.Entities.usuarios;
+    var usuario = Session["User"] as Academia.Entities.usuarios;
 }
 
 <h1>@ViewBag.Materia.desc_materia</h1>

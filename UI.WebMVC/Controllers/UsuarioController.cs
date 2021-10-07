@@ -22,7 +22,7 @@ namespace UI.WebMVC.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
-            return RedirectToAction("Index");
+            return View("Alumno");
         }
 
         // GET: Usuario/Details/5
@@ -94,33 +94,6 @@ namespace UI.WebMVC.Controllers
             catch
             {
                 return View();
-            }
-        }
-
-        [HttpPost]
-        public ActionResult Login(usuarios userDataFromPost)
-        {
-
-            UsuarioRepository usuarioRepository = new UsuarioRepository();
-            usuarios usuario = usuarioRepository.findByUserName(userDataFromPost.nombre_usuario);
-
-            if (usuario != null && usuario.clave == userDataFromPost.clave)
-            {
-                TempData["Usuario"] = usuario;
-                Session["User"] = usuario;
-                if(usuario.personas.tipo_persona == TipoPersona.Docente)
-                {
-                    return new RedirectResult("~/Docente");
-
-                } else
-                {
-                    return View("Alumno", usuario);
-                }
-            }
-            else
-            {
-                ViewBag.ErrorMessage = "No pudimos validar su usuario y/o contraseña. Intente nuevamente.";
-                return View("Index");
             }
         }
 

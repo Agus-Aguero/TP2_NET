@@ -13,10 +13,18 @@ namespace UI.WebMVC
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
             routes.MapRoute(
                 name: "Inscripciones",
-                url: "Usuario/Inscripciones/{id}",
+                url: "usuario/inscripciones/{id}",
                 defaults: new { controller = "Usuario", action = "Inscripciones", id = "" }
+            );
+
+
+            routes.MapRoute(
+                name: "Materias",
+                url: "materias",
+                defaults: new { controller = "Materia", action = "Index" }
             );
 
             routes.MapRoute(
@@ -24,11 +32,14 @@ namespace UI.WebMVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
             routes.MapRoute(
-                name: "Login",
-                 url: "{controller}/{action}",
-                defaults: new { controller = "Home", action = "Index" }
+                 name: "Alumno",
+                 url: "usuario/alumno",
+                 defaults: new { controller = "Usuario", action = "Index" }
             );
+
+
 
 
 

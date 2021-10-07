@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Inscripcion";
+    var usuario = Session["User"] as Academia.Entities.usuarios;
+    var queTengo = Model;
 }
 
 <h2>Inscripcion</h2>
@@ -15,14 +17,14 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cursos.id_curso)
+            @Html.DisplayFor(model => model.id_curso)
         </dd>
         <dt>
             Legajo
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.personas.legajo)
+            @usuario.personas.legajo
         </dd>
 
         <dt>

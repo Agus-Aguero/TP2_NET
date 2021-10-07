@@ -6,15 +6,32 @@ using System.Web.Mvc;
 using Academia.Entities;
 using Academia.Logic;
 using Academia.EntityFramework;
+using Academia.Util;
 
 
 namespace UI.WebMVC.Controllers
 {
     public class HomeController : Controller
     {
+        private usuarios usuario;
+
         public ActionResult Index()
         {
-            return View();
+            usuario = (usuarios)Session["User"];
+
+            if (usuario == null)
+            {
+                return View();
+
+            } else
+            {
+                if(usuario.personas.tipo_persona == TipoPersona.Alumno)
+                {
+                    return Redirect("~/Usuario/Index");
+                }
+
+                return View("Docente");
+            }
         }
 
         public ActionResult About()
@@ -40,7 +57,16 @@ namespace UI.WebMVC.Controllers
 
             if (usuario != null && usuario.clave == userDataFromPost.clave)
             {
-                return View(usuario);
+                Session["User"] = usuario;
+                if (usuario.personas.tipo_persona == TipoPersona.Docente)
+                {
+                    return new RedirectResult("~/Docente");
+
+                }
+                else
+                {
+                    return  Redirect("~/Usuario/Index");
+                }
             }
             else
             {
