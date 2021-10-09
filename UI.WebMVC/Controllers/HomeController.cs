@@ -74,5 +74,12 @@ namespace UI.WebMVC.Controllers
                 return View("Index");
             }
         }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            Session["User"] = null;
+            return View("Index");
+        }
     }
 }

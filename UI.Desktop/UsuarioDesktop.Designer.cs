@@ -50,6 +50,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ModuloListCheck = new System.Windows.Forms.CheckedListBox();
             this.lblModulos = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboTipoPersona = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -76,13 +78,16 @@
             this.tableLayoutPanel1.Controls.Add(this.lblApellido, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboTipoPersona, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 144);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -253,6 +258,23 @@
             this.lblModulos.TabIndex = 4;
             this.lblModulos.Text = "Modulos";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "label1";
+            // 
+            // comboTipoPersona
+            // 
+            this.comboTipoPersona.FormattingEnabled = true;
+            this.comboTipoPersona.Location = new System.Drawing.Point(76, 107);
+            this.comboTipoPersona.Name = "comboTipoPersona";
+            this.comboTipoPersona.Size = new System.Drawing.Size(121, 21);
+            this.comboTipoPersona.TabIndex = 16;
+            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +318,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblModulos;
         public System.Windows.Forms.CheckedListBox ModuloListCheck;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboTipoPersona;
     }
 }

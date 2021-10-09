@@ -80,7 +80,7 @@ namespace UI.Desktop
                     break;
             }
 
-            this.DocenteCursoActual.cargo = Convert.ToInt32(this.txtCargo.Text);
+            this.DocenteCursoActual.cargo = (TipoCargo.Auxiliar);
             this.DocenteCursoActual.id_docente = Convert.ToInt32(this.comboDocente.SelectedValue);
             this.DocenteCursoActual.id_curso = Convert.ToInt32(this.comboCurso.SelectedValue);
         }

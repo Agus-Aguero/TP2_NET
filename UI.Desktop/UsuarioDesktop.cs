@@ -19,6 +19,9 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
+            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
+           
+
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
@@ -33,6 +36,8 @@ namespace UI.Desktop
             ((ListBox)ModuloListCheck).DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
             ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
+            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
+           
 
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
@@ -51,7 +56,9 @@ namespace UI.Desktop
             ((ListBox)ModuloListCheck).DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
             ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
-
+            comboTipoPersona.DataSource= Enum.GetValues(typeof(TipoPersona));
+            comboTipoPersona.DisplayMember = "Value";
+            comboTipoPersona.ValueMember = "Key";
 
             MapearDeDatos();
         }
@@ -80,10 +87,7 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.nombre_usuario;
             this.txtClave.Text = this.UsuarioActual.clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.clave;
-           
-
-
-
+          
 
         }
         public override void MapearADatos()
@@ -107,16 +111,18 @@ namespace UI.Desktop
             this.UsuarioActual.nombre_usuario = this.txtUsuario.Text;
             this.UsuarioActual.clave = this.txtConfirmarClave.Text;
             this.UsuarioActual.modulos_usuarios = new List<modulos_usuarios>();
+           // this.UsuarioActual.personas.tipo_persona = (TipoPersona) comboTipoPersona.SelectedItem;
             foreach (modulos modulo in this.ModuloListCheck.CheckedItems)
             {
                 this.UsuarioActual.modulos_usuarios.Add(new modulos_usuarios { id_modulo = modulo.id_modulo, id_usuario = this.UsuarioActual.id_usuario, alta = true, modificacion = true });
             }
+          
 
-
-       }
+    }
         public override void GuardarCambios()
         {
             this.MapearADatos();
+            
             UsuarioLogic usuarioLogic = new UsuarioLogic();
 
             usuarioLogic.Save(UsuarioActual);

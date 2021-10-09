@@ -119,7 +119,33 @@ namespace UI.Desktop
 
         private void lblDocentes_Click(object sender, EventArgs e)
         {
+           /* var docente = new Docentes();
+            materias.ShowDialog();*/
+        }
 
+        private void lblMaterias_Click(object sender, EventArgs e)
+        {
+            var materias = new Materias();
+            materias.ShowDialog();
+
+        }
+
+        private void lblPlanes_Click(object sender, EventArgs e)
+        {
+            var planes = new Planes();
+            planes.ShowDialog();
+        }
+
+        private void lblCursos_Click(object sender, EventArgs e)
+        {
+            var cursos = new Cursos();
+            cursos.ShowDialog();
+        }
+
+        private void lblComisiones_Click(object sender, EventArgs e)
+        {
+            var comisiones = new Comisiones();
+            comisiones.ShowDialog();
         }
     }
 }

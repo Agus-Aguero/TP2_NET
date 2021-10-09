@@ -144,6 +144,7 @@ namespace UI.Desktop
             this.lblMaterias.Size = new System.Drawing.Size(250, 40);
             this.lblMaterias.TabIndex = 30;
             this.lblMaterias.Text = "Materias";
+            this.lblMaterias.Click += new System.EventHandler(this.lblMaterias_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -220,6 +221,7 @@ namespace UI.Desktop
             this.lblPlanes.Size = new System.Drawing.Size(237, 40);
             this.lblPlanes.TabIndex = 25;
             this.lblPlanes.Text = "Planes";
+            this.lblPlanes.Click += new System.EventHandler(this.lblPlanes_Click);
             // 
             // flowLayoutPanel5
             // 
@@ -241,6 +243,7 @@ namespace UI.Desktop
             this.lblCursos.Size = new System.Drawing.Size(238, 40);
             this.lblCursos.TabIndex = 30;
             this.lblCursos.Text = "Cursos";
+            this.lblCursos.Click += new System.EventHandler(this.lblCursos_Click);
             // 
             // flowLayoutPanel6
             // 
@@ -341,6 +344,7 @@ namespace UI.Desktop
             this.lblComisiones.Size = new System.Drawing.Size(270, 40);
             this.lblComisiones.TabIndex = 41;
             this.lblComisiones.Text = "Comisiones";
+            this.lblComisiones.Click += new System.EventHandler(this.lblComisiones_Click);
             // 
             // Menu
             // 

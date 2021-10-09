@@ -15,3 +15,9 @@ C:\Users\WB Sistemas\Documents\aps\firstApiFork\TP2_NET\Academia.Util\obj\Debug\
 C:\Users\WB Sistemas\Documents\aps\firstApiFork\TP2_NET\Academia.Util\obj\Debug\Academia.Util.csproj.CoreCompileInputs.cache
 C:\Users\WB Sistemas\Documents\aps\firstApiFork\TP2_NET\Academia.Util\obj\Debug\Academia.Util.dll
 C:\Users\WB Sistemas\Documents\aps\firstApiFork\TP2_NET\Academia.Util\obj\Debug\Academia.Util.pdb
+C:\Users\agus_\Documents\GitHub\TP2_NET\Academia.Util\bin\Debug\Academia.Util.dll
+C:\Users\agus_\Documents\GitHub\TP2_NET\Academia.Util\bin\Debug\Academia.Util.pdb
+C:\Users\agus_\Documents\GitHub\TP2_NET\Academia.Util\obj\Debug\Academia.Util.csprojAssemblyReference.cache
+C:\Users\agus_\Documents\GitHub\TP2_NET\Academia.Util\obj\Debug\Academia.Util.csproj.CoreCompileInputs.cache
+C:\Users\agus_\Documents\GitHub\TP2_NET\Academia.Util\obj\Debug\Academia.Util.dll
+C:\Users\agus_\Documents\GitHub\TP2_NET\Academia.Util\obj\Debug\Academia.Util.pdb
