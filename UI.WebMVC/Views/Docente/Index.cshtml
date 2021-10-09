@@ -1,50 +1,22 @@
-﻿@model IEnumerable<Academia.Entities.docentes_cursos>
-
-@{
-    ViewBag.Title = "Index";
-}
-@if(HttpContext.Current.Session["User"] != null){
-    var usu = (Academia.Entities.usuarios)HttpContext.Current.Session["User"];
-    <p>Hola:@usu.nombre_usuario</p>
+﻿@{
+    ViewBag.Title = "Login Page";
+    var usuario = Session["User"] as Academia.Entities.usuarios;
 
 }
 
 
-<h2>Index</h2>
+@using Academia.Entities
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.cursos.id_curso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.personas.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cargo)
-        </th>
-        <th></th>
-    </tr>
+<div class="jumbotron">
+    <h1>Hola @usuario.nombre_usuario !</h1>
+    <p class="lead">PROFESOR: Bienvenido al sistema</p>
+</div>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.cursos.id_curso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.personas.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cargo)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.id_dictado }) |
-            </td>
-        </tr>
-    }
+<div class="row">
+    <ul class="">
+        <a href=""></a>
+        <li>@Html.ActionLink("Listado de Cursos", "", "cursos")</li>
 
-</table>
+        <li>@Html.ActionLink("Listado de Cursos", "Listado_cursos", "Docente", new { id_docente = usuario.id_persona }, null)</li>
+    </ul>
+</div>

@@ -1,0 +1,45 @@
+﻿@model Academia.Entities.docentes_cursos
+
+@{
+    ViewBag.Title = "Listado_cursos";
+}
+
+<h2>Listado_cursos2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cursos.id_curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.personas.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargo)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.cursos.id_curso)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.personas.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.cargo)
+        </td>
+        @*@<td>
+            @Html.ActionLink("Edit", "Edit", new { id= model.id_dictado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_dictado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_dictado })
+        </td>*@
+    </tr>
+
+</table>

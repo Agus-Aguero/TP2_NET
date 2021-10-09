@@ -190,6 +190,7 @@
     <Content Include="Views\Materia\Cursos.cshtml" />
     <Content Include="Views\Inscripcion\Inscripcion.cshtml" />
     <Content Include="Views\Docente\Index.cshtml" />
+    <Content Include="Views\Docente\Listado_cursos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

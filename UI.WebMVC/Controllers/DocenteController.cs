@@ -1,9 +1,11 @@
-﻿using Academia.Logic;
+﻿using Academia.EntityFramework;
+using Academia.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Academia.Entities;
 
 namespace UI.WebMVC.Controllers
 {
@@ -11,9 +13,11 @@ namespace UI.WebMVC.Controllers
 
     {
         private DocenteCursoLogic DocenteCursoLogic;
+        public DocenteCursoRepository dcRepository { get; set; }
         public DocenteController()
         {
             this.DocenteCursoLogic = new DocenteCursoLogic();
+            dcRepository = new DocenteCursoRepository();
         }
         // GET: Docente
         public ActionResult Index()
@@ -91,6 +95,16 @@ namespace UI.WebMVC.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult Listado_cursos(int id_docente)
+        {
+
+
+            docentes_cursos doc_curso = dcRepository.Get(id_docente);
+
+            return View("Listado_cursos", doc_curso);
+             
         }
     }
 }
