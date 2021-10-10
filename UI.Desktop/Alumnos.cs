@@ -10,18 +10,21 @@ using System.Windows.Forms;
 using Academia.Entities;
 using Academia.Logic;
 using Academia.Util;
+using Academia.EntityFramework;
 
 namespace UI.Desktop
 {
     public partial class Alumnos : Form
     {
         public PersonaLogic pLogic { get; set; }
+        public PersonaRepository personaRepository { get; set; }
         public Alumnos()
         {
             InitializeComponent();
             GenerarColumnas();
             this.dgvAlumnos.AutoGenerateColumns = false;
             this.pLogic = new PersonaLogic();
+            this.personaRepository = new PersonaRepository();
         }
 
         private void GenerarColumnas()
@@ -73,8 +76,9 @@ namespace UI.Desktop
 
         private void tstEditar_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(this.dgvAlumnos.Rows[this.dgvAlumnos.CurrentRow.Index].Cells[0].Value);
-            AlumnoDesktop formAlumno = new AlumnoDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            int nroLegajo = Convert.ToInt32(this.dgvAlumnos.Rows[this.dgvAlumnos.CurrentRow.Index].Cells[0].Value);
+            personas persona = personaRepository.GetByLegajo(nroLegajo);
+            AlumnoDesktop formAlumno = new AlumnoDesktop(persona.id_persona, ApplicationForm.ModoForm.Modificacion);
             formAlumno.ShowDialog();
             this.Listar();
         }

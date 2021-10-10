@@ -56,8 +56,8 @@ namespace UI.Desktop
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            // 
-
+            this.toolStripContainer1.Size = new System.Drawing.Size(800, 450);
+            this.toolStripContainer1.TabIndex = 0;
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
@@ -94,6 +94,7 @@ namespace UI.Desktop
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCursos.Size = new System.Drawing.Size(794, 390);
             this.dgvCursos.TabIndex = 0;
+            this.dgvCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellContentClick);
             // 
             // btnSalir
             // 

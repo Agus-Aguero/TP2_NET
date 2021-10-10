@@ -147,5 +147,11 @@ namespace UI.Desktop
             var comisiones = new Comisiones();
             comisiones.ShowDialog();
         }
+
+        private void lblAlumnos_Click(object sender, EventArgs e)
+        {
+            var alumnos = new Alumnos();
+            alumnos.ShowDialog();
+        }
     }
 }

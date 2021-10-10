@@ -6,7 +6,7 @@ namespace Academia.Entities
 {
 
 
-    public partial class cursos:Entity
+    public partial class cursos : Entity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public cursos()
@@ -35,6 +35,7 @@ namespace Academia.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<docentes_cursos> docentes_cursos { get; set; }
+
 
     }
 }

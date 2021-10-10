@@ -50,7 +50,7 @@ namespace UI.Desktop
             this.label1 = new System.Windows.Forms.Label();
             this.docenteCursolbl = new System.Windows.Forms.Label();
             this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.lblInscripcionAlumnos = new System.Windows.Forms.Label();
+            this.lblAlumnos = new System.Windows.Forms.Label();
             this.lblComisiones = new System.Windows.Forms.Label();
             this.PanelRight.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -78,7 +78,7 @@ namespace UI.Desktop
             this.PanelRight.Controls.Add(this.flowLayoutPanel2);
             this.PanelRight.Controls.Add(this.docenteCursolbl);
             this.PanelRight.Controls.Add(this.lblEspecialidad);
-            this.PanelRight.Controls.Add(this.lblInscripcionAlumnos);
+            this.PanelRight.Controls.Add(this.lblAlumnos);
             this.PanelRight.Controls.Add(this.lblComisiones);
             this.PanelRight.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PanelRight.Dock = System.Windows.Forms.DockStyle.Left;
@@ -319,18 +319,19 @@ namespace UI.Desktop
             this.lblEspecialidad.Text = "Especialidades";
             this.lblEspecialidad.Click += new System.EventHandler(this.especialidadLbl_Click);
             // 
-            // lblInscripcionAlumnos
+            // lblAlumnos
             // 
-            this.lblInscripcionAlumnos.AutoSize = true;
-            this.lblInscripcionAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInscripcionAlumnos.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblInscripcionAlumnos.Location = new System.Drawing.Point(0, 364);
-            this.lblInscripcionAlumnos.Margin = new System.Windows.Forms.Padding(0);
-            this.lblInscripcionAlumnos.Name = "lblInscripcionAlumnos";
-            this.lblInscripcionAlumnos.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
-            this.lblInscripcionAlumnos.Size = new System.Drawing.Size(282, 40);
-            this.lblInscripcionAlumnos.TabIndex = 40;
-            this.lblInscripcionAlumnos.Text = "Insc alumnos";
+            this.lblAlumnos.AutoSize = true;
+            this.lblAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlumnos.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lblAlumnos.Location = new System.Drawing.Point(0, 364);
+            this.lblAlumnos.Margin = new System.Windows.Forms.Padding(0);
+            this.lblAlumnos.Name = "lblAlumnos";
+            this.lblAlumnos.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
+            this.lblAlumnos.Size = new System.Drawing.Size(249, 40);
+            this.lblAlumnos.TabIndex = 40;
+            this.lblAlumnos.Text = "Alumnos";
+            this.lblAlumnos.Click += new System.EventHandler(this.lblAlumnos_Click);
             // 
             // lblComisiones
             // 
@@ -398,7 +399,7 @@ namespace UI.Desktop
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Label docenteCursolbl;
         private System.Windows.Forms.Label lblEspecialidad;
-        private System.Windows.Forms.Label lblInscripcionAlumnos;
+        private System.Windows.Forms.Label lblAlumnos;
         private System.Windows.Forms.Label lblComisiones;
     }
 }

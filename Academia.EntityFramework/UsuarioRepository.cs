@@ -15,11 +15,9 @@ namespace Academia.EntityFramework
         {
             using (var context=new Academia())
             {
-              
                 context.usuarios.AddOrUpdate(entityToUpdate);
                 context.modulos_usuarios.AddRange(entityToUpdate.modulos_usuarios.ToList());
                 context.SaveChanges();
-
             }
         }
         public override usuarios Get(int id)

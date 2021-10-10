@@ -1,4 +1,6 @@
-﻿using Academia.Logic;
+﻿using Academia.EntityFramework;
+using Academia.Entities;
+using Academia.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +15,21 @@ namespace UI.Desktop
 {
     public partial class Cursos : Form
     {
+        public personas personaAInscribir { get; set; }
         public Cursos()
         {
             InitializeComponent();
-            GenerarColumnas();
+            GenerarColumnas(false);
             this.dgvCursos.AutoGenerateColumns = false;
 
+        }
+
+        public Cursos(personas persona)
+        {
+            personaAInscribir = persona;
+            InitializeComponent();
+            GenerarColumnas(true);
+            this.dgvCursos.AutoGenerateColumns = false;
         }
 
         public void Listar()
@@ -67,7 +78,7 @@ namespace UI.Desktop
             Listar();
         }
 
-        private void GenerarColumnas()
+        private void GenerarColumnas(bool? habilitaInscripcion)
         {
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
@@ -103,6 +114,29 @@ namespace UI.Desktop
             colIComision.DataPropertyName = "id_comision";
             colIComision.DisplayIndex = 0;
             this.dgvCursos.Columns.Add(colIComision);
+
+            if (habilitaInscripcion == true)
+            {
+                DataGridViewButtonColumn btngrid = new DataGridViewButtonColumn();
+                btngrid.Name = "Inscribir";
+                btngrid.HeaderText = "Inscribir";
+                this.dgvCursos.Columns.Add(btngrid);
+
+            }
+
+        }
+
+        //Inicia la inscripción de persona a curso
+        private void dgvCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks that are not in our 
+            if (e.ColumnIndex == dgvCursos.Columns["Inscribir"].Index && e.RowIndex >= 0)
+            {
+                int idCurso = (int)dgvCursos.CurrentRow.Cells["id"].Value;
+
+                var inscripcion = new Inscripcion(personaAInscribir,idCurso);
+                inscripcion.ShowDialog();
+            }
         }
     }
 }

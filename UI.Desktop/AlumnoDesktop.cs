@@ -20,6 +20,7 @@ namespace UI.Desktop
         private ModoForm _Modo { get; set; }
         public AlumnoDesktop()
         {
+
             InitializeComponent();
         }
 
@@ -109,21 +110,11 @@ namespace UI.Desktop
             this.Close();
         }
 
-        //populating
-        private void populatingDocentes()
-        {
-            //PersonaLogic perLogic = new PersonaLogic();
-            //this.comboDocente.DataSource = perLogic.GetAll();
-            //this.comboDocente.DisplayMember = "apellido";
-            //this.comboDocente.ValueMember = "id_persona";
-        }
 
-        private void populatingCursos()
+        private void buttonInscripcion_Click(object sender, EventArgs e)
         {
-            //CursoLogic cLogic = new CursoLogic();
-            //this.comboCurso.DataSource = cLogic.GetAll();
-            //this.comboCurso.DisplayMember = "id_curso";
-            //this.comboCurso.ValueMember = "id_curso";
+            var cursos = new Cursos(AlumnoActual);
+            cursos.ShowDialog();
         }
         //
 
