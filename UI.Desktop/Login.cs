@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Academia.Entities;
+using Academia.EntityFramework;
+using Academia.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,12 @@ namespace UI.Desktop
 {
     public partial class Academia : Form
     {
+        public usuarios UsuarioActual { get; set; }
+        public UsuarioRepository usr { get; set;} 
         public Academia()
         {
-            InitializeComponent();
+            InitializeComponent();        
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -23,27 +29,29 @@ namespace UI.Desktop
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if(this.txtUsuario.Text == "Admin" && this.txtPass.Text == "admin")
+            UsuarioRepository usr = new UsuarioRepository();
+            this.UsuarioActual = usr.findByUserName(this.txtUsuario.Text);
+
+            if (UsuarioActual != null)
             {
-                this.DialogResult = DialogResult.OK;
+                if(UsuarioActual.clave== this.txtPass.Text)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void Academia_Load(object sender, EventArgs e)

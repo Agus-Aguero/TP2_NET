@@ -21,7 +21,6 @@ namespace UI.Desktop
             InitializeComponent();
             comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
            
-
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
@@ -36,8 +35,7 @@ namespace UI.Desktop
             ((ListBox)ModuloListCheck).DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
             ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
-            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
-           
+            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));       
 
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()

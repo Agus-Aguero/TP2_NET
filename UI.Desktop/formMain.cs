@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Academia.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace UI.Desktop
 {
     public partial class formMain : Form
     {
+        
         public formMain()
         {
             InitializeComponent();
