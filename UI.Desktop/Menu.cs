@@ -153,5 +153,11 @@ namespace UI.Desktop
             var alumnos = new Alumnos();
             alumnos.ShowDialog();
         }
+
+        private void Personaslabel_Click(object sender, EventArgs e)
+        {
+            var personas = new Personas();
+            personas.ShowDialog();
+        }
     }
 }

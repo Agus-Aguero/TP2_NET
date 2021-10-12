@@ -11,8 +11,9 @@ namespace UI.Desktop
     public partial class UsuarioDesktop : ApplicationForm
     {
         public usuarios UsuarioActual { get; set; }
+        public static usuarios UsuarioGuardado { get; set; }
         public IEnumerable<modulos>  Modulos { get; set; }
-
+        
 
         private ModoForm _Modo { get; set; }
 
@@ -48,13 +49,13 @@ namespace UI.Desktop
 
 
             this.UsuarioActual = usuarioLogic.Get(ID);
-            this.Modulos=ModuloLogic.GetAll();
+            this.Modulos = ModuloLogic.GetAll();
             ListBox listaModulos = new ListBox();
             listaModulos.DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
             ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
-            comboTipoPersona.DataSource= Enum.GetValues(typeof(TipoPersona));
+            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
             comboTipoPersona.DisplayMember = "Value";
             comboTipoPersona.ValueMember = "Key";
 
@@ -120,7 +121,6 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             this.MapearADatos();
-            
             UsuarioLogic usuarioLogic = new UsuarioLogic();
 
             usuarioLogic.Save(UsuarioActual);
@@ -175,8 +175,8 @@ namespace UI.Desktop
         {
            if (Validar())
             {
-                GuardarCambios();
                 this.Close();
+                this.MapearADatos();
             }
 
            
@@ -186,5 +186,6 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
     }
 }

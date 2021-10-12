@@ -52,6 +52,7 @@ namespace UI.Desktop
             this.lblEspecialidad = new System.Windows.Forms.Label();
             this.lblAlumnos = new System.Windows.Forms.Label();
             this.lblComisiones = new System.Windows.Forms.Label();
+            this.Personaslabel = new System.Windows.Forms.Label();
             this.PanelRight.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +81,7 @@ namespace UI.Desktop
             this.PanelRight.Controls.Add(this.lblEspecialidad);
             this.PanelRight.Controls.Add(this.lblAlumnos);
             this.PanelRight.Controls.Add(this.lblComisiones);
+            this.PanelRight.Controls.Add(this.Personaslabel);
             this.PanelRight.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PanelRight.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelRight.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -347,6 +349,20 @@ namespace UI.Desktop
             this.lblComisiones.Text = "Comisiones";
             this.lblComisiones.Click += new System.EventHandler(this.lblComisiones_Click);
             // 
+            // Personaslabel
+            // 
+            this.Personaslabel.AutoSize = true;
+            this.Personaslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Personaslabel.ForeColor = System.Drawing.Color.AliceBlue;
+            this.Personaslabel.Location = new System.Drawing.Point(0, 444);
+            this.Personaslabel.Margin = new System.Windows.Forms.Padding(0);
+            this.Personaslabel.Name = "Personaslabel";
+            this.Personaslabel.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
+            this.Personaslabel.Size = new System.Drawing.Size(256, 40);
+            this.Personaslabel.TabIndex = 42;
+            this.Personaslabel.Text = "Personas";
+            this.Personaslabel.Click += new System.EventHandler(this.Personaslabel_Click);
+            // 
             // Menu
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -401,5 +417,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Label lblEspecialidad;
         private System.Windows.Forms.Label lblAlumnos;
         private System.Windows.Forms.Label lblComisiones;
+        private System.Windows.Forms.Label Personaslabel;
     }
 }

@@ -13,6 +13,7 @@ namespace Academia.Logic
         public PersonaLogic() {
             this.repository = new PersonaRepository();
         }
+     
 
     }
 }

@@ -4,7 +4,7 @@ namespace Academia.Entities
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
- 
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class personas:Entity
     {
@@ -51,6 +51,11 @@ namespace Academia.Entities
         public virtual ICollection<docentes_cursos> docentes_cursos { get; set; }
 
         public virtual planes planes { get; set; }
+
+        [NotMapped]
+        public virtual string desc_plan { get {
+                return planes.desc_plan;
+            } }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<usuarios> usuarios { get; set; }
