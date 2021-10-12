@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class Academia
+    partial class Login
     {
         /// <summary>
         /// Variable del diseñador necesaria.

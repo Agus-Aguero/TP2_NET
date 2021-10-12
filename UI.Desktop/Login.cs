@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class Academia : Form
+    public partial class Login : Form
     {
         public usuarios UsuarioActual { get; set; }
         public UsuarioRepository usr { get; set;} 
-        public Academia()
+        public Login()
         {
             InitializeComponent();        
 
@@ -25,7 +25,7 @@ namespace UI.Desktop
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña",
+            MessageBox.Show("Contacte al area de Sistemas 3152", "Olvidé mi contraseña",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
@@ -38,7 +38,8 @@ namespace UI.Desktop
             {
                 if(UsuarioActual.clave== this.txtPass.Text)
                 {
-                    this.DialogResult = DialogResult.OK;
+                    Menu menu = new Menu();
+                    menu.Show();
                 }
                 else
                 {
