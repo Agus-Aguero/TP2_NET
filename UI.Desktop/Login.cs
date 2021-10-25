@@ -39,7 +39,9 @@ namespace UI.Desktop
                 if(UsuarioActual.clave== this.txtPass.Text)
                 {
                     Menu menu = new Menu();
+                    this.Hide();
                     menu.Show();
+                  
                 }
                 else
                 {
@@ -52,6 +54,7 @@ namespace UI.Desktop
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Login"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 
