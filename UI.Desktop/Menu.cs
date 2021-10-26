@@ -119,8 +119,8 @@ namespace UI.Desktop
 
         private void lblDocentes_Click(object sender, EventArgs e)
         {
-           /* var docente = new Docentes();
-            materias.ShowDialog();*/
+            /*var docente = new Docentes();
+            docente.ShowDialog();*/
         }
 
         private void lblMaterias_Click(object sender, EventArgs e)

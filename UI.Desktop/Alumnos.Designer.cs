@@ -29,14 +29,13 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-
             this.tcAlumnos = new System.Windows.Forms.ToolStripContainer();
             this.tlAlumnos = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsAlumnos = new System.Windows.Forms.ToolStrip();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tcAlumnos.ContentPanel.SuspendLayout();
             this.tcAlumnos.TopToolStripPanel.SuspendLayout();
             this.tcAlumnos.SuspendLayout();
@@ -90,17 +89,6 @@ namespace UI.Desktop
             this.dgvAlumnos.Size = new System.Drawing.Size(666, 239);
             this.dgvAlumnos.TabIndex = 0;
             // 
-            // tsbEditar
-            // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.editIcon;
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
-            this.tsbEditar.Text = "toolStripButton1";
-            this.tsbEditar.ToolTipText = "Editar";
-            this.tsbEditar.Click += new System.EventHandler(this.tstEditar_Click);
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(594, 248);
@@ -129,12 +117,22 @@ namespace UI.Desktop
             this.tsbEditar});
             this.tsAlumnos.Location = new System.Drawing.Point(3, 0);
             this.tsAlumnos.Name = "tsAlumnos";
-            this.tsAlumnos.Size = new System.Drawing.Size(112, 25);
+            this.tsAlumnos.Size = new System.Drawing.Size(35, 25);
             this.tsAlumnos.TabIndex = 0;
-
-             
-            //Alumnos
-             
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.editIcon;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditar.Text = "toolStripButton1";
+            this.tsbEditar.ToolTipText = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tstEditar_Click);
+            // 
+            // Alumnos
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 299);
@@ -164,6 +162,5 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ToolStrip tsAlumnos;
-
     }
 }

@@ -41,7 +41,6 @@ namespace UI.Desktop
                     Menu menu = new Menu();
                     this.Hide();
                     menu.Show();
-                  
                 }
                 else
                 {
