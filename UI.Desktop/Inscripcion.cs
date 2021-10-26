@@ -46,6 +46,7 @@ namespace UI.Desktop
         private void inscribirButton_Click(object sender, EventArgs e)
         {
             this.cursoRepository.Inscribir(AlumnoActual.id_persona, CursoActual.id_curso);
+            MessageBox.Show("Inscripción completa. Actualizar lista");
             this.Close();
         }
     }

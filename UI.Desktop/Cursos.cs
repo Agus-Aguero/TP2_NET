@@ -36,7 +36,8 @@ namespace UI.Desktop
         {
             CursoLogic cLogic = new CursoLogic();
             this.dgvCursos.AutoGenerateColumns = false;
-            this.dgvCursos.DataSource = cLogic.GetAll();
+            IEnumerable<cursos> cursos  = cLogic.GetAll().Where(cur => cur.cupo > 0).ToList();
+            this.dgvCursos.DataSource = cursos;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

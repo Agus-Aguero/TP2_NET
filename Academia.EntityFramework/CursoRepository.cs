@@ -13,11 +13,10 @@ namespace Academia.EntityFramework
     {
         public alumnos_inscripciones Inscribir(int idAlumno, int idCurso)
         {
-            //UsuarioRepository usuarioRepository = new UsuarioRepository();
+
+            cursos curso = this.Get(idCurso);
+
             InscripcionRepository inscripcionRepository = new InscripcionRepository();
-            
-            //cursos curso = this.Get(idCurso);
-            //usuarios usuario = usuarioRepository.Get(idAlumno);
 
             alumnos_inscripciones inscripcion = new alumnos_inscripciones();
             inscripcion.id_alumno = idAlumno;
@@ -26,8 +25,7 @@ namespace Academia.EntityFramework
             inscripcion.nota = 0;
 
             inscripcionRepository.Insert(inscripcion);
-
-            cursos curso = this.Get(idCurso);
+            
             curso.cupo--;
             this.Update(curso);
 
