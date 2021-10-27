@@ -13,6 +13,7 @@ namespace Academia.Entities
         {
             alumnos_inscripciones = new HashSet<alumnos_inscripciones>();
             docentes_cursos = new HashSet<docentes_cursos>();
+
         }
 
         [Key]
@@ -25,6 +26,14 @@ namespace Academia.Entities
         public int anio_calendario { get; set; }
 
         public int cupo { get; set; }
+
+        public string nombre_materia
+        {
+            get
+            {
+                return "VER"; //deberìa traer materias.desc_materia sin problemas, da error.
+            }
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<alumnos_inscripciones> alumnos_inscripciones { get; set; }

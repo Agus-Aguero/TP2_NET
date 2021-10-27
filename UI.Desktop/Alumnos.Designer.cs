@@ -81,6 +81,8 @@ namespace UI.Desktop
             // 
             // dgvAlumnos
             // 
+            this.dgvAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAlumnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tlAlumnos.SetColumnSpan(this.dgvAlumnos, 2);
             this.dgvAlumnos.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -45,6 +45,7 @@ namespace UI.Desktop
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(116, 64);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
@@ -52,6 +53,7 @@ namespace UI.Desktop
             // 
             // txtLegajo
             // 
+            this.txtLegajo.Enabled = false;
             this.txtLegajo.Location = new System.Drawing.Point(116, 38);
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(100, 20);
@@ -59,6 +61,7 @@ namespace UI.Desktop
             // 
             // txtTipoUsuario
             // 
+            this.txtTipoUsuario.Enabled = false;
             this.txtTipoUsuario.Location = new System.Drawing.Point(116, 90);
             this.txtTipoUsuario.Name = "txtTipoUsuario";
             this.txtTipoUsuario.Size = new System.Drawing.Size(100, 20);
@@ -66,6 +69,7 @@ namespace UI.Desktop
             // 
             // txtMateria
             // 
+            this.txtMateria.Enabled = false;
             this.txtMateria.Location = new System.Drawing.Point(116, 118);
             this.txtMateria.Name = "txtMateria";
             this.txtMateria.Size = new System.Drawing.Size(100, 20);
@@ -73,6 +77,7 @@ namespace UI.Desktop
             // 
             // txtComision
             // 
+            this.txtComision.Enabled = false;
             this.txtComision.Location = new System.Drawing.Point(116, 147);
             this.txtComision.Name = "txtComision";
             this.txtComision.Size = new System.Drawing.Size(100, 20);

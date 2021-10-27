@@ -41,7 +41,6 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
-
             switch (_Modo)
             {
                 case ModoForm.Alta:
@@ -59,9 +58,12 @@ namespace UI.Desktop
                 default:
                     break;
             }
+
             this.txtLegajo.Text = this.AlumnoActual.legajo.ToString();
             this.txtNombre.Text = this.AlumnoActual.nombre.ToString();
-            this.txtApellido.Text = this.AlumnoActual.apellido.ToString(); ;
+            this.txtApellido.Text = this.AlumnoActual.apellido.ToString();
+            this.txtDireccion.Text = this.AlumnoActual.direccion.ToString();
+
         }
 
         public override void MapearADatos()
@@ -79,6 +81,7 @@ namespace UI.Desktop
             this.AlumnoActual.legajo = Convert.ToInt32(this.txtLegajo);
             this.AlumnoActual.nombre = this.txtNombre.ToString();
             this.AlumnoActual.apellido = this.txtApellido.ToString();
+            this.AlumnoActual.direccion = this.txtDireccion.ToString();
         }
 
         public override void GuardarCambios()

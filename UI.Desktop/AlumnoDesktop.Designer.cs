@@ -47,6 +47,7 @@ namespace UI.Desktop
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.buttonInscripcion = new System.Windows.Forms.Button();
+            this.lblDomicilio = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +60,10 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtApellido, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblApellido, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblDomicilio, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblLegajo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblApellido, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -177,7 +179,7 @@ namespace UI.Desktop
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(100, 269);
+            this.btnAceptar.Location = new System.Drawing.Point(100, 182);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
@@ -187,7 +189,7 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(209, 269);
+            this.btnCancelar.Location = new System.Drawing.Point(209, 182);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
@@ -197,7 +199,7 @@ namespace UI.Desktop
             // 
             // buttonInscripcion
             // 
-            this.buttonInscripcion.Location = new System.Drawing.Point(24, 216);
+            this.buttonInscripcion.Location = new System.Drawing.Point(24, 129);
             this.buttonInscripcion.Name = "buttonInscripcion";
             this.buttonInscripcion.Size = new System.Drawing.Size(341, 23);
             this.buttonInscripcion.TabIndex = 3;
@@ -205,11 +207,20 @@ namespace UI.Desktop
             this.buttonInscripcion.UseVisualStyleBackColor = true;
             this.buttonInscripcion.Click += new System.EventHandler(this.buttonInscripcion_Click);
             // 
+            // lblDomicilio
+            // 
+            this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.Location = new System.Drawing.Point(3, 78);
+            this.lblDomicilio.Name = "lblDomicilio";
+            this.lblDomicilio.Size = new System.Drawing.Size(49, 13);
+            this.lblDomicilio.TabIndex = 15;
+            this.lblDomicilio.Text = "Domicilio";
+            // 
             // AlumnoDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 304);
+            this.ClientSize = new System.Drawing.Size(390, 217);
             this.Controls.Add(this.buttonInscripcion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -246,5 +257,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button buttonInscripcion;
+        private System.Windows.Forms.Label lblDomicilio;
     }
 }

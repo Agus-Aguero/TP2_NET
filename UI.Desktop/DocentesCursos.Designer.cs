@@ -56,9 +56,9 @@ namespace UI.Desktop
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(800, 450);
+            this.toolStripContainer1.TabIndex = 0;
             // 
-
-            // tlDocentesCursos
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsDocentesCursos);
@@ -84,6 +84,8 @@ namespace UI.Desktop
             // 
             this.dgvDocentesCursos.AllowUserToAddRows = false;
             this.dgvDocentesCursos.AllowUserToDeleteRows = false;
+            this.dgvDocentesCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDocentesCursos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDocentesCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tlDocentesCursos.SetColumnSpan(this.dgvDocentesCursos, 2);
             this.dgvDocentesCursos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,7 +164,7 @@ namespace UI.Desktop
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // Cursos
+            // DocentesCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

@@ -105,7 +105,7 @@ namespace UI.Desktop
             DataGridViewTextBoxColumn colIdMateria = new DataGridViewTextBoxColumn();
             colIdMateria.Name = "materia";
             colIdMateria.HeaderText = "Materia";
-            colIdMateria.DataPropertyName = "id_materia";
+            colIdMateria.DataPropertyName = "nombre_materia";
             colIdMateria.DisplayIndex = 0;
             this.dgvCursos.Columns.Add(colIdMateria);
 
@@ -121,6 +121,7 @@ namespace UI.Desktop
                 DataGridViewButtonColumn btngrid = new DataGridViewButtonColumn();
                 btngrid.Name = "Inscribir";
                 btngrid.HeaderText = "Inscribir";
+                btngrid.Text = "Inscribir";
                 this.dgvCursos.Columns.Add(btngrid);
 
             }

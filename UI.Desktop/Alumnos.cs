@@ -50,6 +50,7 @@ namespace UI.Desktop
             colApellido.DisplayIndex = 1;
             this.dgvAlumnos.Columns.Add(colApellido);
 
+
         }
 
         public void Listar()
