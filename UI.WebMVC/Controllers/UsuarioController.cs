@@ -99,8 +99,16 @@ namespace UI.WebMVC.Controllers
 
         public ActionResult Inscripciones(int id)
         {
-            IEnumerable<alumnos_inscripciones> inscripciones = uRepository.getInscripcionesAlumno(id);
-            return View(inscripciones);
+            var usuario = (usuarios)Session["User"];
+
+            if(usuario.personas.tipo_persona == TipoPersona.Alumno)
+            {
+                IEnumerable<alumnos_inscripciones> inscripcionesAlumno = uRepository.getInscripcionesAlumno(id);
+                return View(inscripcionesAlumno);
+            }
+
+            IEnumerable<docentes_cursos> inscripcionesDocente = uRepository.getInscripcionesDocente(id);
+            return View("../Docente/Inscripciones", inscripcionesDocente);
         }
     }
 }

@@ -100,5 +100,11 @@ namespace UI.WebMVC.Controllers
             alumnos_inscripciones inscripcion = cursoRepository.Inscribir(idAlumno, idCurso);
             return View("~/Views/Inscripcion/Inscripcion.cshtml",inscripcion);
         }
+
+        public ActionResult InscribirDocente(int idDocente, int idCurso)
+        {
+            docentes_cursos inscripcion = cursoRepository.InscribirDocente(idDocente, idCurso);
+            return View("~/Views/Inscripcion/Inscripcion.cshtml", inscripcion);
+        }
     }
 }

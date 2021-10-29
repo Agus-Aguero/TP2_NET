@@ -11,6 +11,20 @@ namespace Academia.EntityFramework
 {
     public class CursoRepository : GenericRepository<cursos>
     {
+
+        public docentes_cursos InscribirDocente(int idDocente, int idCurso)
+        {
+
+            cursos curso = this.Get(idCurso);
+
+            InscripcionRepository inscripcionRepository = new InscripcionRepository();
+
+            docentes_cursos inscripcion = new docentes_cursos();
+            inscripcion.id_docente = idDocente;
+            inscripcion.id_curso = idCurso;
+
+            return inscripcion;
+        }
         public alumnos_inscripciones Inscribir(int idAlumno, int idCurso)
         {
 
