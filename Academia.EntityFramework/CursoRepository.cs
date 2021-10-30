@@ -67,5 +67,18 @@ namespace Academia.EntityFramework
                                 .Include(insc => insc.cursos).ToList();
             }
         }
+
+        public override IEnumerable<cursos> GetAll()
+        {
+            using (var context = new Academia())
+            {
+                var hola =  context.cursos
+                                .Include(cur => cur.comisiones)
+                                .Include(cur => cur.materias)
+                                .Include(cur => cur.docentes_cursos).ToList();
+                return hola;
+                
+            }
+        }
     }
 }
