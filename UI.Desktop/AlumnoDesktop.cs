@@ -119,8 +119,6 @@ namespace UI.Desktop
             var cursos = new Cursos(AlumnoActual);
             cursos.ShowDialog();
         }
-        //
-
 
     }
 }

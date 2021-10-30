@@ -82,5 +82,17 @@ namespace Academia.EntityFramework
                 return inscripciones;
             }
         }
+
+        public IEnumerable<docentes_cursos> getInscripcionesDocente(int docenteID)
+        {
+            using (var context = new Academia())
+            {
+                IEnumerable<docentes_cursos> inscripciones = context.docentes_cursos.Include(insc => insc.personas).
+                                                    Include(insc => insc.cursos)
+                                                    .Include(ins => ins.cursos.materias)
+                                                    .Where(insc => insc.id_docente == docenteID).ToList();
+                return inscripciones;
+            }
+        }
     }
 }

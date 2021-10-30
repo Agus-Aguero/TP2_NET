@@ -34,9 +34,10 @@ namespace UI.Desktop
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblDomicilio = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@ namespace UI.Desktop
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.buttonInscripcion = new System.Windows.Forms.Button();
-            this.lblDomicilio = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.lblDomicilio, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblLegajo, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -72,7 +72,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 111);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(354, 111);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // txtLegajo
@@ -104,6 +104,23 @@ namespace UI.Desktop
             this.txtDireccion.Size = new System.Drawing.Size(265, 20);
             this.txtDireccion.TabIndex = 11;
             // 
+            // lblApellido
+            // 
+            this.lblApellido.Location = new System.Drawing.Point(3, 52);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(67, 23);
+            this.lblApellido.TabIndex = 14;
+            this.lblApellido.Text = "Apellido";
+            // 
+            // lblDomicilio
+            // 
+            this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.Location = new System.Drawing.Point(3, 78);
+            this.lblDomicilio.Name = "lblDomicilio";
+            this.lblDomicilio.Size = new System.Drawing.Size(49, 13);
+            this.lblDomicilio.TabIndex = 15;
+            this.lblDomicilio.Text = "Domicilio";
+            // 
             // lblLegajo
             // 
             this.lblLegajo.Location = new System.Drawing.Point(3, 0);
@@ -119,14 +136,6 @@ namespace UI.Desktop
             this.lblNombre.Size = new System.Drawing.Size(67, 23);
             this.lblNombre.TabIndex = 13;
             this.lblNombre.Text = "Nombre";
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.Location = new System.Drawing.Point(3, 52);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(67, 23);
-            this.lblApellido.TabIndex = 14;
-            this.lblApellido.Text = "Apellido";
             // 
             // txtTelefono
             // 
@@ -206,15 +215,6 @@ namespace UI.Desktop
             this.buttonInscripcion.Text = "Inscribir a cursado";
             this.buttonInscripcion.UseVisualStyleBackColor = true;
             this.buttonInscripcion.Click += new System.EventHandler(this.buttonInscripcion_Click);
-            // 
-            // lblDomicilio
-            // 
-            this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(3, 78);
-            this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(49, 13);
-            this.lblDomicilio.TabIndex = 15;
-            this.lblDomicilio.Text = "Domicilio";
             // 
             // AlumnoDesktop
             // 

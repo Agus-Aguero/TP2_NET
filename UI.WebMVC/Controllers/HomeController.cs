@@ -60,7 +60,7 @@ namespace UI.WebMVC.Controllers
                 Session["User"] = usuario;
                 if (usuario.personas.tipo_persona == TipoPersona.Docente)
                 {
-                    return new RedirectResult("~/Docente");
+                    return View("../Docente/Docente");
 
                 }
                 else
