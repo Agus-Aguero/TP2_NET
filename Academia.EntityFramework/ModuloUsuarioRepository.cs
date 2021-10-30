@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Academia.Logic
+namespace Academia.EntityFramework
 {
-    public class ModuloLogic:BusinessLogic<modulos>
+    public class ModuloUsuarioRepository:GenericRepository<modulos_usuarios>
     {
-        
     }
 }

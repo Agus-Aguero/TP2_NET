@@ -30,19 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
-            this.lblApellido = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblConfirmarClave = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -50,8 +43,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ModuloListCheck = new System.Windows.Forms.CheckedListBox();
             this.lblModulos = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboTipoPersona = new System.Windows.Forms.ComboBox();
+            this.lblId = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -64,22 +56,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.lblId, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblClave, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblApellido, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.comboTipoPersona, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -91,37 +75,10 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 144);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(3, 0);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 0;
-            this.lblId.Text = "Id";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(3, 26);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(3, 52);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 2;
-            this.lblEmail.Text = "Email";
-            // 
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(3, 78);
+            this.lblClave.Location = new System.Drawing.Point(3, 52);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(34, 13);
             this.lblClave.TabIndex = 3;
@@ -135,23 +92,9 @@
             this.txtID.Size = new System.Drawing.Size(306, 20);
             this.txtID.TabIndex = 4;
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(76, 29);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(306, 20);
-            this.txtNombre.TabIndex = 5;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(76, 55);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(306, 20);
-            this.txtEmail.TabIndex = 6;
-            // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(76, 81);
+            this.txtClave.Location = new System.Drawing.Point(76, 55);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(306, 20);
             this.txtClave.TabIndex = 7;
@@ -167,16 +110,9 @@
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(496, 29);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(263, 20);
-            this.txtApellido.TabIndex = 9;
-            // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(496, 55);
+            this.txtUsuario.Location = new System.Drawing.Point(76, 29);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(263, 20);
             this.txtUsuario.TabIndex = 10;
@@ -184,25 +120,16 @@
             // txtConfirmarClave
             // 
             this.txtConfirmarClave.AcceptsReturn = true;
-            this.txtConfirmarClave.Location = new System.Drawing.Point(496, 81);
+            this.txtConfirmarClave.Location = new System.Drawing.Point(496, 55);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.Size = new System.Drawing.Size(263, 20);
             this.txtConfirmarClave.TabIndex = 11;
             this.txtConfirmarClave.UseSystemPasswordChar = true;
             // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(390, 26);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
-            this.lblApellido.TabIndex = 12;
-            this.lblApellido.Text = "Apellido";
-            // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(390, 52);
+            this.lblUsuario.Location = new System.Drawing.Point(3, 26);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 13;
@@ -211,7 +138,7 @@
             // lblConfirmarClave
             // 
             this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(390, 78);
+            this.lblConfirmarClave.Location = new System.Drawing.Point(390, 52);
             this.lblConfirmarClave.Name = "lblConfirmarClave";
             this.lblConfirmarClave.Size = new System.Drawing.Size(81, 13);
             this.lblConfirmarClave.TabIndex = 14;
@@ -258,22 +185,14 @@
             this.lblModulos.TabIndex = 4;
             this.lblModulos.Text = "Modulos";
             // 
-            // label1
+            // lblId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "label1";
-            // 
-            // comboTipoPersona
-            // 
-            this.comboTipoPersona.FormattingEnabled = true;
-            this.comboTipoPersona.Location = new System.Drawing.Point(76, 107);
-            this.comboTipoPersona.Name = "comboTipoPersona";
-            this.comboTipoPersona.Size = new System.Drawing.Size(121, 21);
-            this.comboTipoPersona.TabIndex = 16;
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(3, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.TabIndex = 0;
+            this.lblId.Text = "Id";
             // 
             // UsuarioDesktop
             // 
@@ -298,19 +217,12 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.CheckBox chkHabilitado;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtConfirmarClave;
-        private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblConfirmarClave;
         private System.Windows.Forms.Button btnAceptar;
@@ -318,7 +230,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblModulos;
         public System.Windows.Forms.CheckedListBox ModuloListCheck;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboTipoPersona;
+        private System.Windows.Forms.Label lblId;
     }
 }

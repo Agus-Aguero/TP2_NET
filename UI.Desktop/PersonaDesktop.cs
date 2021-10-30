@@ -5,6 +5,7 @@ using Academia.Entities;
 using Academia.Util;
 using Academia.Logic;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace UI.Desktop
 {
@@ -25,6 +26,9 @@ namespace UI.Desktop
             PersonaL = new PersonaLogic();
             usuarios = new List<usuarios>();
             GenerarColumnasUsuarios();
+            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
+            PlanesLogic Plan = new PlanesLogic();
+            comboPlan.DataSource = Plan.GetAll();
 
         }
 
@@ -37,14 +41,18 @@ namespace UI.Desktop
             _Modo = modo;
             ModuloLogic ModuloLogic = new ModuloLogic();
 
-            this.Modulos = ModuloLogic.GetAll();
+            this.Modulos = ModuloLogic.GetAll().ToList();
             ListBox listaModulos = new ListBox();
             listaModulos.DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
             ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
-            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));     
-            
+            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
+            PlanesLogic Plan = new PlanesLogic();
+            comboPlan.DataSource = Plan.GetAll().ToList();
+            comboPlan.DisplayMember = "desc_plan";
+            comboPlan.ValueMember = "id_plan";
+
 
         }
         public PersonaDektop(int ID, ModoForm modo) : this()
@@ -55,10 +63,14 @@ namespace UI.Desktop
 
 
 
+            PlanesLogic Plan = new PlanesLogic();
+            comboPlan.DataSource = Plan.GetAll().ToList();
+            comboPlan.DisplayMember = "desc_plan";
+            comboPlan.ValueMember = "id_plan";
 
             this.PersonaActual = this.PersonaL.Get(ID);
-
-
+            this.comboTipoPersona.SelectedIndex =(int) this.PersonaActual.tipo_persona;
+            comboPlan.SelectedValue = this.PersonaActual.id_plan; ;
             MapearDeDatos();
         }
 
@@ -88,9 +100,12 @@ namespace UI.Desktop
             this.txtEmail.Text = this.PersonaActual.email;
             this.txtLegajo.Text = this.PersonaActual.legajo.ToString();
             this.txtNombre.Text = this.PersonaActual.nombre;
+            UsuarioLogic usuarioLogic = new UsuarioLogic();
+
             foreach (var item in this.PersonaActual.usuarios)
             {
-                usuarios.Add(item);
+                var usuario = usuarioLogic.Get(item.id_usuario);
+                usuarios.Add(usuario);
             }
             this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.DataSource = usuarios;
@@ -119,16 +134,26 @@ namespace UI.Desktop
                     break;
             }
             this.PersonaActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
-         
-        
-          
 
-    }
+            this.PersonaActual.nombre = this.txtTelefono.Text;
+            this.PersonaActual.apellido = this.txtApellido.Text;
+            this.PersonaActual.fecha_nac = this.datePickeFecNac.Value;
+            this.PersonaActual.email = this.txtEmail.Text;
+            this.PersonaActual.legajo = Convert.ToInt32(this.txtLegajo.Text);
+            this.PersonaActual.nombre = this.txtNombre.Text;
+            this.PersonaActual.id_plan =Convert.ToInt32( this.comboPlan.SelectedValue);
+            this.PersonaActual.tipo_persona = (TipoPersona)this.comboTipoPersona.SelectedIndex;
+            this.PersonaActual.usuarios = (List<usuarios>) this.dgvUsuarios.DataSource;
+
+
+
+        }
         public override void GuardarCambios()
         {
             this.MapearADatos();
             
 
+            
             PersonaL.Save(PersonaActual);
 
         }
@@ -207,6 +232,7 @@ namespace UI.Desktop
             using (var usuariosDesktop = new UsuarioDesktop(ModoForm.Alta))
             {
                 usuariosDesktop.ShowDialog();
+                usuariosDesktop.UsuarioActual.id_persona = this.PersonaActual.id_persona;
                 this.usuarios.Add(usuariosDesktop.UsuarioActual);
                 this.dgvUsuarios.DataSource = null;
                 this.dgvUsuarios.DataSource = this.usuarios;
@@ -220,6 +246,14 @@ namespace UI.Desktop
 
         private void edit_Click(object sender, EventArgs e)
         {
+            int ID = Convert.ToInt32(this.dgvUsuarios.Rows[this.dgvUsuarios.CurrentRow.Index].Cells[0].Value);
+            UsuarioDesktop usuariosDesktop = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            usuariosDesktop.ShowDialog();
+            this.usuarios.RemoveAll(x => x.id_usuario == ID);
+            this.usuarios.Add(usuariosDesktop.UsuarioActual);
+            this.dgvUsuarios.DataSource = null;
+            this.dgvUsuarios.DataSource = this.usuarios;
+
 
         }
 

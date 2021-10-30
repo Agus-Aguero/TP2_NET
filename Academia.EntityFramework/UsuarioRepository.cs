@@ -15,9 +15,35 @@ namespace Academia.EntityFramework
         {
             using (var context=new Academia())
             {
-                context.usuarios.AddOrUpdate(entityToUpdate);
-                context.modulos_usuarios.AddRange(entityToUpdate.modulos_usuarios.ToList());
+                var permisosActuales = context.modulos_usuarios.Where(mod => mod.id_usuario == entityToUpdate.id_usuario).ToList();
+                context.modulos_usuarios.RemoveRange(permisosActuales);
+
+                //foreach (var modulos_Usuarios in permisosActuales)
+                //{
+                //    var band = false;
+                //    foreach (var modulos_UsuariosNuevos in entityToUpdate.modulos_usuarios)
+                //    {
+                //        if(modulos_UsuariosNuevos.id_modulo== modulos_Usuarios.id_modulo)
+                //        {
+                //            band = true;
+                //        }
+                //        if (!band)
+                //        {
+                //            context.modulos_usuarios.Remove(modulos_UsuariosNuevos);
+                //            context.SaveChanges();
+                //        }
+                //    }
+                //}
+                var usuario=this.Get(entityToUpdate.id_usuario);
+                usuario = entityToUpdate;
+                ModuloUsuarioRepository moduloUsuarioRepository = new ModuloUsuarioRepository();
+
+                context.usuarios.AddOrUpdate(usuario);
                 context.SaveChanges();
+                foreach (var mod in usuario.modulos_usuarios)
+                {
+                    moduloUsuarioRepository.Update(mod);
+                }
             }
         }
         public override usuarios Get(int id)

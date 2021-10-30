@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace Academia.EntityFramework
             {
                 return context.personas.Include(per => per.planes)
                                        .Include(per => per.usuarios).ToList();
-                                      
+
             }
         }
         public override personas Get(int id)
@@ -34,8 +35,38 @@ namespace Academia.EntityFramework
                                        .Include(per => per.usuarios)
                                        .Where(per => per.id_persona == id)
                                        .FirstOrDefault();
+            
+            }
+        }
+        public async override void Update(personas entityToUpdate)
+        {
+            try
+            {
+                
+                using (var context = new Academia())
+                {
+                    var transaction = context.Database.BeginTransaction();
+                    context.personas.AddOrUpdate(entityToUpdate);
+
+                    context.SaveChanges();
+                  
+                    var usuRepo = new UsuarioRepository();
+                   
+                    foreach (var usuarioUdpdate in entityToUpdate.usuarios)
+                    {
+                        usuRepo.Update(usuarioUdpdate);
+                    }
+                    context.SaveChanges();
+                    transaction.Commit();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
 
             }
         }
-    }
+    }    
 }

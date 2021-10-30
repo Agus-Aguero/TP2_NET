@@ -5,6 +5,7 @@ using Academia.Entities;
 using Academia.Util;
 using Academia.Logic;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace UI.Desktop
 {
@@ -20,7 +21,6 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
-            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
            
         }
         public UsuarioDesktop(ModoForm modo) : this()
@@ -36,7 +36,6 @@ namespace UI.Desktop
             ((ListBox)ModuloListCheck).DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
             ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
-            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));       
 
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
@@ -55,9 +54,7 @@ namespace UI.Desktop
             ((ListBox)ModuloListCheck).DataSource = this.Modulos;
             ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
             ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
-            comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
-            comboTipoPersona.DisplayMember = "Value";
-            comboTipoPersona.ValueMember = "Key";
+      
 
             MapearDeDatos();
         }
@@ -86,7 +83,15 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.nombre_usuario;
             this.txtClave.Text = this.UsuarioActual.clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.clave;
-          
+            for (int count = 0; count < this.ModuloListCheck.Items.Count; count++)
+            {
+                var chkMod = (modulos)this.ModuloListCheck.Items[count];
+                if (this.UsuarioActual.modulos_usuarios.Any(mod=>mod.id_modulo== chkMod.id_modulo))
+                {
+                    ModuloListCheck.SetItemChecked(count, true);
+                }
+            }
+
 
         }
         public override void MapearADatos()
@@ -131,30 +136,14 @@ namespace UI.Desktop
         {
             bool estado=true;
             string error_msj="Completar:\n";
-            if (this.txtNombre.Text == String.Empty)
-            {
-                estado = false;
-                error_msj+= "Nombre\n";
-            }
-
-            if (this.txtApellido.Text == String.Empty)
-            {
-                estado = false;
-                error_msj += "Apellido\n";
-            }
-
+          
             if (this.txtUsuario.Text == String.Empty)
             {
                 estado = false;
                 error_msj += "usuarios\n";
             }
 
-            if (!IsValidEmail(this.txtEmail.Text)) //this.txtEmail.Text == String.Empty)
-            {
-                error_msj+= String.IsNullOrEmpty(this.txtEmail.Text) ? "Email\n" : "Email no valido\n";
-                estado = false;             
-            }
-
+          
             if (String.IsNullOrEmpty(this.txtClave.Text)|| this.txtClave.Text.Length<= 8 || this.txtClave.Text != this.txtConfirmarClave.Text )
             {
                 error_msj += String.IsNullOrEmpty(this.txtClave.Text) ? "Clave\n" : this.txtClave.Text.Length <= 8 ?

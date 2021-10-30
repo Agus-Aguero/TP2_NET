@@ -26,7 +26,7 @@ namespace Academia.Entities
         public bool habilitado { get; set; }
 
         public bool? cambia_clave { get; set; }
-
+        
         public int? id_persona { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
