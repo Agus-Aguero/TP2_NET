@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Academia.Entities.alumnos_inscripciones>
+
+@{
+    ViewBag.Title = "Alumnos inscriptos";
+}
+
+<h2>Alumnos inscriptos</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            ID Curso
+        </th>
+        <th>
+            Legajo
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Condición
+        </th>
+        <th>
+            Nota
+        </th>
+        <th></th>
+    </tr>
+    @using (Html.BeginForm("Edit", "Inscripcion", FormMethod.Post))
+    {
+        <input type="submit" value="GUARDAR" class="btn btn-primary"/>
+
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_curso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.personas.legajo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.personas.nombre_apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.condicion)
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => item.nota)
+                </td>
+            </tr>
+        }
+    }
+</table>

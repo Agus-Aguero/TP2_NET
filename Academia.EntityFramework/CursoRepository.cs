@@ -16,12 +16,13 @@ namespace Academia.EntityFramework
         {
 
             cursos curso = this.Get(idCurso);
-
-            InscripcionRepository inscripcionRepository = new InscripcionRepository();
+            DocenteCursoRepository inscripcionRepository = new DocenteCursoRepository();
 
             docentes_cursos inscripcion = new docentes_cursos();
             inscripcion.id_docente = idDocente;
-            inscripcion.id_curso = idCurso;
+            inscripcion.id_curso = curso.id_curso;
+
+            inscripcionRepository.Insert(inscripcion);
 
             return inscripcion;
         }
@@ -54,6 +55,16 @@ namespace Academia.EntityFramework
                                 .Include(cur => cur.comisiones)
                                 .Include(cur => cur.materias)
                                 .Include(cur => cur.docentes_cursos).FirstOrDefault();
+            }
+        }
+
+        public IEnumerable<alumnos_inscripciones> GetAlumnosInscriptos(int idCurso)
+        {
+            using (var context = new Academia())
+            {
+                return context.alumnos_inscripciones.Where(insc => insc.id_curso == idCurso)
+                                .Include(insc => insc.personas)
+                                .Include(insc => insc.cursos).ToList();
             }
         }
     }

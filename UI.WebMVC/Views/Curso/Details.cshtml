@@ -1,0 +1,56 @@
+﻿@model Academia.Entities.cursos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Curso</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID Asignatura
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_materia)
+        </dd>
+
+        <dt>
+            Comisión
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_comision)
+        </dd>
+
+        <dt>
+            Año
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anio_calendario)
+        </dd>
+
+        <dt>
+            Nombre asignatura
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_materia)
+        </dd>
+
+        <dt>
+            Alumnos inscriptos
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Ver", "AlumnosInscriptos", "Curso", new { idCurso = Model.id_curso }, null)
+        </dd>
+
+    </dl>
+</div>
+<p>
+</p>

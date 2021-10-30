@@ -14,7 +14,9 @@
         <th>
             Asignatura
         </th>
-        <th></th>
+        <th>
+            Acción
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -25,7 +27,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.cursos.materias.desc_materia)
         </td>
-  
+        <td>
+            @Html.ActionLink("Ver", "Details", "Curso", new { id = item.cursos.id_curso }, null)
+        </td>
     </tr>
 }
 

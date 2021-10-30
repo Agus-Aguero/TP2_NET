@@ -13,6 +13,7 @@ namespace UI.WebMVC.Controllers
     public class InscripcionController : Controller
     {
         public InscripcionRepository inscripcionRepository { get; set; }
+        public DocenteCursoRepository docenteCursoRepository { get; set; }
         public InscripcionController()
         {
             inscripcionRepository = new InscripcionRepository();
@@ -59,8 +60,10 @@ namespace UI.WebMVC.Controllers
 
         // POST: Inscripcion/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(FormCollection collection)
         {
+            var req = Request.Form;
+            var hola = "hola";
             try
             {
                 // TODO: Add update logic here

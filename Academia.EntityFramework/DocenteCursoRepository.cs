@@ -34,5 +34,6 @@ namespace Academia.EntityFramework
                                               .Include(docCur => docCur.personas).ToList();
             }
         }
+
     }
 }

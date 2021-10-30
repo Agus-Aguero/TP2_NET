@@ -22,7 +22,17 @@ namespace UI.WebMVC.Controllers
         // GET: Usuario
         public ActionResult Index()
         {
-            return View("Alumno");
+            var usuario = (usuarios)Session["User"];
+            
+            switch (usuario.personas.tipo_persona)
+            {
+                case TipoPersona.Alumno:
+                    return View("Alumno");
+                case TipoPersona.Docente:
+                    return View("../Docente/Docente");
+                default:
+                    return View("../Home/Index");
+            }
         }
 
         // GET: Usuario/Details/5

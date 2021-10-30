@@ -43,7 +43,14 @@
                 @Html.DisplayFor(modelItem => item.cupo)
             </td>
             <td>
-                @Html.ActionLink("Registrarme", "InscribirAlumno", "Curso", new { idAlumno = usuario.id_persona, idCurso = item.id_curso }, null)
+                @if (usuario.personas.tipo_persona == Academia.Util.TipoPersona.Alumno)
+                {
+                    @Html.ActionLink("Registrarme", "InscribirAlumno", "Curso", new { idAlumno = usuario.id_persona, idCurso = item.id_curso }, null)
+                }
+                else if((usuario.personas.tipo_persona == Academia.Util.TipoPersona.Docente))
+                {
+                    @Html.ActionLink("Registrarme", "InscribirDocente", "Curso", new { idDocente = usuario.id_persona, idCurso = item.id_curso }, null)
+                }
             </td>
         </tr>
     }
