@@ -58,10 +58,6 @@ namespace UI.Desktop
             IEnumerable<personas> docentes = pLogic.GetAll().Where(per => per.tipo_persona == TipoPersona.Docente).ToList();
             this.dgvDocentes.DataSource = docentes;
         }
-        private void Docentes_Load(object sender, EventArgs e)
-        {
-            Listar();
-        }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -75,12 +71,25 @@ namespace UI.Desktop
 
         private void tstEditar_Click(object sender, EventArgs e)
         {
-           /* int nroLegajo = Convert.ToInt32(this.dgvDocentes.Rows[this.dgvDocentes.CurrentRow.Index].Cells[0].Value);
+            int nroLegajo = Convert.ToInt32(this.dgvDocentes.Rows[this.dgvDocentes.CurrentRow.Index].Cells[0].Value);
             personas persona = personaRepository.GetByLegajo(nroLegajo);
             DocenteDesktop formAlumno = new DocenteDesktop(persona.id_persona, ApplicationForm.ModoForm.Modificacion);
             formAlumno.ShowDialog();
-            this.Listar();*/
+            this.Listar();
         }
 
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            int nroLegajo = Convert.ToInt32(this.dgvDocentes.Rows[this.dgvDocentes.CurrentRow.Index].Cells[0].Value);
+            personas persona = personaRepository.GetByLegajo(nroLegajo);
+            DocenteDesktop formDocente = new DocenteDesktop(persona.id_persona, ApplicationForm.ModoForm.Modificacion);
+            formDocente.ShowDialog();
+            this.Listar();
+        }
+
+        private void Docentes_Load_1(object sender, EventArgs e)
+        {
+            Listar();
+        }
     }
 }

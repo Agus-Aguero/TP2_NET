@@ -30,18 +30,18 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.tcDocentes = new System.Windows.Forms.ToolStripContainer();
-            this.tsDocentes = new System.Windows.Forms.ToolStrip();
             this.tlDocentes = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDocentes = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsDocentes = new System.Windows.Forms.ToolStrip();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tcDocentes.ContentPanel.SuspendLayout();
             this.tcDocentes.TopToolStripPanel.SuspendLayout();
             this.tcDocentes.SuspendLayout();
-            this.tsDocentes.SuspendLayout();
             this.tlDocentes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).BeginInit();
+            this.tsDocentes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcDocentes
@@ -61,16 +61,6 @@ namespace UI.Desktop
             // tcDocentes.TopToolStripPanel
             // 
             this.tcDocentes.TopToolStripPanel.Controls.Add(this.tsDocentes);
-            // 
-            // tsDocentes
-            // 
-            this.tsDocentes.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsDocentes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.tsDocentes.Location = new System.Drawing.Point(3, 0);
-            this.tsDocentes.Name = "tsDocentes";
-            this.tsDocentes.Size = new System.Drawing.Size(35, 25);
-            this.tsDocentes.TabIndex = 0;
             // 
             // tlDocentes
             // 
@@ -120,14 +110,25 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // toolStripButton1
+            // tsDocentes
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::UI.Desktop.Properties.Resources.editIcon;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.tsDocentes.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsDocentes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbEditar});
+            this.tsDocentes.Location = new System.Drawing.Point(3, 0);
+            this.tsDocentes.Name = "tsDocentes";
+            this.tsDocentes.Size = new System.Drawing.Size(35, 25);
+            this.tsDocentes.TabIndex = 0;
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.editIcon;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditar.Text = "toolStripButton1";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // Docentes
             // 
@@ -137,15 +138,16 @@ namespace UI.Desktop
             this.Controls.Add(this.tcDocentes);
             this.Name = "Docentes";
             this.Text = "Docentes";
+            this.Load += new System.EventHandler(this.Docentes_Load_1);
             this.tcDocentes.ContentPanel.ResumeLayout(false);
             this.tcDocentes.TopToolStripPanel.ResumeLayout(false);
             this.tcDocentes.TopToolStripPanel.PerformLayout();
             this.tcDocentes.ResumeLayout(false);
             this.tcDocentes.PerformLayout();
-            this.tsDocentes.ResumeLayout(false);
-            this.tsDocentes.PerformLayout();
             this.tlDocentes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).EndInit();
+            this.tsDocentes.ResumeLayout(false);
+            this.tsDocentes.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -158,6 +160,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridView dgvDocentes;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsbEditar;
     }
 }
