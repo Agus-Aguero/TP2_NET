@@ -13,45 +13,16 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <div class="navbar-header">     
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-                @if (HttpContext.Current.Session["User"] == null)
-                {
-                    @Html.ActionLink("UTN", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                }
-                else
-                {
-                    @Html.ActionLink("UTN", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                }
             </div>
             <div class="navbar-collapse collapse">
-                @if (HttpContext.Current.Session["User"] == null)
-                {
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    </ul>
-                }
-                else
-                {
-                    var user = (Academia.Entities.usuarios)HttpContext.Current.Session["User"];
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                <li>@Html.ActionLink(user.nombre_usuario, "user", "usuario")</li>
-                <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
-
-            </ul>
-
-                }
-
-
+            <img src="~/Imagenes/utn_logo.png"  style="width: 50px;">
             </div>
         </div>
     </div>
@@ -59,7 +30,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Universidad Tecnológica Rosario</p>
         </footer>
     </div>
 

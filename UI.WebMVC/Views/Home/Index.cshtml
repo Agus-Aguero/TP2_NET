@@ -5,15 +5,17 @@
 @using Academia.Entities
 @model usuarios
 
-<div class="jumbotron">
-    <h1>Universidad Tecnológica Rosario</h1>
-    <p class="lead">Ingreso al sistema</p>
+<div class="container">
+    <div class="jumbotron row">
+            <h1>Universidad Tecnológica Rosario</h1>
+            <p class="lead">Ingreso al sistema</p>
+    </div>
 </div>
 
+
 <div class="container">
-    <div class="row align-items-center">
+    <div class="row justify-content-center">
         <div class="col-md-6">
-            <section id="loginForm">
                 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                 {
                     <h4>Utilice una cuenta local para iniciar sesión.</h4>
@@ -27,6 +29,8 @@
                         </div>
                     </div>
                     <br />
+                    <br />
+                    <br />
                     <div class="form-group">
                         <div class="col-md-10">
                             @Html.PasswordFor(m => m.clave, new { @class = "form-control", placeholder = "Ingrese su contraseña" })
@@ -35,11 +39,11 @@
                     <br />
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
+                            <br />
                             <input type="submit" value="Iniciar sesión" class="btn btn-default" />
                         </div>
                     </div>
                 }
-            </section>
         </div>
     </div>
 </div>

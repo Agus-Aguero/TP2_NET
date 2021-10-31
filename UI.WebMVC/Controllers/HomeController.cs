@@ -25,12 +25,9 @@ namespace UI.WebMVC.Controllers
 
             } else
             {
-                if(usuario.personas.tipo_persona == TipoPersona.Alumno)
-                {
-                    return Redirect("~/Usuario/Index");
-                }
 
-                return View("Docente");
+                return Redirect("~/Usuario/Index");
+
             }
         }
 

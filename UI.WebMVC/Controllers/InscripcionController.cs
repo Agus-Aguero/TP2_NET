@@ -70,7 +70,7 @@ namespace UI.WebMVC.Controllers
                 {
                     inscripcionRepository.Update(item);
                 }
-                return RedirectToAction("AlumnosInscriptos", "Inscripcion", idCurso);
+                return Redirect("/Curso/AlumnosInscriptos?idCurso="+idCurso);
 
             }
             catch (Exception e)
