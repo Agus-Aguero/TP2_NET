@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Academia.Entities.alumnos_inscripciones>
+﻿@model List<Academia.Entities.alumnos_inscripciones>
 
 @{
     ViewBag.Title = "Alumnos inscriptos";
@@ -27,26 +27,45 @@
     </tr>
     @using (Html.BeginForm("Edit", "Inscripcion", FormMethod.Post))
     {
-        <input type="submit" value="GUARDAR" class="btn btn-primary"/>
+        <input type="submit" value="GUARDAR" class="btn btn-primary" />
 
-        foreach (var item in Model)
+
+        //foreach (var item in Model)
+        //{
+        for (var i = 0; i < Model.ToList().Count; i++)
         {
+
+            @Html.HiddenFor(model => Model[i].cursos)
+            @Html.HiddenFor(model => Model[i].id_curso)
+            @Html.HiddenFor(model => Model[i].id_inscripcion)
+
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.id_curso)
+                    @Html.DisplayFor(model => Model[i].id_alumno)
+                    @Html.HiddenFor(model => Model[i].id_alumno)
+
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.personas.legajo)
+                    @Html.DisplayFor(model => Model[i].personas.legajo)
+                    @Html.HiddenFor(model => Model[i].personas.legajo)
+
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.personas.nombre_apellido)
+                    @Html.DisplayFor(model => Model[i].personas.nombre_apellido)
+                    @Html.HiddenFor(model => Model[i].personas.nombre_apellido)
+
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.condicion)
+                    @Html.DisplayFor(model => Model[i].condicion)
+                    @Html.HiddenFor(model => Model[i].condicion)
+
                 </td>
                 <td>
-                    @Html.TextBoxFor(modelItem => item.nota)
+                    @Html.TextBoxFor(model => Model[i].nota)
                 </td>
+
+                @Html.HiddenFor(model => Model[i].personas.legajo)
+
             </tr>
         }
     }

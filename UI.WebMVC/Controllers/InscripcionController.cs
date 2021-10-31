@@ -60,17 +60,20 @@ namespace UI.WebMVC.Controllers
 
         // POST: Inscripcion/Edit/5
         [HttpPost]
-        public ActionResult Edit(FormCollection collection)
+        public ActionResult Edit(List<alumnos_inscripciones> inscripcionesAlumnos)
         {
-            var req = Request.Form;
-            var hola = "hola";
             try
             {
-                // TODO: Add update logic here
+                var idCurso = inscripcionesAlumnos.FirstOrDefault().id_curso;
 
-                return RedirectToAction("Index");
+                foreach (var item in inscripcionesAlumnos)
+                {
+                    inscripcionRepository.Update(item);
+                }
+                return RedirectToAction("AlumnosInscriptos", "Inscripcion", idCurso);
+
             }
-            catch
+            catch (Exception e)
             {
                 return View();
             }

@@ -58,7 +58,7 @@ namespace Academia.EntityFramework
             }
         }
 
-        public IEnumerable<alumnos_inscripciones> GetAlumnosInscriptos(int idCurso)
+        public List<alumnos_inscripciones> GetAlumnosInscriptos(int idCurso)
         {
             using (var context = new Academia())
             {

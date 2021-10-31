@@ -98,7 +98,7 @@ namespace UI.WebMVC.Controllers
 
         public ActionResult AlumnosInscriptos(int idCurso)
         {
-            IEnumerable<alumnos_inscripciones> alumnosInscriptos = cursoRepository.GetAlumnosInscriptos(idCurso);
+            List<alumnos_inscripciones> alumnosInscriptos = cursoRepository.GetAlumnosInscriptos(idCurso);
             return View(alumnosInscriptos);
         }
 
