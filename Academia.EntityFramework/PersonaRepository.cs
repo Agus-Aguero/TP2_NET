@@ -33,6 +33,7 @@ namespace Academia.EntityFramework
             {
                 return context.personas.Include(per => per.planes)
                                        .Include(per => per.usuarios)
+                                       .Include(per=>per.alumnos_inscripciones)
                                        .Where(per => per.id_persona == id)
                                        .FirstOrDefault();
             

@@ -36,8 +36,23 @@ namespace UI.Desktop
         {
             CursoLogic cLogic = new CursoLogic();
             this.dgvCursos.AutoGenerateColumns = false;
+            var index = 0;
             IEnumerable<cursos> cursos  = cLogic.GetAll().Where(cur => cur.cupo > 0).ToList();
             this.dgvCursos.DataSource = cursos;
+            if (this.personaAInscribir != null)
+            {
+                foreach (var curso in cursos)
+                {
+                    bool inscripto=false;
+                    inscripto = this.personaAInscribir.alumnos_inscripciones.Any(alumInsc => alumInsc.id_curso == curso.id_curso);
+                    this.dgvCursos.EditMode = DataGridViewEditMode.EditProgrammatically;
+                    this.dgvCursos.Rows[index].Cells[5].Value = inscripto;
+
+
+                    index++;
+                    
+                }
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -118,10 +133,18 @@ namespace UI.Desktop
 
             if (habilitaInscripcion == true)
             {
+                DataGridViewCheckBoxColumn boolGrid = new DataGridViewCheckBoxColumn();
+                boolGrid.HeaderText = "Inscripto";
+                boolGrid.DisplayIndex = 5;
+                this.dgvCursos.Columns.Add(boolGrid);
+
                 DataGridViewButtonColumn btngrid = new DataGridViewButtonColumn();
                 btngrid.Name = "Inscribir";
-                btngrid.HeaderText = "Inscribir";
+                btngrid.HeaderText = "Inscribir/Desinscribir";
                 btngrid.Text = "Inscribir";
+                btngrid.DataPropertyName = "Inscribir";
+                btngrid.DisplayIndex = 6;
+                btngrid.UseColumnTextForButtonValue = true;
                 this.dgvCursos.Columns.Add(btngrid);
 
             }
@@ -136,8 +159,10 @@ namespace UI.Desktop
             {
                 int idCurso = (int)dgvCursos.CurrentRow.Cells["id"].Value;
 
-                var inscripcion = new Inscripcion(personaAInscribir,idCurso);
+                var inscripcion = new Inscripcion(personaAInscribir,idCurso, (bool)dgvCursos.CurrentRow.Cells[5].Value);
                 inscripcion.ShowDialog();
+                dgvCursos.CurrentRow.Cells[5].Value = inscripcion.Inscripto;
+
             }
         }
     }

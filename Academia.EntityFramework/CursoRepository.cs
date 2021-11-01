@@ -47,6 +47,21 @@ namespace Academia.EntityFramework
             return inscripcion;
         }
 
+        public void EliminarInscripcion(int idAlumno, int idCurso)
+        {
+            using (var context = new Academia())
+            {
+
+                List<alumnos_inscripciones> inscripciones = context.alumnos_inscripciones
+                                                                   .Where(aluIns => aluIns.id_curso == idCurso && aluIns.id_alumno == idAlumno)
+                                                                   .ToList();
+                context.alumnos_inscripciones.RemoveRange(inscripciones);
+                context.SaveChanges();
+
+            }
+
+        }
+
         public override cursos Get(int id)
         {
             using (var context = new Academia())
