@@ -57,6 +57,7 @@ namespace Academia.Entities
                 return planes.desc_plan;
             } }
 
+        [NotMapped]
         public string nombre_apellido { get {
                 return this.nombre + " " + this.apellido;
             } }
