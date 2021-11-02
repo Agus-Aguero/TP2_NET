@@ -55,15 +55,8 @@ namespace UI.WebMVC.Controllers
             if (usuario != null && usuario.clave == userDataFromPost.clave)
             {
                 Session["User"] = usuario;
-                //if (usuario.personas.tipo_persona == TipoPersona.Docente)
-                //{
-                //    return View("../Docente/Docente");
 
-                //}
-                //else
-                //{
                 return Redirect("~/Usuario/Index");
-                //}
             }
             else
             {

@@ -89,6 +89,8 @@ namespace UI.WebMVC.Controllers
                 personaAux.fecha_nac = persona.fecha_nac;
 
                 pRepository.UpdateMVC(personaAux);
+                TempData["Success"] = "Perfil editado satisfactoriamente.";
+
                 return RedirectToAction("Index");
             }
             catch(Exception e)

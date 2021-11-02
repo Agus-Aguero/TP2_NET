@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Details";
+    var usuario = Session["User"] as Academia.Entities.usuarios;
+
 }
 
 <h2>Curso</h2>
@@ -52,5 +54,9 @@
 
     </dl>
 </div>
-<p>
-</p>
+
+<div class="text-center">
+    <h4>
+        @Html.ActionLink("Volver", "Inscripciones", "Usuario", new { id = usuario.id_persona }, null)
+    </h4>
+</div>

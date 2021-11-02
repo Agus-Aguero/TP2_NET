@@ -70,6 +70,7 @@ namespace UI.WebMVC.Controllers
                 {
                     inscripcionRepository.Update(item);
                 }
+                TempData["Success"] = "Actualización de curso exitosa.";
                 return Redirect("/Curso/AlumnosInscriptos?idCurso="+idCurso);
 
             }

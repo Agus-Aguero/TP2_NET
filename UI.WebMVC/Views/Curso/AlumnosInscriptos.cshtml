@@ -2,9 +2,22 @@
 
 @{
     ViewBag.Title = "Alumnos inscriptos";
+    var usuario = Session["User"] as Academia.Entities.usuarios;
+
 }
 
 <h2>Alumnos inscriptos</h2>
+
+@if (TempData["Success"] != null)
+{
+<p class="alert-success text-center">
+    <br />
+    @TempData["Success"]
+    <br />
+    <br />
+</p>
+}
+
 
 <table class="table">
     <tr>
@@ -77,3 +90,7 @@
 
     }
 </table>
+
+<div class="text-center">
+    <h4>@Html.ActionLink("Volver", "Inscripciones", "Usuario", new { id = usuario.id_persona }, null)</h4>
+</div>

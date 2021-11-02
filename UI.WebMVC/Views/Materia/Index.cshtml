@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Asignaturas";
+    var usuario = Session["User"] as Academia.Entities.usuarios;
+
 }
 
 <h2>Asignaturas</h2>
@@ -45,3 +47,6 @@
     }
 
 </table>
+<div class="text-center">
+    <h4>@Html.ActionLink("Volver", "Index", "Usuario", new { id = usuario.id_persona }, null)</h4>
+</div>

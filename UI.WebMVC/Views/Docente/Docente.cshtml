@@ -15,6 +15,17 @@
 
 <div class="container">
     <div class="row text-center">
+
+        @if (TempData["Success"] != null)
+        {
+            <p class="alert-success p-5">
+                <br />
+                @TempData["Success"]
+                <br />
+                <br />
+            </p>
+        }
+
         <div class="col-6 bg-info">
             <ul class="list-unstyled">
                 <a href=""></a>

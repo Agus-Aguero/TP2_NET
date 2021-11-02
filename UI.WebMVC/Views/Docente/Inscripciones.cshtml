@@ -28,9 +28,13 @@
             @Html.DisplayFor(modelItem => item.cursos.materias.desc_materia)
         </td>
         <td>
-            @Html.ActionLink("Ver", "Details", "Curso", new { id = item.cursos.id_curso }, null)
+            @Html.ActionLink("Ver curso", "Details", "Curso", new { id = item.cursos.id_curso }, null)
         </td>
     </tr>
 }
 
 </table>
+
+<div class="text-center">
+    <h4>@Html.ActionLink("Volver", "Index")</h4> 
+</div>
