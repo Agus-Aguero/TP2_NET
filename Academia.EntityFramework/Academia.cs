@@ -11,6 +11,7 @@ namespace Academia.EntityFramework
         public Academia()
             : base("name=Academia")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public virtual DbSet<alumnos_inscripciones> alumnos_inscripciones { get; set; }

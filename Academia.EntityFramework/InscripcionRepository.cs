@@ -27,5 +27,24 @@ namespace Academia.EntityFramework
         //        //}
         //    }
         //}
+
+
+        public List<alumnos_inscripciones> GetInscripcionesByAlumno(int idAlumno)
+        {
+            try
+            {
+                using (var context = new Academia())
+                {
+                    var inscripciones = context.alumnos_inscripciones.
+                        Include(insc => insc.cursos).
+                        Where(insc => insc.id_alumno == idAlumno).ToList();
+                    return inscripciones;
+                }
+            } catch
+            {
+                return null;
+            }
+         
+        }
     }
 }
