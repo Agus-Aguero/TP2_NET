@@ -38,7 +38,7 @@ namespace Academia.EntityFramework
             
             }
         }
-        public async override void Update(personas entityToUpdate)
+        public  override void Update(personas entityToUpdate)
         {
             try
             {
