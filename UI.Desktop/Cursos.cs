@@ -84,10 +84,20 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvCursos.Rows[this.dgvCursos.CurrentRow.Index].Cells[0].Value);
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar el registro?", "Eliminar registro",
+                                       MessageBoxButtons.OKCancel);
 
-            CursoDesktop formEspecialidad = new CursoDesktop(ID, ApplicationForm.ModoForm.Baja);
-            formEspecialidad.ShowDialog();
-            this.Listar();
+            if (dialogResult == DialogResult.OK)
+            {
+                CursoDesktop formEspecialidad = new CursoDesktop(ID, ApplicationForm.ModoForm.Baja);
+                formEspecialidad.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                this.Close();
+            }
+            
         }
 
         private void Cursos_Load(object sender, EventArgs e)

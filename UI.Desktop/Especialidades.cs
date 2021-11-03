@@ -59,8 +59,19 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvEspecialidades.Rows[this.dgvEspecialidades.CurrentRow.Index].Cells[0].Value);
-            eLogic.Delete(ID);
-            this.Listar();
+
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar el registro?", "Eliminar registro",
+                                    MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                eLogic.Delete(ID);
+                this.Listar();
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void Especialidades_Load(object sender, EventArgs e)

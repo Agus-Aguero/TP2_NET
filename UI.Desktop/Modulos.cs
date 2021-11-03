@@ -70,8 +70,20 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvModulos.Rows[this.dgvModulos.CurrentRow.Index].Cells[2].Value);
-            mLogic.Delete(ID);
-            this.Listar();
+
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar el registro?", "Eliminar registro",
+                                    MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                mLogic.Delete(ID);
+                this.Listar();
+            }
+            else
+            {
+                this.Close();
+            }
+
         }
 
         private void GenerarColumnas()

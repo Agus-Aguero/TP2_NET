@@ -93,8 +93,18 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvPlanes.Rows[this.dgvPlanes.CurrentRow.Index].Cells[0].Value);
-            pLogic.Delete(ID);
-            this.Listar();
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar el registro?", "Eliminar registro",
+                                       MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                pLogic.Delete(ID);
+                this.Listar();
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)

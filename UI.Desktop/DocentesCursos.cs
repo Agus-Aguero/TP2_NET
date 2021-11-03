@@ -58,8 +58,19 @@ namespace UI.Desktop
         {
             int ID = Convert.ToInt32(this.dgvDocentesCursos.Rows[this.dgvDocentesCursos.CurrentRow.Index].Cells[0].Value);
 
-            dcLogic.Delete(ID);
-            this.Listar();
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar el registro?", "Eliminar registro",
+                                    MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                dcLogic.Delete(ID);
+                this.Listar();
+            }
+            else
+            {
+                this.Close();
+            }
+
         }
 
         private void Cursos_Load(object sender, EventArgs e)
