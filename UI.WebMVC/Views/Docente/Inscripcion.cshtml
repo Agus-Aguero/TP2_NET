@@ -1,0 +1,32 @@
+﻿@model Academia.Entities.docentes_cursos
+
+@{
+    ViewBag.Title = "Inscripción";
+}
+
+<h2>Inscripciones</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nº Curso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_curso)
+        </dd>
+
+        <dt>
+            Nº Docente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_docente)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_dictado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

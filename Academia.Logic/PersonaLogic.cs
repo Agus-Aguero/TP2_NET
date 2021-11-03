@@ -13,7 +13,11 @@ namespace Academia.Logic
         public PersonaLogic() {
             this.repository = new PersonaRepository();
         }
-     
+        public override personas Get(int ID)
+        {
+            return this.repository.Get(ID);
+        }
+
 
     }
 }

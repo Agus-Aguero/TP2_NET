@@ -19,18 +19,24 @@ namespace UI.Desktop
         public alumnos_inscripciones InscripcionAlumnoActual { get; set; }
         public personas AlumnoActual { get; set; }
         public cursos CursoActual { get; set; }
+        public bool Inscripto { get; set; }
         public InscripcionRepository inscripcionRepository { get; set; }
         public CursoRepository cursoRepository { get; set; }
         private ModoForm _Modo { get; set; }
 
-        public Inscripcion(personas persona, int idCurso)
+        public Inscripcion(personas persona, int idCurso,bool inscripto)
         {
             //inscripcionRepository = new InscripcionRepository();
             AlumnoActual = persona;
+            this.Inscripto = inscripto;
             cursoRepository = new CursoRepository();
             CursoActual = cursoRepository.Get(idCurso);
             InitializeComponent();
             MapearDeDatos();
+            if (inscripto)
+            {
+                this.inscribirButton.Text = "Eliminar Inscripción";
+            }
         }
 
 
@@ -45,8 +51,20 @@ namespace UI.Desktop
 
         private void inscribirButton_Click(object sender, EventArgs e)
         {
-            this.cursoRepository.Inscribir(AlumnoActual.id_persona, CursoActual.id_curso);
-            MessageBox.Show("Inscripción completa. Actualizar lista");
+            if (Inscripto)
+            {
+                this.cursoRepository.EliminarInscripcion(AlumnoActual.id_persona, CursoActual.id_curso);
+
+            }
+            else
+            {
+                this.cursoRepository.Inscribir(AlumnoActual.id_persona, CursoActual.id_curso);
+
+            }
+            string msjRespuesta = Inscripto ? "Se Eliminó la inscripcion" : "Se ha inscripto al curso correctamente";
+            MessageBox.Show(msjRespuesta);
+            this.Inscripto = !Inscripto;
+
             this.Close();
         }
     }

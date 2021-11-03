@@ -33,6 +33,8 @@ namespace Academia.EntityFramework
             {
                 return context.personas.Include(per => per.planes)
                                        .Include(per => per.usuarios)
+                                       .Include(per=>per.alumnos_inscripciones)
+                                       .Include(per=>per.docentes_cursos)
                                        .Where(per => per.id_persona == id)
                                        .FirstOrDefault();
             
@@ -68,5 +70,23 @@ namespace Academia.EntityFramework
 
             }
         }
+
+        public void UpdateMVC(personas persona)
+        {
+            try
+            {
+                using (var context = new Academia())
+                {
+                    context.personas.AddOrUpdate(persona);
+                    context.SaveChanges();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
     }    
 }

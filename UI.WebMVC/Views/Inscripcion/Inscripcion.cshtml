@@ -35,13 +35,11 @@
             @Html.DisplayFor(model => model.condicion)
         </dd>
 
-        <dt>
-            Nota
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nota)
-        </dd>
 
     </dl>
+</div>
+
+<div class="text-center">
+    <h4>@Html.ActionLink("Volver", "Index", "Usuario", new { id = usuario.id_persona }, null)</h4>
 </div>

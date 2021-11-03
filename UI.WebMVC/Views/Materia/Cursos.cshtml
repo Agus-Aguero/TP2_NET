@@ -26,27 +26,40 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
 
-    if(item.cupo != 0) { 
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.id_comision)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.id_curso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.anio_calendario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cupo)
-            </td>
-            <td>
-                @Html.ActionLink("Registrarme", "InscribirAlumno", "Curso", new { idAlumno = usuario.id_persona, idCurso = item.id_curso }, null)
-            </td>
-        </tr>
+        if (item.cupo != 0)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_comision)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_curso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.anio_calendario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cupo)
+                </td>
+                <td>
+                    @if (usuario.personas.tipo_persona == Academia.Util.TipoPersona.Alumno)
+                    {
+                        @Html.ActionLink("Registrarme", "InscribirAlumno", "Curso", new { idAlumno = usuario.id_persona, idCurso = item.id_curso }, null)
+                    }
+                    else if ((usuario.personas.tipo_persona == Academia.Util.TipoPersona.Docente))
+                    {
+                        @Html.ActionLink("Registrarme", "InscribirDocente", "Curso", new { idDocente = usuario.id_persona, idCurso = item.id_curso }, null)
+                    }
+                </td>
+            </tr>
+        }
     }
-}
 
 </table>
+
+<div class="text-center">
+    <h4>@Html.ActionLink("Volver", "", "materias")</h4>
+</div>

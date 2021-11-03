@@ -7,16 +7,35 @@
 
 @using Academia.Entities
 
-<div class="jumbotron">
-    <h1>Hola @usuario.nombre_usuario !</h1>
-    <p class="lead">ALUMNO: Bienvenido al sistema</p>
+<div class="jumbotron text-center">
+    <h1>Universidad Tecnológica Nacional</h1>
+    <h2 class="">Facultad Regional Rosario</h2>
+    <h4>Sistema de autogestión alumnos</h4>
 </div>
 
-<div class="row">
-    <ul class="">
-        <a href=""></a>
-        <li>@Html.ActionLink("Inscribirme a materia", "", "materias")</li>
+<div class="container">
+    <div class="row text-center">
 
-        <li>@Html.ActionLink("Mis inscripciones", "Inscripciones", "Usuario", new { id = usuario.id_persona }, null)</li>
-    </ul>
+        @if (TempData["Success"] != null)
+        {
+            <p class="alert-success p-5">
+                <br />
+                @TempData["Success"]
+                <br />
+                <br />
+            </p>
+        }
+
+        <div class="col-6 bg-info">
+            <ul class="list-unstyled">
+                <a href=""></a>
+                <li>@Html.ActionLink("Mi perfil", "Edit", "Usuario", new { id = usuario.id_persona }, null)</li>
+                @*<li>@Html.ActionLink("Inscribirme a dictado de cursado", "", "materias")</li>*@
+                <li>@Html.ActionLink("Mis cursos", "Inscripciones", "Usuario", new { id = usuario.id_persona }, null)</li>
+                <li>@Html.ActionLink("Salir", "Logout", "Home")</li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+

@@ -1,0 +1,96 @@
+﻿@model List<Academia.Entities.alumnos_inscripciones>
+
+@{
+    ViewBag.Title = "Alumnos inscriptos";
+    var usuario = Session["User"] as Academia.Entities.usuarios;
+
+}
+
+<h2>Alumnos inscriptos</h2>
+
+@if (TempData["Success"] != null)
+{
+<p class="alert-success text-center">
+    <br />
+    @TempData["Success"]
+    <br />
+    <br />
+</p>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            Nº Curso
+        </th>
+        <th>
+            Comisión
+        </th>
+        <th>
+            Legajo
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Condición
+        </th>
+        <th>
+            Nota
+        </th>
+        <th></th>
+    </tr>
+    @using (Html.BeginForm("Edit", "Inscripcion", FormMethod.Post))
+    {
+        <br />
+        <input type="submit" value="GUARDAR" class="btn btn-primary" />
+        <br />
+        <br />
+
+
+        //foreach (var item in Model)
+        //{
+        for (var i = 0; i < Model.ToList().Count; i++)
+        {
+
+            @Html.HiddenFor(model => Model[i].cursos)
+            @Html.HiddenFor(model => Model[i].id_inscripcion)
+            @Html.HiddenFor(model => Model[i].id_alumno)
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => Model[i].id_curso)
+                    @Html.HiddenFor(model => Model[i].id_curso)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => Model[i].cursos.id_comision)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => Model[i].personas.legajo)
+                    @Html.HiddenFor(model => Model[i].personas.legajo)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => Model[i].personas.nombre_apellido)
+                    @Html.HiddenFor(model => Model[i].personas.nombre_apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => Model[i].condicion)
+                    @Html.HiddenFor(model => Model[i].condicion)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => Model[i].nota)
+                </td>
+
+                @Html.HiddenFor(model => Model[i].personas.legajo)
+
+            </tr>
+        }
+
+    }
+</table>
+
+<div class="text-center">
+    <h4>@Html.ActionLink("Volver", "Inscripciones", "Usuario", new { id = usuario.id_persona }, null)</h4>
+</div>

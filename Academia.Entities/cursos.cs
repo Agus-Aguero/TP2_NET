@@ -27,11 +27,12 @@ namespace Academia.Entities
 
         public int cupo { get; set; }
 
+        [NotMapped]
         public string nombre_materia
         {
             get
             {
-                return "VER"; //deberìa traer materias.desc_materia sin problemas, da error.
+                return this.materias.desc_materia; //deberìa traer materias.desc_materia sin problemas, da error.
             }
         }
 

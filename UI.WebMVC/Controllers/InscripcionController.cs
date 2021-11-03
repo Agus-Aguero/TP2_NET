@@ -13,6 +13,7 @@ namespace UI.WebMVC.Controllers
     public class InscripcionController : Controller
     {
         public InscripcionRepository inscripcionRepository { get; set; }
+        public DocenteCursoRepository docenteCursoRepository { get; set; }
         public InscripcionController()
         {
             inscripcionRepository = new InscripcionRepository();
@@ -59,15 +60,21 @@ namespace UI.WebMVC.Controllers
 
         // POST: Inscripcion/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(List<alumnos_inscripciones> inscripcionesAlumnos)
         {
             try
             {
-                // TODO: Add update logic here
+                var idCurso = inscripcionesAlumnos.FirstOrDefault().id_curso;
 
-                return RedirectToAction("Index");
+                foreach (var item in inscripcionesAlumnos)
+                {
+                    inscripcionRepository.Update(item);
+                }
+                TempData["Success"] = "Actualización de curso exitosa.";
+                return Redirect("/Curso/AlumnosInscriptos?idCurso="+idCurso);
+
             }
-            catch
+            catch (Exception e)
             {
                 return View();
             }

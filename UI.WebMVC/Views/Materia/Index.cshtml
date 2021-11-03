@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Asignaturas";
+    var usuario = Session["User"] as Academia.Entities.usuarios;
+    bool inscripto = false;
 }
 
 <h2>Asignaturas</h2>
@@ -39,9 +41,31 @@
                 @Html.DisplayFor(modelItem => item.hs_totales)
             </td>
             <td>
-                @Html.ActionLink("Inscribirme", "Cursos", new { idMateria = item.id_materia }) 
+                @foreach (var inscripcion in usuario.personas.alumnos_inscripciones)
+                {
+                    if (inscripcion.cursos.id_materia == item.id_materia)
+                    {
+                        inscripto = true;
+                        break;
+                    } else
+                    {
+                        inscripto = false;
+                    }
+                }
+                @if (inscripto)
+                {
+                    @Html.DisplayFor(modelItem => item.hs_totales)
+
+                }
+                else
+                {
+                    @Html.ActionLink("Inscribirme", "Cursos", new { idMateria = item.id_materia })
+                }
             </td>
         </tr>
     }
 
 </table>
+<div class="text-center">
+    <h4>@Html.ActionLink("Volver", "Index", "Usuario", new { id = usuario.id_persona }, null)</h4>
+</div>

@@ -69,7 +69,6 @@ namespace Academia.EntityFramework
                     .FirstOrDefault();
                 return usuario;
             }
-
         }
         public IEnumerable<alumnos_inscripciones> getInscripcionesAlumno(int alumnoId)
         {

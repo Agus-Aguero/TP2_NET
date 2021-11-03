@@ -57,6 +57,11 @@ namespace Academia.Entities
                 return planes.desc_plan;
             } }
 
+        [NotMapped]
+        public string nombre_apellido { get {
+                return this.nombre + " " + this.apellido;
+            } }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<usuarios> usuarios { get; set; }
     }

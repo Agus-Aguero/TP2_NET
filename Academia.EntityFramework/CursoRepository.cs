@@ -16,12 +16,13 @@ namespace Academia.EntityFramework
         {
 
             cursos curso = this.Get(idCurso);
-
-            InscripcionRepository inscripcionRepository = new InscripcionRepository();
+            DocenteCursoRepository inscripcionRepository = new DocenteCursoRepository();
 
             docentes_cursos inscripcion = new docentes_cursos();
             inscripcion.id_docente = idDocente;
-            inscripcion.id_curso = idCurso;
+            inscripcion.id_curso = curso.id_curso;
+
+            inscripcionRepository.Insert(inscripcion);
 
             return inscripcion;
         }
@@ -46,6 +47,21 @@ namespace Academia.EntityFramework
             return inscripcion;
         }
 
+        public void EliminarInscripcion(int idAlumno, int idCurso)
+        {
+            using (var context = new Academia())
+            {
+
+                List<alumnos_inscripciones> inscripciones = context.alumnos_inscripciones
+                                                                   .Where(aluIns => aluIns.id_curso == idCurso && aluIns.id_alumno == idAlumno)
+                                                                   .ToList();
+                context.alumnos_inscripciones.RemoveRange(inscripciones);
+                context.SaveChanges();
+
+            }
+
+        }
+
         public override cursos Get(int id)
         {
             using (var context = new Academia())
@@ -54,6 +70,29 @@ namespace Academia.EntityFramework
                                 .Include(cur => cur.comisiones)
                                 .Include(cur => cur.materias)
                                 .Include(cur => cur.docentes_cursos).FirstOrDefault();
+            }
+        }
+
+        public List<alumnos_inscripciones> GetAlumnosInscriptos(int idCurso)
+        {
+            using (var context = new Academia())
+            {
+                return context.alumnos_inscripciones.Where(insc => insc.id_curso == idCurso)
+                                .Include(insc => insc.personas)
+                                .Include(insc => insc.cursos).ToList();
+            }
+        }
+
+        public override IEnumerable<cursos> GetAll()
+        {
+            using (var context = new Academia())
+            {
+                var hola =  context.cursos
+                                .Include(cur => cur.comisiones)
+                                .Include(cur => cur.materias)
+                                .Include(cur => cur.docentes_cursos).ToList();
+                return hola;
+                
             }
         }
     }

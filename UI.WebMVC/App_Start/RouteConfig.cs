@@ -38,12 +38,6 @@ namespace UI.WebMVC
                  url: "usuario/alumno",
                  defaults: new { controller = "Usuario", action = "Index" }
             );
-
-
-
-
-
-
         }
     }
 }

@@ -25,12 +25,9 @@ namespace UI.WebMVC.Controllers
 
             } else
             {
-                if(usuario.personas.tipo_persona == TipoPersona.Alumno)
-                {
-                    return Redirect("~/Usuario/Index");
-                }
 
-                return View("Docente");
+                return Redirect("~/Usuario/Index");
+
             }
         }
 
@@ -53,20 +50,19 @@ namespace UI.WebMVC.Controllers
         {
 
             UsuarioRepository usuarioRepository = new UsuarioRepository();
+            InscripcionRepository inscripcionRepository = new InscripcionRepository();
             usuarios usuario = usuarioRepository.findByUserName(userDataFromPost.nombre_usuario);
+            if (usuario.personas.tipo_persona == TipoPersona.Alumno)
+            {
+                var inscripciones = inscripcionRepository.GetInscripcionesByAlumno((int)usuario.id_persona);
+                usuario.personas.alumnos_inscripciones = inscripciones;
 
+            }
             if (usuario != null && usuario.clave == userDataFromPost.clave)
             {
                 Session["User"] = usuario;
-                if (usuario.personas.tipo_persona == TipoPersona.Docente)
-                {
-                    return View("../Docente/Docente");
 
-                }
-                else
-                {
-                    return  Redirect("~/Usuario/Index");
-                }
+                return Redirect("~/Usuario/Index");
             }
             else
             {

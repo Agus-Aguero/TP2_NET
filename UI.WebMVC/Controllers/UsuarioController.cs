@@ -14,15 +14,28 @@ namespace UI.WebMVC.Controllers
     {
         public UsuarioLogic uLogic { get; set; }
         public UsuarioRepository uRepository { get; set; }
+        public PersonaRepository pRepository { get; set; }
         public UsuarioController()
         {
             uLogic = new UsuarioLogic();
             uRepository = new UsuarioRepository();
+            pRepository = new PersonaRepository();
+
         }
         // GET: Usuario
         public ActionResult Index()
         {
-            return View("Alumno");
+            var usuario = (usuarios)Session["User"];
+            
+            switch (usuario.personas.tipo_persona)
+            {
+                case TipoPersona.Alumno:
+                    return View("Alumno");
+                case TipoPersona.Docente:
+                    return View("../Docente/Docente");
+                default:
+                    return View("../Home/Index");
+            }
         }
 
         // GET: Usuario/Details/5
@@ -56,20 +69,31 @@ namespace UI.WebMVC.Controllers
         // GET: Usuario/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            personas persona = pRepository.Get(id);
+            return View(persona);
         }
 
         // POST: Usuario/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, personas persona)
         {
             try
             {
-                // TODO: Add update logic here
+                personas personaAux = pRepository.Get(persona.id_persona);
+
+                personaAux.nombre = persona.nombre;
+                personaAux.apellido = persona.apellido;
+                personaAux.direccion = persona.direccion;
+                personaAux.email = persona.email;
+                personaAux.telefono = persona.telefono;
+                personaAux.fecha_nac = persona.fecha_nac;
+
+                pRepository.UpdateMVC(personaAux);
+                TempData["Success"] = "Perfil editado satisfactoriamente.";
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception e)
             {
                 return View();
             }
