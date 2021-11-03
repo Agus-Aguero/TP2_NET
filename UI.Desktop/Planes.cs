@@ -96,5 +96,12 @@ namespace UI.Desktop
             pLogic.Delete(ID);
             this.Listar();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            PlanReport planReport = new PlanReport();
+            planReport.ShowDialog();
+
+        }
     }
 }

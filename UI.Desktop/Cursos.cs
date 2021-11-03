@@ -16,6 +16,7 @@ namespace UI.Desktop
     public partial class Cursos : Form
     {
         public personas personaAInscribir { get; set; }
+        public CursoLogic cLogic { get; set; }
         public Cursos()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            CursoLogic cLogic = new CursoLogic();
+            cLogic = new CursoLogic();
             this.dgvCursos.AutoGenerateColumns = false;
             var index = 0;
             IEnumerable<cursos> cursos  = cLogic.GetAll().Where(cur => cur.cupo > 0).ToList();
@@ -164,6 +165,12 @@ namespace UI.Desktop
                 dgvCursos.CurrentRow.Cells[5].Value = inscripcion.Inscripto;
 
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            CursoReport report = new CursoReport();
+            report.ShowDialog();
         }
     }
 }

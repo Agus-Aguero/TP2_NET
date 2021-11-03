@@ -3,7 +3,7 @@ namespace Academia.Entities
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-  
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class planes:Entity
     {
@@ -23,6 +23,9 @@ namespace Academia.Entities
         public string desc_plan { get; set; }
 
         public int id_especialidad { get; set; }
+        [NotMapped]
+        public string desc_especialidad { get { return especialidades.desc_especialidad; } }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comisiones> comisiones { get; set; }
