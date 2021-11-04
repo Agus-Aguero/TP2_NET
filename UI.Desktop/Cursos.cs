@@ -121,38 +121,39 @@ namespace UI.Desktop
         {
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
-            colId.HeaderText = "ID";
+            colId.HeaderText = "ID Curso";
             colId.DataPropertyName = "id_curso";
             colId.DisplayIndex = 0;
             this.dgvCursos.Columns.Add(colId);
+
+            DataGridViewTextBoxColumn colIComision = new DataGridViewTextBoxColumn();
+            colIComision.Name = "comision";
+            colIComision.HeaderText = "ID Comisión";
+            colIComision.DataPropertyName = "id_comision";
+            colIComision.DisplayIndex = 1;
+            this.dgvCursos.Columns.Add(colIComision);
+
+            DataGridViewTextBoxColumn colIdMateria = new DataGridViewTextBoxColumn();
+            colIdMateria.Name = "materia";
+            colIdMateria.HeaderText = "Materia";
+            colIdMateria.DataPropertyName = "nombre_materia";
+            colIdMateria.DisplayIndex = 2;
+            this.dgvCursos.Columns.Add(colIdMateria);
 
             DataGridViewTextBoxColumn colAnioCalendario = new DataGridViewTextBoxColumn();
             colAnioCalendario.Name = "anioCalendario";
             colAnioCalendario.HeaderText = "Año calendario";
             colAnioCalendario.DataPropertyName = "anio_calendario";
-            colAnioCalendario.DisplayIndex = 0;
+            colAnioCalendario.DisplayIndex = 3;
             this.dgvCursos.Columns.Add(colAnioCalendario);
 
             DataGridViewTextBoxColumn colCupo = new DataGridViewTextBoxColumn();
             colCupo.Name = "cupo";
             colCupo.HeaderText = "Cupo";
             colCupo.DataPropertyName = "cupo";
-            colCupo.DisplayIndex = 0;
+            colCupo.DisplayIndex = 4;
             this.dgvCursos.Columns.Add(colCupo);
 
-            DataGridViewTextBoxColumn colIdMateria = new DataGridViewTextBoxColumn();
-            colIdMateria.Name = "materia";
-            colIdMateria.HeaderText = "Materia";
-            colIdMateria.DataPropertyName = "nombre_materia";
-            colIdMateria.DisplayIndex = 0;
-            this.dgvCursos.Columns.Add(colIdMateria);
-
-            DataGridViewTextBoxColumn colIComision = new DataGridViewTextBoxColumn();
-            colIComision.Name = "comision";
-            colIComision.HeaderText = "Comisión";
-            colIComision.DataPropertyName = "id_comision";
-            colIComision.DisplayIndex = 0;
-            this.dgvCursos.Columns.Add(colIComision);
 
             if (habilitaInscripcion == true)
             {

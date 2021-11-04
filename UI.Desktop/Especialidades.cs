@@ -94,10 +94,9 @@ namespace UI.Desktop
         private void GenerarColumnas()
         {
 
-
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
-            colId.HeaderText = "ID";
+            colId.HeaderText = "ID Especialidad";
             colId.DataPropertyName = "id_especialidad";
             colId.DisplayIndex = 0;
             this.dgvEspecialidades.Columns.Add(colId);
@@ -106,12 +105,8 @@ namespace UI.Desktop
             colDescripcion.Name = "descripcion";
             colDescripcion.HeaderText = "Descripcion";
             colDescripcion.DataPropertyName = "desc_especialidad";
-            colDescripcion.DisplayIndex = 0;
-            this.dgvEspecialidades.Columns.Add(colDescripcion);
-
-
-
-            
+            colDescripcion.DisplayIndex = 1;
+            this.dgvEspecialidades.Columns.Add(colDescripcion);  
 
         }
 
