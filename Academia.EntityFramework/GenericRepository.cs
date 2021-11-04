@@ -1,5 +1,6 @@
 ﻿
 using Academia.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -47,14 +48,26 @@ namespace Academia.EntityFramework
 
         }
 
-        public virtual void Delete(object id)
+        public virtual bool Delete(object id)
         {
+
             using (var context = new Academia())
             {
-                var dbSet = context.Set<TEntity>();
-                TEntity entityToDelete = dbSet.Find(id);
-                dbSet.Remove(entityToDelete);
-                context.SaveChanges();
+                try
+                {
+                    var dbSet = context.Set<TEntity>();
+                    TEntity entityToDelete = dbSet.Find(id);
+                    dbSet.Remove(entityToDelete);
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    
+                    return false;
+                  
+                }
+                
             }
         }
 
@@ -72,6 +85,21 @@ namespace Academia.EntityFramework
 
         }
 
+        public bool CanDelete(int ID)
+        {
+            try
+            {
+                this.Delete(ID);
 
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+                
+            }
+
+        }
     }
 }

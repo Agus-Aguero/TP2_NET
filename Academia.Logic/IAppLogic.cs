@@ -14,7 +14,7 @@ namespace Academia.Logic
         IEnumerable<TEntity> GetAll();
         void GuardarCambios(DataTable dataTable);
         void Save(TEntity entity);
-        void Delete(int ID);
-       
+        bool Delete(int ID);
+        
     }
 }

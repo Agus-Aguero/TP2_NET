@@ -89,9 +89,21 @@ namespace UI.Desktop
 
             if (dialogResult == DialogResult.OK)
             {
-                CursoDesktop formEspecialidad = new CursoDesktop(ID, ApplicationForm.ModoForm.Baja);
-                formEspecialidad.ShowDialog();
-                this.Listar();
+                bool rta;
+                rta = cLogic.Delete(ID);
+
+                if (rta)
+                {
+                    CursoDesktop formEspecialidad = new CursoDesktop(ID, ApplicationForm.ModoForm.Baja);
+                    formEspecialidad.ShowDialog();
+                    this.Listar();
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar el registro");
+                    this.Close();
+
+                }
             }
             else
             {
