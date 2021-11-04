@@ -61,9 +61,11 @@ namespace Academia.Logic
 
         }
 
-        public void Delete(int ID)
+        public bool Delete(int ID)
         {
-            repository.Delete(ID);
+            return repository.Delete(ID);
+
         }
+
     }
 }
