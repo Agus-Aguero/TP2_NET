@@ -98,8 +98,19 @@ namespace UI.Desktop
 
             if (dialogResult == DialogResult.OK)
             {
-                pLogic.Delete(ID);
-                this.Listar();
+                bool rta;
+                rta = pLogic.Delete(ID);
+
+                if (rta)
+                {
+                    MessageBox.Show("Se elimino el registro exitosamente");
+                    this.Listar();
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar el registro");
+                    this.Close();
+                }
             }
             else
             {
