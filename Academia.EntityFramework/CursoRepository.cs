@@ -40,9 +40,11 @@ namespace Academia.EntityFramework
             inscripcion.nota = 0;
 
             inscripcionRepository.Insert(inscripcion);
-            
+
             curso.cupo--;
             this.Update(curso);
+
+            inscripcion.cursos = curso;
 
             return inscripcion;
         }
