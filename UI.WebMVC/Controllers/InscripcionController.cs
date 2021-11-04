@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Academia.Entities;
 using Academia.Logic;
 using Academia.EntityFramework;
+using Academia.Util;
 
 
 namespace UI.WebMVC.Controllers
@@ -68,6 +69,28 @@ namespace UI.WebMVC.Controllers
 
                 foreach (var item in inscripcionesAlumnos)
                 {
+                    switch (item.nota)
+                    {
+                        case 0:
+                            item.condicion = EstadoAlumno.Inscripto.ToString();
+                            break;
+                        case 1:
+                        case 2:
+                        case 3:
+                            item.condicion = EstadoAlumno.Desaprobado.ToString();
+                            break;
+                        case 4:
+                        case 5:
+                            item.condicion = EstadoAlumno.Regular.ToString();
+                            break;
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                            item.condicion = EstadoAlumno.Aprobado.ToString();
+                            break;
+                    }
                     inscripcionRepository.Update(item);
                 }
                 TempData["Success"] = "Actualización de curso exitosa.";

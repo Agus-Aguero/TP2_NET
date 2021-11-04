@@ -31,4 +31,12 @@ namespace Academia.Util
         Titular,
         Practica
     }
+
+    public enum EstadoAlumno
+    {
+        Inscripto,
+        Regular,
+        Aprobado,
+        Desaprobado
+    }
 }
