@@ -105,6 +105,8 @@ namespace UI.WebMVC.Controllers
         public ActionResult InscribirAlumno(int idAlumno, int idCurso)
         {
             alumnos_inscripciones inscripcion = cursoRepository.Inscribir(idAlumno, idCurso);
+            var alumno = (usuarios)Session["User"];
+           // alumno.personas.alumnos_inscripciones.Add(inscripcion);
             return View("~/Views/Inscripcion/Inscripcion.cshtml",inscripcion);
         }
 
