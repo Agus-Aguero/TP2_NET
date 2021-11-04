@@ -54,24 +54,24 @@ namespace UI.Desktop
 
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
-            colId.HeaderText = "ID";
+            colId.HeaderText = "ID Plan";
             colId.DataPropertyName = "id_plan";
             colId.DisplayIndex = 0;
             this.dgvPlanes.Columns.Add(colId);
-
-            DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
-            colDesc.Name = "descripcion";
-            colDesc.HeaderText = "Descripcion";
-            colDesc.DataPropertyName = "desc_plan";
-            colDesc.DisplayIndex = 0;
-            this.dgvPlanes.Columns.Add(colDesc);
 
             DataGridViewTextBoxColumn colIdEsp = new DataGridViewTextBoxColumn();
             colIdEsp.Name = "IdEsp";
             colIdEsp.HeaderText = "ID Especialidad";
             colIdEsp.DataPropertyName = "id_especialidad";
-            colIdEsp.DisplayIndex = 0;
+            colIdEsp.DisplayIndex = 1;
             this.dgvPlanes.Columns.Add(colIdEsp);
+
+            DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
+            colDesc.Name = "descripcion";
+            colDesc.HeaderText = "Descripcion";
+            colDesc.DataPropertyName = "desc_plan";
+            colDesc.DisplayIndex = 2;
+            this.dgvPlanes.Columns.Add(colDesc);
 
         }
 

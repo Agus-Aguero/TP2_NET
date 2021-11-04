@@ -99,8 +99,6 @@ namespace UI.Desktop
 
         private void GenerarColumnas()
         {
-
-
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
             colId.HeaderText = "ID";
@@ -108,46 +106,46 @@ namespace UI.Desktop
             colId.DisplayIndex = 0;
             this.dgvUsuarios.Columns.Add(colId);
 
+            DataGridViewTextBoxColumn colUsuario = new DataGridViewTextBoxColumn();
+            colUsuario.Name = "usuario";
+            colUsuario.HeaderText = "Usuario";
+            colUsuario.DataPropertyName = "nombre_usuario";
+            colUsuario.DisplayIndex = 1;
+            this.dgvUsuarios.Columns.Add(colUsuario);
+
+            DataGridViewTextBoxColumn colClave = new DataGridViewTextBoxColumn();
+            colClave.Name = "clave";
+            colClave.HeaderText = "Clave";
+            colClave.DataPropertyName = "clave";
+            colClave.DisplayIndex = 2;
+            this.dgvUsuarios.Columns.Add(colClave);
+
             DataGridViewTextBoxColumn colNombre = new DataGridViewTextBoxColumn();
             colNombre.Name = "nombre";
             colNombre.HeaderText = "Nombre";
             colNombre.DataPropertyName = "nombre";
-            colNombre.DisplayIndex = 0;
+            colNombre.DisplayIndex = 3;
             this.dgvUsuarios.Columns.Add(colNombre);
 
             DataGridViewTextBoxColumn colApellido = new DataGridViewTextBoxColumn();
             colApellido.Name = "apellido";
             colApellido.HeaderText = "Apellido";
             colApellido.DataPropertyName = "apellido";
-            colApellido.DisplayIndex = 0;
+            colApellido.DisplayIndex = 4;
             this.dgvUsuarios.Columns.Add(colApellido);
-
-            DataGridViewTextBoxColumn colUsuario = new DataGridViewTextBoxColumn();
-            colUsuario.Name = "usuario";
-            colUsuario.HeaderText = "Usuario";
-            colUsuario.DataPropertyName = "nombre_usuario";
-            colUsuario.DisplayIndex = 0;
-            this.dgvUsuarios.Columns.Add(colUsuario);
 
             DataGridViewTextBoxColumn colEmail = new DataGridViewTextBoxColumn();
             colEmail.Name = "email";
             colEmail.HeaderText = "Email";
             colEmail.DataPropertyName = "email";
-            colEmail.DisplayIndex = 0;
+            colEmail.DisplayIndex = 5;
             this.dgvUsuarios.Columns.Add(colEmail);
-
-            DataGridViewTextBoxColumn colClave = new DataGridViewTextBoxColumn();
-            colClave.Name = "clave";
-            colClave.HeaderText = "Clave";
-            colClave.DataPropertyName = "clave";
-            colClave.DisplayIndex = 0;
-            this.dgvUsuarios.Columns.Add(colClave);
 
             DataGridViewCheckBoxColumn colHabilitado = new DataGridViewCheckBoxColumn();
             colHabilitado.Name = "habilitado";
             colHabilitado.HeaderText = "Habilitado";
             colHabilitado.DataPropertyName = "Habilitado";
-            colHabilitado.DisplayIndex = 0;
+            colHabilitado.DisplayIndex = 6;
             this.dgvUsuarios.Columns.Add(colHabilitado);
 
         }

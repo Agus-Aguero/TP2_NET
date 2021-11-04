@@ -54,26 +54,26 @@ namespace UI.Desktop
             colID.DisplayIndex = 0;
             this.dgvComisiones.Columns.Add(colID);
 
-            DataGridViewTextBoxColumn colAnioEsp = new DataGridViewTextBoxColumn();
-            colAnioEsp.Name = "Año especialidad";
-            colAnioEsp.HeaderText = "Año Especialidad";
-            colAnioEsp.DataPropertyName = "anio_especialidad";
-            colAnioEsp.DisplayIndex = 1;
-            this.dgvComisiones.Columns.Add(colAnioEsp);
-
-            DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
-            colDesc.Name = "descripcion";
-            colDesc.HeaderText = "Descripcion";
-            colDesc.DataPropertyName = "desc_comision";
-            colDesc.DisplayIndex = 2;
-            this.dgvComisiones.Columns.Add(colDesc);
-
             DataGridViewTextBoxColumn colIdPlan = new DataGridViewTextBoxColumn();
             colIdPlan.Name = "Id Plan";
             colIdPlan.HeaderText = "Id Plan";
             colIdPlan.DataPropertyName = "id_plan";
-            colIdPlan.DisplayIndex = 3;
+            colIdPlan.DisplayIndex = 1;
             this.dgvComisiones.Columns.Add(colIdPlan);
+
+            DataGridViewTextBoxColumn colAnioEsp = new DataGridViewTextBoxColumn();
+            colAnioEsp.Name = "Año especialidad";
+            colAnioEsp.HeaderText = "Año Especialidad";
+            colAnioEsp.DataPropertyName = "anio_especialidad";
+            colAnioEsp.DisplayIndex = 2;
+            this.dgvComisiones.Columns.Add(colAnioEsp);
+
+            DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
+            colDesc.Name = "descripcion";
+            colDesc.HeaderText = "Descripcion Comision";
+            colDesc.DataPropertyName = "desc_comision";
+            colDesc.DisplayIndex = 3;
+            this.dgvComisiones.Columns.Add(colDesc);         
 
         }
 

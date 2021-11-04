@@ -97,13 +97,19 @@ namespace UI.Desktop
         private void GenerarColumnas()
         {
 
-
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
-            colId.HeaderText = "ID";
+            colId.HeaderText = "ID Persona";
             colId.DataPropertyName = "id_persona";
             colId.DisplayIndex = 0;
             this.dgvPersonas.Columns.Add(colId);
+
+            DataGridViewTextBoxColumn Collegajo = new DataGridViewTextBoxColumn();
+            Collegajo.Name = "legajo";
+            Collegajo.HeaderText = "Legajo";
+            Collegajo.DataPropertyName = "legajo";
+            Collegajo.DisplayIndex = 1;
+            this.dgvPersonas.Columns.Add(Collegajo);
 
             DataGridViewTextBoxColumn colNombre = new DataGridViewTextBoxColumn();
             colNombre.Name = "nombre";
@@ -116,15 +122,8 @@ namespace UI.Desktop
             colApellido.Name = "apellido";
             colApellido.HeaderText = "Apellido";
             colApellido.DataPropertyName = "apellido";
-            colApellido.DisplayIndex = 1;
-            this.dgvPersonas.Columns.Add(colApellido);
-
-            DataGridViewTextBoxColumn colUsuario = new DataGridViewTextBoxColumn();
-            colUsuario.Name = "usuario";
-            colUsuario.HeaderText = "Usuario";
-            colUsuario.DataPropertyName = "nombre_usuario";
-            colUsuario.DisplayIndex = 3;
-            this.dgvPersonas.Columns.Add(colUsuario);
+            colApellido.DisplayIndex = 3;
+            this.dgvPersonas.Columns.Add(colApellido);        
 
             DataGridViewTextBoxColumn colEmail = new DataGridViewTextBoxColumn();
             colEmail.Name = "email";
@@ -145,34 +144,21 @@ namespace UI.Desktop
             colFec.HeaderText = "Fecha Nacimiento";
             colFec.DataPropertyName = "fecha_nac";
             colFec.DisplayIndex = 6;
-            this.dgvPersonas.Columns.Add(colFec);
-
-            DataGridViewTextBoxColumn Collegajo = new DataGridViewTextBoxColumn();
-            Collegajo.Name = "legajo";
-            Collegajo.HeaderText = "Legajo";
-            Collegajo.DataPropertyName = "legajo";
-            Collegajo.DisplayIndex = 7;
-            this.dgvPersonas.Columns.Add(Collegajo);
+            this.dgvPersonas.Columns.Add(colFec);        
             
             DataGridViewTextBoxColumn coltipo_persona = new DataGridViewTextBoxColumn();
             coltipo_persona.Name = "tipo_persona";
             coltipo_persona.HeaderText = "Tipo de Persona";
             coltipo_persona.DataPropertyName = "tipo_persona";
-
-            colEmail.DisplayIndex = 7;
+            coltipo_persona.DisplayIndex = 7;
             this.dgvPersonas.Columns.Add(coltipo_persona);
 
             DataGridViewTextBoxColumn col_desc_plan = new DataGridViewTextBoxColumn();
             col_desc_plan.Name = "desc_plan";
             col_desc_plan.HeaderText = "Plan";
             col_desc_plan.DataPropertyName = "desc_plan";
-            col_desc_plan.DisplayIndex = 7;
+            col_desc_plan.DisplayIndex = 8;
             this.dgvPersonas.Columns.Add(col_desc_plan);
-
-
-
-
-
         }
     }
 }
