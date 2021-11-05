@@ -65,7 +65,7 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.MateriaActual.desc_materia;
             this.txtHSSemanal.Text = this.MateriaActual.hs_semanales.ToString();
             this.txtHSTotales.Text = this.MateriaActual.hs_totales.ToString();
-            this.txtIDPlan.Text = this.MateriaActual.id_plan.ToString();
+            this.comboPlan.Text = this.MateriaActual.id_plan.ToString();
         }
 
         public override void MapearADatos()
@@ -87,7 +87,7 @@ namespace UI.Desktop
             this.MateriaActual.desc_materia = this.txtDescripcion.Text;
             this.MateriaActual.hs_semanales = Convert.ToInt32(this.txtHSSemanal.Text);
             this.MateriaActual.hs_totales = Convert.ToInt32(this.txtHSTotales.Text);
-            this.MateriaActual.id_plan = Convert.ToInt32(this.txtIDPlan.Text);
+            this.MateriaActual.id_plan = Convert.ToInt32(this.comboPlan.SelectedValue);
         }
 
         public override bool Validar()
@@ -112,7 +112,7 @@ namespace UI.Desktop
                 error_msj += "Hs totales\n";
             }
 
-            if (this.txtIDPlan.Text == String.Empty)
+            if (this.comboPlan.Text == String.Empty)
             {
                 estado = false;
                 error_msj += "Id Plan\n";
@@ -148,6 +148,15 @@ namespace UI.Desktop
             this.Close();
         }
 
-        
+        private void populatingPlanes()
+        {
+            PlanesLogic pLogic = new PlanesLogic();
+            var planes = pLogic.GetAll();
+            this.comboPlan.DataSource = pLogic.GetAll();
+            this.comboPlan.DisplayMember = "desc_plan";
+            this.comboPlan.ValueMember = "id_plan";
+        }
+
+
     }
 }

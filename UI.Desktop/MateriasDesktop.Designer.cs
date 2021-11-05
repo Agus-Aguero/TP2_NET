@@ -30,7 +30,6 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtIDPlan = new System.Windows.Forms.TextBox();
             this.txtHSSemanal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace UI.Desktop
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.comboPlan = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,10 +52,8 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtHSSemanal, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
@@ -64,21 +62,16 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboPlan, 3, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.86418F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.86418F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.27164F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.44199F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.78453F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.32597F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(449, 181);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // txtIDPlan
-            // 
-            this.txtIDPlan.Location = new System.Drawing.Point(300, 75);
-            this.txtIDPlan.Name = "txtIDPlan";
-            this.txtIDPlan.Size = new System.Drawing.Size(142, 20);
-            this.txtIDPlan.TabIndex = 7;
             // 
             // txtHSSemanal
             // 
@@ -99,15 +92,15 @@ namespace UI.Desktop
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(226, 72);
+            this.label4.Location = new System.Drawing.Point(226, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "ID Plan";
+            this.label4.Text = "Plan";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(226, 147);
+            this.btnAceptar.Location = new System.Drawing.Point(226, 72);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(68, 23);
             this.btnAceptar.TabIndex = 8;
@@ -117,7 +110,7 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(300, 147);
+            this.btnCancelar.Location = new System.Drawing.Point(300, 72);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(66, 23);
             this.btnCancelar.TabIndex = 9;
@@ -128,7 +121,7 @@ namespace UI.Desktop
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 144);
+            this.label2.Location = new System.Drawing.Point(3, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 2;
@@ -136,14 +129,14 @@ namespace UI.Desktop
             // 
             // txtHSTotales
             // 
-            this.txtHSTotales.Location = new System.Drawing.Point(77, 147);
+            this.txtHSTotales.Location = new System.Drawing.Point(77, 72);
             this.txtHSTotales.Name = "txtHSTotales";
             this.txtHSTotales.Size = new System.Drawing.Size(138, 20);
             this.txtHSTotales.TabIndex = 6;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(77, 75);
+            this.txtDescripcion.Location = new System.Drawing.Point(77, 39);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(138, 20);
             this.txtDescripcion.TabIndex = 1;
@@ -151,7 +144,7 @@ namespace UI.Desktop
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 72);
+            this.label1.Location = new System.Drawing.Point(3, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 0;
@@ -174,11 +167,19 @@ namespace UI.Desktop
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 11;
             // 
+            // comboPlan
+            // 
+            this.comboPlan.FormattingEnabled = true;
+            this.comboPlan.Location = new System.Drawing.Point(300, 39);
+            this.comboPlan.Name = "comboPlan";
+            this.comboPlan.Size = new System.Drawing.Size(139, 21);
+            this.comboPlan.TabIndex = 12;
+            // 
             // MateriasDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 199);
+            this.ClientSize = new System.Drawing.Size(467, 121);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MateriasDesktop";
             this.Text = "MateriasDesktop";
@@ -186,12 +187,13 @@ namespace UI.Desktop
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
+            this.populatingPlanes();
+
         }
 
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox txtIDPlan;
         private System.Windows.Forms.TextBox txtHSTotales;
         private System.Windows.Forms.TextBox txtHSSemanal;
         private System.Windows.Forms.Label label3;
@@ -203,5 +205,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ComboBox comboPlan;
     }
 }
