@@ -64,7 +64,7 @@ namespace UI.Desktop
             }
             this.txtID.Text = this.PlanActual.id_plan.ToString();
             this.txtDescripcion.Text = this.PlanActual.desc_plan;
-            this.txtIDEsp.Text = this.PlanActual.id_especialidad.ToString();
+            this.comboEspecialidad.Text = this.PlanActual.id_especialidad.ToString();
 
         }
 
@@ -86,7 +86,7 @@ namespace UI.Desktop
             }
             this.PlanActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
             this.PlanActual.desc_plan = this.txtDescripcion.Text;
-            this.PlanActual.id_especialidad = Convert.ToInt32(this.txtIDEsp.Text); // Consultar si esta bien
+            this.PlanActual.id_especialidad = Convert.ToInt32(this.comboEspecialidad.SelectedValue);
         }
 
         public override bool Validar()
@@ -99,7 +99,7 @@ namespace UI.Desktop
                 error_msj += "Descripcion\n";
             }
 
-            if (this.txtIDEsp.Text == String.Empty)
+            if (this.comboEspecialidad.Text == String.Empty)
             {
                 estado = false;
                 error_msj += "Id especialidad\n";
@@ -132,6 +132,15 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void populatingEspecialidades()
+        {
+            EspecialidadLogic eLogic = new EspecialidadLogic();
+            var comisiones = eLogic.GetAll();
+            this.comboEspecialidad.DataSource = eLogic.GetAll();
+            this.comboEspecialidad.DisplayMember = "desc_especialidad";
+            this.comboEspecialidad.ValueMember = "id_especialidad";
         }
 
     }
