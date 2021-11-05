@@ -36,7 +36,6 @@ namespace UI.Desktop
         //}
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblId = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -65,7 +64,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 144);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 55);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblId
@@ -82,30 +81,28 @@ namespace UI.Desktop
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Location = new System.Drawing.Point(3, 26);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(44, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 1;
             this.lblDescripcion.Text = "Descripcion";
-
             // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(76, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(306, 20);
+            this.txtID.Size = new System.Drawing.Size(177, 20);
             this.txtID.TabIndex = 4;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(76, 29);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(306, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(177, 20);
             this.txtDescripcion.TabIndex = 5;
-
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(317, 176);
+            this.btnAceptar.Location = new System.Drawing.Point(60, 73);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
@@ -115,7 +112,7 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(414, 176);
+            this.btnCancelar.Location = new System.Drawing.Point(157, 73);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
@@ -123,13 +120,11 @@ namespace UI.Desktop
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-  
-            // 
             // EspecialidadDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 234);
+            this.ClientSize = new System.Drawing.Size(308, 115);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tableLayoutPanel1);
