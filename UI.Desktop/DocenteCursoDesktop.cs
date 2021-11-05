@@ -59,7 +59,7 @@ namespace UI.Desktop
                     break;
             }
             this.txtId.Text = this.DocenteCursoActual.id_dictado.ToString();
-            this.txtCargo.Text = this.DocenteCursoActual.cargo.ToString();
+            this.comboTipoCargo.Text = this.DocenteCursoActual.cargo.ToString();
             this.comboCurso.Text = this.DocenteCursoActual.id_curso.ToString(); ;
             this.comboDocente.Text = this.DocenteCursoActual.personas.apellido.ToString();
         }
@@ -79,8 +79,8 @@ namespace UI.Desktop
                     this.DocenteCursoActual.State = States.Modified;
                     break;
             }
-
-            this.DocenteCursoActual.cargo = (TipoCargo.Auxiliar);
+            TipoCargo cargo = (TipoCargo)this.comboTipoCargo.SelectedItem;
+            this.DocenteCursoActual.cargo = cargo;
             this.DocenteCursoActual.id_docente = Convert.ToInt32(this.comboDocente.SelectedValue);
             this.DocenteCursoActual.id_curso = Convert.ToInt32(this.comboCurso.SelectedValue);
         }
@@ -129,6 +129,12 @@ namespace UI.Desktop
             this.comboCurso.DataSource = cLogic.GetAll();
             this.comboCurso.DisplayMember = "id_curso";
             this.comboCurso.ValueMember = "id_curso";
+        }
+
+        private void populatingTipoCargo()
+        {
+            this.comboTipoCargo.DataSource = Enum.GetValues(typeof(TipoCargo));
+
         }
         //
     }

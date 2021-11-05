@@ -33,7 +33,6 @@ namespace UI.Desktop
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.txtCargo = new System.Windows.Forms.TextBox();
             this.comboCurso = new System.Windows.Forms.ComboBox();
             this.comboDocente = new System.Windows.Forms.ComboBox();
             this.lblId = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@ namespace UI.Desktop
             this.lblCargo = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.comboTipoCargo = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,13 +52,13 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.41667F));
             this.tableLayoutPanel1.Controls.Add(this.txtId, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtCargo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboCurso, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboDocente, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblId, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblIdCurso, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblIdDocente, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboTipoCargo, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -78,23 +78,16 @@ namespace UI.Desktop
             this.txtId.Size = new System.Drawing.Size(265, 20);
             this.txtId.TabIndex = 4;
             // 
-            // txtCargo
-            // 
-            this.txtCargo.Location = new System.Drawing.Point(76, 29);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(265, 20);
-            this.txtCargo.TabIndex = 5;
-            // 
             // comboCurso
             // 
-            this.comboCurso.Location = new System.Drawing.Point(76, 55);
+            this.comboCurso.Location = new System.Drawing.Point(76, 56);
             this.comboCurso.Name = "comboCurso";
             this.comboCurso.Size = new System.Drawing.Size(265, 21);
             this.comboCurso.TabIndex = 10;
             // 
             // comboDocente
             // 
-            this.comboDocente.Location = new System.Drawing.Point(76, 82);
+            this.comboDocente.Location = new System.Drawing.Point(76, 83);
             this.comboDocente.Name = "comboDocente";
             this.comboDocente.Size = new System.Drawing.Size(265, 21);
             this.comboDocente.TabIndex = 9;
@@ -111,7 +104,7 @@ namespace UI.Desktop
             // lblIdCurso
             // 
             this.lblIdCurso.AutoSize = true;
-            this.lblIdCurso.Location = new System.Drawing.Point(3, 52);
+            this.lblIdCurso.Location = new System.Drawing.Point(3, 53);
             this.lblIdCurso.Name = "lblIdCurso";
             this.lblIdCurso.Size = new System.Drawing.Size(34, 13);
             this.lblIdCurso.TabIndex = 1;
@@ -120,7 +113,7 @@ namespace UI.Desktop
             // lblIdDocente
             // 
             this.lblIdDocente.AutoSize = true;
-            this.lblIdDocente.Location = new System.Drawing.Point(3, 79);
+            this.lblIdDocente.Location = new System.Drawing.Point(3, 80);
             this.lblIdDocente.Name = "lblIdDocente";
             this.lblIdDocente.Size = new System.Drawing.Size(48, 13);
             this.lblIdDocente.TabIndex = 2;
@@ -162,6 +155,14 @@ namespace UI.Desktop
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // comboTipoCargo
+            // 
+            this.comboTipoCargo.FormattingEnabled = true;
+            this.comboTipoCargo.Location = new System.Drawing.Point(76, 29);
+            this.comboTipoCargo.Name = "comboTipoCargo";
+            this.comboTipoCargo.Size = new System.Drawing.Size(265, 21);
+            this.comboTipoCargo.TabIndex = 12;
+            // 
             // DocenteCursoDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +180,7 @@ namespace UI.Desktop
             //populating comisiones&materias ComboBox
             this.populatingDocentes();
             this.populatingCursos();
+            this.populatingTipoCargo();
             //
 
         }
@@ -191,11 +193,11 @@ namespace UI.Desktop
         private System.Windows.Forms.Label lblIdDocente;
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.ComboBox comboCurso;
         private System.Windows.Forms.ComboBox comboDocente;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboTipoCargo;
     }
 }
