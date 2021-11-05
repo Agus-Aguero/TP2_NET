@@ -63,7 +63,7 @@ namespace UI.Desktop
             }
             this.txtDescripcion.Text = this.ComisionActual.desc_comision;
             this.txtAnioEsp.Text = this.ComisionActual.anio_especialidad.ToString();
-            this.txtIDPlan.Text = this.ComisionActual.id_plan.ToString();
+            this.comboPlanes.Text = this.ComisionActual.id_plan.ToString();
         }
 
         public override void MapearADatos()
@@ -84,7 +84,7 @@ namespace UI.Desktop
             this.ComisionActual.State = this._Modo == ModoForm.Alta ? States.New : States.Modified;
             this.ComisionActual.desc_comision = this.txtDescripcion.Text;
             this.ComisionActual.anio_especialidad = Convert.ToInt32(this.txtAnioEsp.Text);
-            this.ComisionActual.id_plan = Convert.ToInt32(this.txtIDPlan.Text);
+            this.ComisionActual.id_plan = Convert.ToInt32(this.comboPlanes.SelectedValue);
         }
 
         public override bool Validar()
@@ -103,7 +103,7 @@ namespace UI.Desktop
                 error_msj += "Año Especialidad\n";
             }
 
-            if (this.txtIDPlan.Text == String.Empty)
+            if (this.comboPlanes.Text == String.Empty)
             {
                 estado = false;
                 error_msj += "Id Plan\n";
@@ -137,6 +137,15 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void populatingPlanes()
+        {
+            PlanesLogic pLogic = new PlanesLogic();
+            var planes = pLogic.GetAll();
+            this.comboPlanes.DataSource = pLogic.GetAll();
+            this.comboPlanes.DisplayMember = "desc_plan";
+            this.comboPlanes.ValueMember = "id_plan";
         }
 
 

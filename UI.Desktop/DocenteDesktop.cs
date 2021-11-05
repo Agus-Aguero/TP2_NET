@@ -110,5 +110,10 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void btnInscribirDocente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
