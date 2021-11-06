@@ -27,6 +27,16 @@
             </p>
         }
 
+        @if (TempData["Fail"] != null)
+        {
+            <p class="alert-danger p-5">
+                <br />
+                @TempData["Fail"]
+                <br />
+                <br />
+            </p>
+        }
+
 
         <div class="col-6 bg-info">
             <ul class="list-unstyled">
