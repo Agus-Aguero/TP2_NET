@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Academia.Entities;
 using Academia.Logic;
 using Academia.EntityFramework;
+using UI.WebMVC.Filters;
 
 namespace UI.WebMVC.Controllers
 {
@@ -20,6 +21,7 @@ namespace UI.WebMVC.Controllers
             mRepository = new MateriaRepository();
         }
 
+        [AlumnoFilter]
         // GET: Materia
         public ActionResult Index()
         {
@@ -99,6 +101,7 @@ namespace UI.WebMVC.Controllers
             }
         }
 
+        [AlumnoFilter]
         public ActionResult Cursos(int idMateria)
         {
             materias materia = mRepository.Get(idMateria);

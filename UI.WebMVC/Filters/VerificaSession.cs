@@ -33,5 +33,42 @@ namespace UI.WebMVC.Filters
                 base.OnActionExecuting(filterContext);
             }
         }
+
+        public bool ValidacionAcceso(int id)
+        {
+            usuario = (usuarios)HttpContext.Current.Session["User"];
+            if(id != usuario.id_persona)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool PermisoVisualizacionCurso(cursos curso)
+        {
+            bool permiso = false;
+            try
+            {
+                usuario = (usuarios)HttpContext.Current.Session["User"];
+
+                if (curso == null || curso.docentes_cursos == null)
+                {
+                    return permiso;
+                }
+
+                foreach (var docente in curso.docentes_cursos)
+                {
+                    if (docente.id_docente == usuario.id_persona)
+                    {
+                        permiso = true;
+                    }
+                }
+            } catch (Exception e)
+            {
+                return permiso;
+            }
+            return permiso;
+        }
     }
 }

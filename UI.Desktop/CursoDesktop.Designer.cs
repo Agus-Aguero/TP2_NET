@@ -76,9 +76,9 @@ namespace UI.Desktop
             this.lblAnioCalendario.AutoSize = true;
             this.lblAnioCalendario.Location = new System.Drawing.Point(3, 26);
             this.lblAnioCalendario.Name = "lblAnioCalendario";
-            this.lblAnioCalendario.Size = new System.Drawing.Size(57, 26);
+            this.lblAnioCalendario.Size = new System.Drawing.Size(26, 13);
             this.lblAnioCalendario.TabIndex = 1;
-            this.lblAnioCalendario.Text = "año Calendario";
+            this.lblAnioCalendario.Text = "Año";
             // 
             // lblCupo
             // 

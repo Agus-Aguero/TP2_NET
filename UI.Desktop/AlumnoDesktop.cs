@@ -78,7 +78,7 @@ namespace UI.Desktop
                     break;
             }
 
-            this.AlumnoActual.legajo = Convert.ToInt32(this.txtLegajo);
+            this.AlumnoActual.legajo = Convert.ToInt32(this.txtLegajo.Text);
             this.AlumnoActual.nombre = this.txtNombre.ToString();
             this.AlumnoActual.apellido = this.txtApellido.ToString();
             this.AlumnoActual.direccion = this.txtDireccion.ToString();

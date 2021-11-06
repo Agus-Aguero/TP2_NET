@@ -7,6 +7,7 @@ using Academia.Entities;
 using Academia.Logic;
 using Academia.EntityFramework;
 using Academia.Util;
+using UI.WebMVC.Filters;
 
 namespace UI.WebMVC.Controllers
 {
@@ -15,11 +16,13 @@ namespace UI.WebMVC.Controllers
         public UsuarioLogic uLogic { get; set; }
         public UsuarioRepository uRepository { get; set; }
         public PersonaRepository pRepository { get; set; }
+        public VerificaSession verificarSession { get; set; }
         public UsuarioController()
         {
             uLogic = new UsuarioLogic();
             uRepository = new UsuarioRepository();
             pRepository = new PersonaRepository();
+            verificarSession = new VerificaSession();
 
         }
         // GET: Usuario
@@ -69,8 +72,14 @@ namespace UI.WebMVC.Controllers
         // GET: Usuario/Edit/5
         public ActionResult Edit(int id)
         {
-            personas persona = pRepository.Get(id);
-            return View(persona);
+            if (verificarSession.ValidacionAcceso(id))
+            {
+                personas persona = pRepository.Get(id);
+                return View(persona);
+            }
+
+            return Redirect("~/Usuario/Index");
+            
         }
 
         // POST: Usuario/Edit/5
@@ -123,9 +132,14 @@ namespace UI.WebMVC.Controllers
 
         public ActionResult Inscripciones(int id)
         {
+            if (!verificarSession.ValidacionAcceso(id))
+            {
+                return Redirect("~/Usuario/Index");
+            }
+
             var usuario = (usuarios)Session["User"];
 
-            if(usuario.personas.tipo_persona == TipoPersona.Alumno)
+            if (usuario.personas.tipo_persona == TipoPersona.Alumno)
             {
                 IEnumerable<alumnos_inscripciones> inscripcionesAlumno = uRepository.getInscripcionesAlumno(id);
                 return View(inscripcionesAlumno);
