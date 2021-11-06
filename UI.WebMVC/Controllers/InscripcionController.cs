@@ -63,6 +63,7 @@ namespace UI.WebMVC.Controllers
         [HttpPost]
         public ActionResult Edit(List<alumnos_inscripciones> inscripcionesAlumnos)
         {
+            List<int> rowId = new List<int>();
             try
             {
                 var idCurso = inscripcionesAlumnos.FirstOrDefault().id_curso;
@@ -73,15 +74,18 @@ namespace UI.WebMVC.Controllers
                     {
                         case 0:
                             item.condicion = EstadoAlumno.Inscripto.ToString();
+                            inscripcionRepository.Update(item);
                             break;
                         case 1:
                         case 2:
                         case 3:
                             item.condicion = EstadoAlumno.Desaprobado.ToString();
+                            inscripcionRepository.Update(item);
                             break;
                         case 4:
                         case 5:
                             item.condicion = EstadoAlumno.Regular.ToString();
+                            inscripcionRepository.Update(item);
                             break;
                         case 6:
                         case 7:
@@ -89,10 +93,14 @@ namespace UI.WebMVC.Controllers
                         case 9:
                         case 10:
                             item.condicion = EstadoAlumno.Aprobado.ToString();
+                            inscripcionRepository.Update(item);
+                            break;
+                        default:
+                            rowId.Add(item.id_inscripcion);
                             break;
                     }
-                    inscripcionRepository.Update(item);
                 }
+                ViewBag.ErrorList = rowId;
                 TempData["Success"] = "Actualización de curso exitosa.";
                 return Redirect("/Curso/AlumnosInscriptos?idCurso="+idCurso);
 
