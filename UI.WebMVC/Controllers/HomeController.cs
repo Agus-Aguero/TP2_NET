@@ -25,9 +25,7 @@ namespace UI.WebMVC.Controllers
 
             } else
             {
-
                 return Redirect("~/Usuario/Index");
-
             }
         }
 
