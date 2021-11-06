@@ -127,6 +127,7 @@ namespace UI.Desktop
             // 
             // comboPlanes
             // 
+            this.comboPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPlanes.FormattingEnabled = true;
             this.comboPlanes.Location = new System.Drawing.Point(101, 60);
             this.comboPlanes.Name = "comboPlanes";
@@ -144,8 +145,6 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-
-            populatingPlanes();
 
         }
 

@@ -32,7 +32,6 @@ namespace UI.Desktop
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtHSSemanal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@ namespace UI.Desktop
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.comboPlan = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,15 +88,6 @@ namespace UI.Desktop
             this.label3.Size = new System.Drawing.Size(59, 26);
             this.label3.TabIndex = 3;
             this.label3.Text = "HS Semanales";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(226, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Plan";
             // 
             // btnAceptar
             // 
@@ -167,8 +158,18 @@ namespace UI.Desktop
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 11;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(226, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Plan";
+            // 
             // comboPlan
             // 
+            this.comboPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPlan.FormattingEnabled = true;
             this.comboPlan.Location = new System.Drawing.Point(300, 39);
             this.comboPlan.Name = "comboPlan";
@@ -186,8 +187,6 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-
-            this.populatingPlanes();
 
         }
 

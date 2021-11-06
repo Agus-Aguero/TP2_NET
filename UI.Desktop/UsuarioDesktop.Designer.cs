@@ -30,20 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblId = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblConfirmarClave = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ModuloListCheck = new System.Windows.Forms.CheckedListBox();
-            this.lblModulos = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +72,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 144);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(3, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.TabIndex = 0;
+            this.lblId.Text = "Id";
             // 
             // lblClave
             // 
@@ -110,13 +117,6 @@
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(76, 29);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(263, 20);
-            this.txtUsuario.TabIndex = 10;
-            // 
             // txtConfirmarClave
             // 
             this.txtConfirmarClave.AcceptsReturn = true;
@@ -125,6 +125,15 @@
             this.txtConfirmarClave.Size = new System.Drawing.Size(263, 20);
             this.txtConfirmarClave.TabIndex = 11;
             this.txtConfirmarClave.UseSystemPasswordChar = true;
+            // 
+            // lblConfirmarClave
+            // 
+            this.lblConfirmarClave.AutoSize = true;
+            this.lblConfirmarClave.Location = new System.Drawing.Point(390, 52);
+            this.lblConfirmarClave.Name = "lblConfirmarClave";
+            this.lblConfirmarClave.Size = new System.Drawing.Size(81, 13);
+            this.lblConfirmarClave.TabIndex = 14;
+            this.lblConfirmarClave.Text = "Confirmar Clave";
             // 
             // lblUsuario
             // 
@@ -135,14 +144,12 @@
             this.lblUsuario.TabIndex = 13;
             this.lblUsuario.Text = "Usuario";
             // 
-            // lblConfirmarClave
+            // txtUsuario
             // 
-            this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(390, 52);
-            this.lblConfirmarClave.Name = "lblConfirmarClave";
-            this.lblConfirmarClave.Size = new System.Drawing.Size(81, 13);
-            this.lblConfirmarClave.TabIndex = 14;
-            this.lblConfirmarClave.Text = "Confirmar Clave";
+            this.txtUsuario.Location = new System.Drawing.Point(76, 29);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(263, 20);
+            this.txtUsuario.TabIndex = 10;
             // 
             // btnAceptar
             // 
@@ -168,39 +175,11 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // ModuloListCheck
-            // 
-            this.ModuloListCheck.FormattingEnabled = true;
-            this.ModuloListCheck.Location = new System.Drawing.Point(196, 181);
-            this.ModuloListCheck.Name = "ModuloListCheck";
-            this.ModuloListCheck.Size = new System.Drawing.Size(405, 139);
-            this.ModuloListCheck.TabIndex = 3;
-            // 
-            // lblModulos
-            // 
-            this.lblModulos.AutoSize = true;
-            this.lblModulos.Location = new System.Drawing.Point(193, 159);
-            this.lblModulos.Name = "lblModulos";
-            this.lblModulos.Size = new System.Drawing.Size(47, 13);
-            this.lblModulos.TabIndex = 4;
-            this.lblModulos.Text = "Modulos";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(3, 0);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 0;
-            this.lblId.Text = "Id";
-            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 426);
-            this.Controls.Add(this.lblModulos);
-            this.Controls.Add(this.ModuloListCheck);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -210,7 +189,6 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -228,8 +206,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label lblModulos;
-        public System.Windows.Forms.CheckedListBox ModuloListCheck;
         private System.Windows.Forms.Label lblId;
     }
 }

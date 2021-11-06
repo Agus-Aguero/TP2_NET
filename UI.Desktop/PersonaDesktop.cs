@@ -177,7 +177,12 @@ namespace UI.Desktop
             if (this.txtTelefono.Text == String.Empty)
             {
                 estado = false;
-                error_msj += "personas\n";
+                error_msj += "Telefono\n";
+            }
+            if (this.txtLegajo.Text == String.Empty)
+            {
+                estado = false;
+                error_msj += "Telefono\n";
             }
 
             if (!IsValidEmail(this.txtEmail.Text)) //this.txtEmail.Text == String.Empty)
@@ -229,7 +234,7 @@ namespace UI.Desktop
             //this.dgvUsuarios.DataSource = null;
             //this.dgvUsuarios.DataSource = this.usuarios;
 
-            using (var usuariosDesktop = new UsuarioDesktop(ModoForm.Alta))
+            using (var usuariosDesktop = new UsuarioDesktop(ModoForm.Alta,true))
             {
                 usuariosDesktop.ShowDialog();
                 usuariosDesktop.UsuarioActual.id_persona = this.PersonaActual.id_persona;

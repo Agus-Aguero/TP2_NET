@@ -13,6 +13,7 @@ namespace UI.Desktop
     {
         public usuarios UsuarioActual { get; set; }
         public static usuarios UsuarioGuardado { get; set; }
+        public bool  isPerson { get; set; }
         public IEnumerable<modulos>  Modulos { get; set; }
         
 
@@ -23,7 +24,7 @@ namespace UI.Desktop
             InitializeComponent();
            
         }
-        public UsuarioDesktop(ModoForm modo) : this()
+        public UsuarioDesktop(ModoForm modo,bool isPerson) : this()
         {
             // Internamete debe setear a ModoForm en el modo enviado, este constructor
             // servirá para las altas.
@@ -33,9 +34,8 @@ namespace UI.Desktop
             this.Modulos = ModuloLogic.GetAll();
             ListBox listaModulos = new ListBox();
             listaModulos.DataSource = this.Modulos;
-            ((ListBox)ModuloListCheck).DataSource = this.Modulos;
-            ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
-            ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
+            this.isPerson = isPerson;
+       
 
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
@@ -51,9 +51,7 @@ namespace UI.Desktop
             this.Modulos = ModuloLogic.GetAll();
             ListBox listaModulos = new ListBox();
             listaModulos.DataSource = this.Modulos;
-            ((ListBox)ModuloListCheck).DataSource = this.Modulos;
-            ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
-            ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
+       
       
 
             MapearDeDatos();
@@ -83,14 +81,7 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.nombre_usuario;
             this.txtClave.Text = this.UsuarioActual.clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.clave;
-            for (int count = 0; count < this.ModuloListCheck.Items.Count; count++)
-            {
-                var chkMod = (modulos)this.ModuloListCheck.Items[count];
-                if (this.UsuarioActual.modulos_usuarios.Any(mod=>mod.id_modulo== chkMod.id_modulo))
-                {
-                    ModuloListCheck.SetItemChecked(count, true);
-                }
-            }
+            
 
 
         }
@@ -115,12 +106,7 @@ namespace UI.Desktop
             this.UsuarioActual.nombre_usuario = this.txtUsuario.Text;
             this.UsuarioActual.clave = this.txtConfirmarClave.Text;
             this.UsuarioActual.modulos_usuarios = new List<modulos_usuarios>();
-           // this.UsuarioActual.personas.tipo_persona = (TipoPersona) comboTipoPersona.SelectedItem;
-            foreach (modulos modulo in this.ModuloListCheck.CheckedItems)
-            {
-                this.UsuarioActual.modulos_usuarios.Add(new modulos_usuarios { id_modulo = modulo.id_modulo, id_usuario = this.UsuarioActual.id_usuario, alta = true, modificacion = true });
-            }
-          
+    
 
     }
         public override void GuardarCambios()
@@ -166,6 +152,10 @@ namespace UI.Desktop
             {
                 this.Close();
                 this.MapearADatos();
+                if (!this.isPerson)
+                {
+                    this.GuardarCambios();
+                }
             }
 
            

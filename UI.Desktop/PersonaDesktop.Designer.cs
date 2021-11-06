@@ -253,7 +253,8 @@
             // 
             // comboPlan
             // 
-            this.comboPlan.FormattingEnabled = true;
+            this.comboPlan.AllowDrop = true;
+            this.comboPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPlan.Location = new System.Drawing.Point(588, 107);
             this.comboPlan.Name = "comboPlan";
             this.comboPlan.Size = new System.Drawing.Size(121, 21);
@@ -261,6 +262,7 @@
             // 
             // comboTipoPersona
             // 
+            this.comboTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipoPersona.FormattingEnabled = true;
             this.comboTipoPersona.Location = new System.Drawing.Point(111, 107);
             this.comboTipoPersona.Name = "comboTipoPersona";
@@ -328,10 +330,11 @@
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUsuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvUsuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvUsuarios.Location = new System.Drawing.Point(0, 0);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(774, 153);
             this.dgvUsuarios.TabIndex = 1;
@@ -345,7 +348,7 @@
             this.delete});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(112, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(81, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // create
