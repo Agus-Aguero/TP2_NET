@@ -44,8 +44,6 @@ namespace UI.Desktop
             this.lblCursos = new System.Windows.Forms.Label();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDocentes = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.docenteCursolbl = new System.Windows.Forms.Label();
             this.lblEspecialidad = new System.Windows.Forms.Label();
             this.lblAlumnos = new System.Windows.Forms.Label();
@@ -59,7 +57,6 @@ namespace UI.Desktop
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelRight
@@ -71,7 +68,6 @@ namespace UI.Desktop
             this.PanelRight.Controls.Add(this.flowLayoutPanel7);
             this.PanelRight.Controls.Add(this.flowLayoutPanel5);
             this.PanelRight.Controls.Add(this.flowLayoutPanel6);
-            this.PanelRight.Controls.Add(this.flowLayoutPanel2);
             this.PanelRight.Controls.Add(this.docenteCursolbl);
             this.PanelRight.Controls.Add(this.lblEspecialidad);
             this.PanelRight.Controls.Add(this.lblAlumnos);
@@ -230,41 +226,18 @@ namespace UI.Desktop
             this.lblDocentes.Text = "Docentes";
             this.lblDocentes.Click += new System.EventHandler(this.lblDocentes_Click);
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.label1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 198);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(302, 41);
-            this.flowLayoutPanel2.TabIndex = 32;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
-            this.label1.Size = new System.Drawing.Size(248, 40);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Modulos";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // docenteCursolbl
             // 
             this.docenteCursolbl.AutoSize = true;
             this.docenteCursolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.docenteCursolbl.ForeColor = System.Drawing.Color.AliceBlue;
-            this.docenteCursolbl.Location = new System.Drawing.Point(0, 239);
+            this.docenteCursolbl.Location = new System.Drawing.Point(0, 198);
             this.docenteCursolbl.Margin = new System.Windows.Forms.Padding(0);
             this.docenteCursolbl.Name = "docenteCursolbl";
             this.docenteCursolbl.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
-            this.docenteCursolbl.Size = new System.Drawing.Size(295, 40);
+            this.docenteCursolbl.Size = new System.Drawing.Size(271, 57);
             this.docenteCursolbl.TabIndex = 38;
-            this.docenteCursolbl.Text = "Docente Curso";
+            this.docenteCursolbl.Text = "Inscripción docente";
             this.docenteCursolbl.Click += new System.EventHandler(this.docenteCursolbl_Click);
             // 
             // lblEspecialidad
@@ -272,7 +245,7 @@ namespace UI.Desktop
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEspecialidad.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblEspecialidad.Location = new System.Drawing.Point(0, 279);
+            this.lblEspecialidad.Location = new System.Drawing.Point(0, 255);
             this.lblEspecialidad.Margin = new System.Windows.Forms.Padding(0);
             this.lblEspecialidad.Name = "lblEspecialidad";
             this.lblEspecialidad.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -286,7 +259,7 @@ namespace UI.Desktop
             this.lblAlumnos.AutoSize = true;
             this.lblAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlumnos.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblAlumnos.Location = new System.Drawing.Point(0, 319);
+            this.lblAlumnos.Location = new System.Drawing.Point(0, 295);
             this.lblAlumnos.Margin = new System.Windows.Forms.Padding(0);
             this.lblAlumnos.Name = "lblAlumnos";
             this.lblAlumnos.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -300,7 +273,7 @@ namespace UI.Desktop
             this.lblComisiones.AutoSize = true;
             this.lblComisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComisiones.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblComisiones.Location = new System.Drawing.Point(0, 359);
+            this.lblComisiones.Location = new System.Drawing.Point(0, 335);
             this.lblComisiones.Margin = new System.Windows.Forms.Padding(0);
             this.lblComisiones.Name = "lblComisiones";
             this.lblComisiones.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -314,7 +287,7 @@ namespace UI.Desktop
             this.Personaslabel.AutoSize = true;
             this.Personaslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Personaslabel.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Personaslabel.Location = new System.Drawing.Point(0, 399);
+            this.Personaslabel.Location = new System.Drawing.Point(0, 375);
             this.Personaslabel.Margin = new System.Windows.Forms.Padding(0);
             this.Personaslabel.Name = "Personaslabel";
             this.Personaslabel.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -344,8 +317,6 @@ namespace UI.Desktop
             this.flowLayoutPanel5.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -358,8 +329,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Label lblUsuarios;
         private System.Windows.Forms.Label lblDocentes;
         private System.Windows.Forms.Label lblMaterias;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureBox6;
