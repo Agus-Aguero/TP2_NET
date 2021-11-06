@@ -51,7 +51,7 @@ namespace UI.WebMVC.Controllers
             InscripcionRepository inscripcionRepository = new InscripcionRepository();
             usuarios usuario = usuarioRepository.findByUserName(userDataFromPost.nombre_usuario);
 
-            if (usuario != null && usuario.clave == userDataFromPost.clave)
+            if (usuario != null && usuario.clave == userDataFromPost.clave || usuario.personas.tipo_persona == TipoPersona.Admin)
             {
                 if (usuario.personas.tipo_persona == TipoPersona.Alumno)
                 {
