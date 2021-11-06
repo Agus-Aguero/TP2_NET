@@ -94,8 +94,6 @@ namespace UI.Desktop
 
                 if (rta)
                 {
-                    CursoDesktop formEspecialidad = new CursoDesktop(ID, ApplicationForm.ModoForm.Baja);
-                    formEspecialidad.ShowDialog();
                     this.Listar();
                 }
                 else
@@ -178,14 +176,19 @@ namespace UI.Desktop
         //Inicia la inscripción de persona a curso
         private void dgvCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ignore clicks that are not in our 
-            if (e.ColumnIndex == dgvCursos.Columns["Inscribir"].Index && e.RowIndex >= 0)
+            try
             {
-                int idCurso = (int)dgvCursos.CurrentRow.Cells["id"].Value;
+                if (e.ColumnIndex == dgvCursos.Columns["Inscribir"].Index && e.RowIndex >= 0)
+                {
+                    int idCurso = (int)dgvCursos.CurrentRow.Cells["id"].Value;
 
-                var inscripcion = new Inscripcion(personaAInscribir,idCurso, (bool)dgvCursos.CurrentRow.Cells[5].Value);
-                inscripcion.ShowDialog();
-                dgvCursos.CurrentRow.Cells[5].Value = inscripcion.Inscripto;
+                    var inscripcion = new Inscripcion(personaAInscribir, idCurso, (bool)dgvCursos.CurrentRow.Cells[5].Value);
+                    inscripcion.ShowDialog();
+                    dgvCursos.CurrentRow.Cells[5].Value = inscripcion.Inscripto;
+
+                }
+            } catch
+            {
 
             }
         }

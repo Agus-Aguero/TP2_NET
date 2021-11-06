@@ -31,8 +31,6 @@ namespace UI.Desktop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.PanelRight = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblMaterias = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,8 +52,6 @@ namespace UI.Desktop
             this.lblComisiones = new System.Windows.Forms.Label();
             this.Personaslabel = new System.Windows.Forms.Label();
             this.PanelRight.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -70,7 +66,6 @@ namespace UI.Desktop
             // 
             this.PanelRight.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PanelRight.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PanelRight.Controls.Add(this.tableLayoutPanel1);
             this.PanelRight.Controls.Add(this.flowLayoutPanel1);
             this.PanelRight.Controls.Add(this.flowLayoutPanel4);
             this.PanelRight.Controls.Add(this.flowLayoutPanel7);
@@ -90,46 +85,11 @@ namespace UI.Desktop
             this.PanelRight.Size = new System.Drawing.Size(304, 677);
             this.PanelRight.TabIndex = 0;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(296, 45);
-            this.tableLayoutPanel1.TabIndex = 15;
-            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::UI.Desktop.Properties.Resources._134216_menu_lines_hamburger_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(44, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.WaitOnLoad = true;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseHover);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox2_MouseHover);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseHover);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseHover);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.lblMaterias);
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 45);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(295, 41);
@@ -183,7 +143,7 @@ namespace UI.Desktop
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Controls.Add(this.lblUsuarios);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 86);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 41);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(297, 38);
@@ -206,7 +166,7 @@ namespace UI.Desktop
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.Controls.Add(this.lblPlanes);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 124);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(0, 79);
             this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(295, 38);
@@ -228,7 +188,7 @@ namespace UI.Desktop
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(this.lblCursos);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 162);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 117);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(297, 38);
@@ -250,7 +210,7 @@ namespace UI.Desktop
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.Controls.Add(this.lblDocentes);
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 200);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 155);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(295, 43);
@@ -273,7 +233,7 @@ namespace UI.Desktop
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.label1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 243);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 198);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(302, 41);
@@ -298,7 +258,7 @@ namespace UI.Desktop
             this.docenteCursolbl.AutoSize = true;
             this.docenteCursolbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.docenteCursolbl.ForeColor = System.Drawing.Color.AliceBlue;
-            this.docenteCursolbl.Location = new System.Drawing.Point(0, 284);
+            this.docenteCursolbl.Location = new System.Drawing.Point(0, 239);
             this.docenteCursolbl.Margin = new System.Windows.Forms.Padding(0);
             this.docenteCursolbl.Name = "docenteCursolbl";
             this.docenteCursolbl.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -312,7 +272,7 @@ namespace UI.Desktop
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEspecialidad.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblEspecialidad.Location = new System.Drawing.Point(0, 324);
+            this.lblEspecialidad.Location = new System.Drawing.Point(0, 279);
             this.lblEspecialidad.Margin = new System.Windows.Forms.Padding(0);
             this.lblEspecialidad.Name = "lblEspecialidad";
             this.lblEspecialidad.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -326,7 +286,7 @@ namespace UI.Desktop
             this.lblAlumnos.AutoSize = true;
             this.lblAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlumnos.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblAlumnos.Location = new System.Drawing.Point(0, 364);
+            this.lblAlumnos.Location = new System.Drawing.Point(0, 319);
             this.lblAlumnos.Margin = new System.Windows.Forms.Padding(0);
             this.lblAlumnos.Name = "lblAlumnos";
             this.lblAlumnos.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -340,7 +300,7 @@ namespace UI.Desktop
             this.lblComisiones.AutoSize = true;
             this.lblComisiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComisiones.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lblComisiones.Location = new System.Drawing.Point(0, 404);
+            this.lblComisiones.Location = new System.Drawing.Point(0, 359);
             this.lblComisiones.Margin = new System.Windows.Forms.Padding(0);
             this.lblComisiones.Name = "lblComisiones";
             this.lblComisiones.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -354,7 +314,7 @@ namespace UI.Desktop
             this.Personaslabel.AutoSize = true;
             this.Personaslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Personaslabel.ForeColor = System.Drawing.Color.AliceBlue;
-            this.Personaslabel.Location = new System.Drawing.Point(0, 444);
+            this.Personaslabel.Location = new System.Drawing.Point(0, 399);
             this.Personaslabel.Margin = new System.Windows.Forms.Padding(0);
             this.Personaslabel.Name = "Personaslabel";
             this.Personaslabel.Padding = new System.Windows.Forms.Padding(90, 11, 90, 12);
@@ -366,13 +326,11 @@ namespace UI.Desktop
             // Menu
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1178, 677);
+            this.ClientSize = new System.Drawing.Size(303, 677);
             this.Controls.Add(this.PanelRight);
             this.Name = "Menu";
             this.PanelRight.ResumeLayout(false);
             this.PanelRight.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -396,8 +354,6 @@ namespace UI.Desktop
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel PanelRight;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblPlanes;
         private System.Windows.Forms.Label lblUsuarios;
         private System.Windows.Forms.Label lblDocentes;
