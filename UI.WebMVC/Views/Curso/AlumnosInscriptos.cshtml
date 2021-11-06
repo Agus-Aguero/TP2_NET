@@ -1,9 +1,8 @@
 ﻿@model List<Academia.Entities.alumnos_inscripciones>
 
 @{
-    ViewBag.Title = "Alumnos inscriptos";
-    var usuario = Session["User"] as Academia.Entities.usuarios;
-
+        ViewBag.Title = "Alumnos inscriptos";
+        var usuario = Session["User"] as Academia.Entities.usuarios;
 }
 
 <h2>Alumnos inscriptos</h2>
@@ -58,7 +57,7 @@
             @Html.HiddenFor(model => Model[i].id_inscripcion)
             @Html.HiddenFor(model => Model[i].id_alumno)
 
-            <tr>
+            <tr id="@Model[i].id_inscripcion">
                 <td>
                     @Html.DisplayFor(model => Model[i].id_curso)
                     @Html.HiddenFor(model => Model[i].id_curso)
@@ -91,6 +90,17 @@
     }
 </table>
 
+
 <div class="text-center">
     <h4>@Html.ActionLink("Volver", "Inscripciones", "Usuario", new { id = usuario.id_persona }, null)</h4>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+
+    </script>
+}
