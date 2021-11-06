@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using UI.WebMVC.Controllers;
 
 namespace UI.WebMVC.Filters
@@ -12,19 +13,19 @@ namespace UI.WebMVC.Filters
     public class AlumnoFilter: ActionFilterAttribute
     {
         private usuarios usuario;
-        public override void OnActionExecuted(ActionExecutedContext filterContext)
-        {
-            base.OnActionExecuted(filterContext);
-            usuario = (usuarios)HttpContext.Current.Session["User"];
-            if (usuario.personas.tipo_persona == TipoPersona.Alumno)
-            {
 
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            usuario = (usuarios)HttpContext.Current.Session["User"];
+            if (usuario.personas.tipo_persona != TipoPersona.Alumno)
+            {
                 if ((filterContext.Controller is HomeController) == false)
                 {
-
-                    filterContext.HttpContext.Response.Redirect("~/Home");
-
+                    RouteValueDictionary redirectTargetDictionary = new RouteValueDictionary();
+                    redirectTargetDictionary.Add("controller", "Home");
+                    filterContext.Result = new RedirectToRouteResult(redirectTargetDictionary);
                 }
+                base.OnActionExecuting(filterContext);
             }
         }
     }

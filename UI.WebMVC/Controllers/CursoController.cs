@@ -26,6 +26,7 @@ namespace UI.WebMVC.Controllers
             return View();
         }
 
+        [DocenteFilter]
         // GET: Curso/Details/5
         public ActionResult Details(int id)
         {
@@ -102,7 +103,7 @@ namespace UI.WebMVC.Controllers
                 return View();
             }
         }
-
+        [DocenteFilter]
         public ActionResult AlumnosInscriptos(int idCurso)
         {
             cursos curso = cursoRepository.Get(idCurso);
@@ -113,7 +114,7 @@ namespace UI.WebMVC.Controllers
             }
             return Redirect("~/Usuario/Index");
         }
-
+        [AlumnoFilter]
         public ActionResult InscribirAlumno(int idAlumno, int idCurso)
         {
             alumnos_inscripciones inscripcion = cursoRepository.Inscribir(idAlumno, idCurso);

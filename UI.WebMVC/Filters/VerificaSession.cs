@@ -51,6 +51,12 @@ namespace UI.WebMVC.Filters
             try
             {
                 usuario = (usuarios)HttpContext.Current.Session["User"];
+
+                if (curso == null || curso.docentes_cursos == null)
+                {
+                    return permiso;
+                }
+
                 foreach (var docente in curso.docentes_cursos)
                 {
                     if (docente.id_docente == usuario.id_persona)
@@ -58,7 +64,7 @@ namespace UI.WebMVC.Filters
                         permiso = true;
                     }
                 }
-            } catch
+            } catch (Exception e)
             {
                 return permiso;
             }

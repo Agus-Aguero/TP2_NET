@@ -30,16 +30,16 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblId = new System.Windows.Forms.Label();
             this.lblAnioCalendario = new System.Windows.Forms.Label();
             this.lblCupo = new System.Windows.Forms.Label();
-            this.lblIdMateria = new System.Windows.Forms.Label();
-            this.lblIdComision = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtAnioCalendario = new System.Windows.Forms.TextBox();
             this.comboComision = new System.Windows.Forms.ComboBox();
+            this.lblIdComision = new System.Windows.Forms.Label();
             this.comboMateria = new System.Windows.Forms.ComboBox();
             this.txtCupo = new System.Windows.Forms.TextBox();
+            this.lblIdMateria = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -71,23 +71,14 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 144);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(3, 0);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 0;
-            this.lblId.Text = "Id";
-            // 
             // lblAnioCalendario
             // 
             this.lblAnioCalendario.AutoSize = true;
             this.lblAnioCalendario.Location = new System.Drawing.Point(3, 26);
             this.lblAnioCalendario.Name = "lblAnioCalendario";
-            this.lblAnioCalendario.Size = new System.Drawing.Size(57, 26);
+            this.lblAnioCalendario.Size = new System.Drawing.Size(26, 13);
             this.lblAnioCalendario.TabIndex = 1;
-            this.lblAnioCalendario.Text = "año Calendario";
+            this.lblAnioCalendario.Text = "Año";
             // 
             // lblCupo
             // 
@@ -97,24 +88,6 @@ namespace UI.Desktop
             this.lblCupo.Size = new System.Drawing.Size(32, 13);
             this.lblCupo.TabIndex = 2;
             this.lblCupo.Text = "Cupo";
-            // 
-            // lblIdMateria
-            // 
-            this.lblIdMateria.AutoSize = true;
-            this.lblIdMateria.Location = new System.Drawing.Point(3, 104);
-            this.lblIdMateria.Name = "lblIdMateria";
-            this.lblIdMateria.Size = new System.Drawing.Size(42, 13);
-            this.lblIdMateria.TabIndex = 7;
-            this.lblIdMateria.Text = "Materia";
-            // 
-            // lblIdComision
-            // 
-            this.lblIdComision.AutoSize = true;
-            this.lblIdComision.Location = new System.Drawing.Point(3, 78);
-            this.lblIdComision.Name = "lblIdComision";
-            this.lblIdComision.Size = new System.Drawing.Size(49, 13);
-            this.lblIdComision.TabIndex = 8;
-            this.lblIdComision.Text = "Comision";
             // 
             // txtID
             // 
@@ -135,14 +108,23 @@ namespace UI.Desktop
             // 
             this.comboComision.Location = new System.Drawing.Point(76, 81);
             this.comboComision.Name = "comboComision";
-            this.comboComision.Size = new System.Drawing.Size(265, 20);
+            this.comboComision.Size = new System.Drawing.Size(265, 21);
             this.comboComision.TabIndex = 9;
+            // 
+            // lblIdComision
+            // 
+            this.lblIdComision.AutoSize = true;
+            this.lblIdComision.Location = new System.Drawing.Point(3, 78);
+            this.lblIdComision.Name = "lblIdComision";
+            this.lblIdComision.Size = new System.Drawing.Size(49, 13);
+            this.lblIdComision.TabIndex = 8;
+            this.lblIdComision.Text = "Comision";
             // 
             // comboMateria
             // 
-            this.comboMateria.Location = new System.Drawing.Point(76, 107);
+            this.comboMateria.Location = new System.Drawing.Point(76, 108);
             this.comboMateria.Name = "comboMateria";
-            this.comboMateria.Size = new System.Drawing.Size(265, 20);
+            this.comboMateria.Size = new System.Drawing.Size(265, 21);
             this.comboMateria.TabIndex = 10;
             // 
             // txtCupo
@@ -151,6 +133,24 @@ namespace UI.Desktop
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(265, 20);
             this.txtCupo.TabIndex = 6;
+            // 
+            // lblIdMateria
+            // 
+            this.lblIdMateria.AutoSize = true;
+            this.lblIdMateria.Location = new System.Drawing.Point(3, 105);
+            this.lblIdMateria.Name = "lblIdMateria";
+            this.lblIdMateria.Size = new System.Drawing.Size(42, 13);
+            this.lblIdMateria.TabIndex = 7;
+            this.lblIdMateria.Text = "Materia";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(3, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.TabIndex = 0;
+            this.lblId.Text = "Id";
             // 
             // btnAceptar
             // 
@@ -185,11 +185,6 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-
-            //populating comisiones&materias ComboBox
-            this.populatingComisiones();
-            this.populatingMaterias();
-            //
 
         }
 

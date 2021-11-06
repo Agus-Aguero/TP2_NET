@@ -33,11 +33,11 @@ namespace UI.Desktop
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.comboEspecialidad = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,15 +89,6 @@ namespace UI.Desktop
             this.label2.TabIndex = 1;
             this.label2.Text = "Descripcion";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Especialidad";
-            // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(88, 3);
@@ -134,6 +125,15 @@ namespace UI.Desktop
             this.comboEspecialidad.Size = new System.Drawing.Size(223, 21);
             this.comboEspecialidad.TabIndex = 8;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Especialidad";
+            // 
             // PlanesDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,12 +141,10 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(334, 157);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlanesDesktop";
-            this.Text = "PlanesDesktop";
+            this.Text = "Planes";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-
-            populatingEspecialidades();
 
         }
 
