@@ -117,6 +117,17 @@ namespace UI.WebMVC.Controllers
         [AlumnoFilter]
         public ActionResult InscribirAlumno(int idAlumno, int idCurso)
         {
+
+            var cursoInscripciones = cursoRepository.GetAlumnosInscriptos(idCurso);
+            foreach (var insc in cursoInscripciones)
+            {
+               if(insc.id_alumno == idAlumno)
+                {
+                    TempData["Fail"] = "Acción denegada. Usted ya se encuentra inscripto.";
+                    return Redirect("~/Usuario/Index");
+                }
+            }
+
             alumnos_inscripciones inscripcion = cursoRepository.Inscribir(idAlumno, idCurso);
             var alumno = (usuarios)Session["User"];
             alumno.personas.alumnos_inscripciones.Add(inscripcion);
