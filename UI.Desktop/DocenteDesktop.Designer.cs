@@ -70,6 +70,7 @@ namespace UI.Desktop
             // 
             this.txtDireccion.Location = new System.Drawing.Point(130, 120);
             this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(254, 20);
             this.txtDireccion.TabIndex = 8;
             // 
@@ -77,6 +78,7 @@ namespace UI.Desktop
             // 
             this.txtApellido.Location = new System.Drawing.Point(130, 81);
             this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
             this.txtApellido.Size = new System.Drawing.Size(254, 20);
             this.txtApellido.TabIndex = 7;
             // 
@@ -84,6 +86,7 @@ namespace UI.Desktop
             // 
             this.txtNombre.Location = new System.Drawing.Point(130, 42);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(254, 20);
             this.txtNombre.TabIndex = 6;
             // 
@@ -127,6 +130,7 @@ namespace UI.Desktop
             // 
             this.txtLegajo.Location = new System.Drawing.Point(130, 3);
             this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.ReadOnly = true;
             this.txtLegajo.Size = new System.Drawing.Size(254, 20);
             this.txtLegajo.TabIndex = 5;
             // 
