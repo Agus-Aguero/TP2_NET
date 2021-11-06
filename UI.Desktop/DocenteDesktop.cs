@@ -94,6 +94,31 @@ namespace UI.Desktop
         {
             bool estado = true;
 
+            string error_msj = "Completar:\n\n";
+
+            if (this.txtNombre.Text == String.Empty)
+            {
+                estado = false;
+                error_msj += "El Nombre\n";
+            }
+
+            if (this.txtApellido.Text == String.Empty)
+            {
+                error_msj += "El Apellido\n";
+                estado = false;
+            }
+
+            if (this.txtDireccion.Text == String.Empty)
+            {
+                error_msj += "El domicilio\n";
+                estado = false;
+            }
+
+            if (!estado)
+            {
+                Notificar(error_msj, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             return estado;
         }
 

@@ -116,7 +116,7 @@ namespace UI.Desktop
             DataGridViewTextBoxColumn colClave = new DataGridViewTextBoxColumn();
             colClave.Name = "clave";
             colClave.HeaderText = "Clave";
-            colClave.DataPropertyName = "clave";
+            colClave.DataPropertyName = "*****";
             colClave.DisplayIndex = 2;
             this.dgvUsuarios.Columns.Add(colClave);
 
