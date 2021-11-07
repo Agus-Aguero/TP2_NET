@@ -12,8 +12,6 @@ namespace Academia.EntityFramework
     public class GenericRepository<TEntity> where TEntity : Entity
     {
 
-        
-
         public virtual IEnumerable<TEntity> GetAll()
         {
             using (var context = new Academia())

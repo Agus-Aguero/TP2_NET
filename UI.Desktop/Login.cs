@@ -38,9 +38,19 @@ namespace UI.Desktop
             {
                 if(UsuarioActual.clave== this.txtPass.Text)
                 {
-                    Menu menu = new Menu();
-                    this.Hide();
-                    menu.Show();
+
+                    if (this.UsuarioActual.personas.tipo_persona == Academia.Util.TipoPersona.Admin)
+                    {
+                        Menu menu = new Menu();
+                        this.Hide();
+                        menu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usted no tiene permisos para acceder\nContacte a Sistemas 3152", "Login"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
                 else
                 {

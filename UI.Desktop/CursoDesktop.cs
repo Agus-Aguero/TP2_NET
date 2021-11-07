@@ -98,9 +98,44 @@ namespace UI.Desktop
         public override bool Validar()
         {
             bool estado = true;
-  
+            string error_msj = "Completar:\n";
+
+             if (this.txtAnioCalendario.Text == String.Empty)
+             {
+                 estado = false;
+                 error_msj += "Año calendario\n";
+             }
+
+
+             if (this.txtCupo.Text == String.Empty)
+             {
+                error_msj += "El Cupo del curso\n";
+                 estado = false;
+             }
+
+            if (this.comboComision.Text == String.Empty)
+            {
+                error_msj += "La comision\n";
+                estado = false;
+            }
+
+            if (this.comboMateria.Text == String.Empty)
+            {
+                error_msj += "La Materia\n";
+                estado = false;
+            }
+
+
+             if (!estado)
+             {
+                 Notificar(error_msj, MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+
             return estado;
         }
+  
+            
+        
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -137,6 +172,9 @@ namespace UI.Desktop
             this.comboMateria.ValueMember = "id_materia";
         }
         //
+
+
+
 
 
     }

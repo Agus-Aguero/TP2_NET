@@ -68,16 +68,16 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            CursoDesktop formEspecialidad = new CursoDesktop(ApplicationForm.ModoForm.Alta);
-            formEspecialidad.ShowDialog();
+            CursoDesktop formCurso = new CursoDesktop(ApplicationForm.ModoForm.Alta);
+            formCurso.ShowDialog();
             this.Listar();
         }
 
         private void tstEditar_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(this.dgvCursos.Rows[this.dgvCursos.CurrentRow.Index].Cells[0].Value);
-            CursoDesktop formEspecialidad = new CursoDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-            formEspecialidad.ShowDialog();
+            CursoDesktop formCurso = new CursoDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formCurso.ShowDialog();
             this.Listar();
         }
 
