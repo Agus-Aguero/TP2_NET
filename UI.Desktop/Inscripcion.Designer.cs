@@ -91,6 +91,7 @@ namespace UI.Desktop
             this.cancelButton.TabIndex = 7;
             this.cancelButton.Text = "Cancelar";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // inscribirButton
             // 

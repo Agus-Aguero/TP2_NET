@@ -87,6 +87,7 @@ namespace UI.Desktop
             // 
             this.txtNombre.Location = new System.Drawing.Point(76, 29);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(265, 20);
             this.txtNombre.TabIndex = 5;
             // 
@@ -94,6 +95,7 @@ namespace UI.Desktop
             // 
             this.txtApellido.Location = new System.Drawing.Point(76, 55);
             this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
             this.txtApellido.Size = new System.Drawing.Size(265, 20);
             this.txtApellido.TabIndex = 10;
             // 
@@ -101,6 +103,7 @@ namespace UI.Desktop
             // 
             this.txtDireccion.Location = new System.Drawing.Point(76, 81);
             this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(265, 20);
             this.txtDireccion.TabIndex = 11;
             // 
