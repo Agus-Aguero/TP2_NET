@@ -20,6 +20,7 @@ namespace UI.Desktop
         public ComisionDesktop()
         {
             InitializeComponent();
+            populatingPlanes();
         }
 
         public ComisionDesktop(ModoForm modo) : this()

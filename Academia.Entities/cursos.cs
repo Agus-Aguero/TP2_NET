@@ -35,6 +35,14 @@ namespace Academia.Entities
                 return this.materias.desc_materia; //deberìa traer materias.desc_materia sin problemas, da error.
             }
         }
+        [NotMapped]
+        public string desc_comision
+        {
+            get
+            {
+                return this.comisiones.desc_comision; //deberìa traer materias.desc_materia sin problemas, da error.
+            }
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<alumnos_inscripciones> alumnos_inscripciones { get; set; }

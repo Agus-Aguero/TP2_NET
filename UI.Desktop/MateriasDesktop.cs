@@ -20,6 +20,7 @@ namespace UI.Desktop
         public MateriasDesktop()
         {
             InitializeComponent();
+            populatingPlanes();
         }
 
         public MateriasDesktop(ModoForm modo) : this()
@@ -152,7 +153,7 @@ namespace UI.Desktop
         {
             PlanesLogic pLogic = new PlanesLogic();
             var planes = pLogic.GetAll();
-            this.comboPlan.DataSource = pLogic.GetAll();
+            this.comboPlan.DataSource = planes.ToList();
             this.comboPlan.DisplayMember = "desc_plan";
             this.comboPlan.ValueMember = "id_plan";
         }

@@ -11,6 +11,15 @@ namespace Academia.EntityFramework
 {
     public class UsuarioRepository:GenericRepository<usuarios>
     {
+
+        public override IEnumerable<usuarios> GetAll()
+        {
+            using (var context = new Academia())
+            {
+                return context.usuarios.Include(usu => usu.personas).ToList();
+            }
+        }
+
         public override void Update(usuarios entityToUpdate)
         {
             using (var context=new Academia())

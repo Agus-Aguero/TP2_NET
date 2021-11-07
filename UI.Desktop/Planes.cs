@@ -54,15 +54,15 @@ namespace UI.Desktop
 
             DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
             colId.Name = "id";
-            colId.HeaderText = "ID Plan";
+            colId.HeaderText = "ID";
             colId.DataPropertyName = "id_plan";
             colId.DisplayIndex = 0;
             this.dgvPlanes.Columns.Add(colId);
 
             DataGridViewTextBoxColumn colIdEsp = new DataGridViewTextBoxColumn();
             colIdEsp.Name = "IdEsp";
-            colIdEsp.HeaderText = "ID Especialidad";
-            colIdEsp.DataPropertyName = "id_especialidad";
+            colIdEsp.HeaderText = "Especialidad";
+            colIdEsp.DataPropertyName = "desc_especialidad";
             colIdEsp.DisplayIndex = 1;
             this.dgvPlanes.Columns.Add(colIdEsp);
 

@@ -60,6 +60,8 @@
             this.create = new System.Windows.Forms.ToolStripButton();
             this.edit = new System.Windows.Forms.ToolStripButton();
             this.delete = new System.Windows.Forms.ToolStripButton();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblDireccion = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -83,7 +85,6 @@
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtLegajo, 3, 3);
@@ -95,6 +96,9 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboPlan, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboTipoPersona, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblDireccion, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -170,7 +174,7 @@
             // chkHabilitado
             // 
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(423, 3);
+            this.chkHabilitado.Location = new System.Drawing.Point(3, 137);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 8;
@@ -382,6 +386,22 @@
             this.delete.Text = "toolStripButton3";
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(588, 3);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(263, 20);
+            this.txtDireccion.TabIndex = 20;
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(423, 0);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.TabIndex = 21;
+            this.lblDireccion.Text = "Dirección";
+            // 
             // PersonaDektop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,5 +464,7 @@
         private System.Windows.Forms.ToolStripButton edit;
         private System.Windows.Forms.ToolStripButton delete;
         private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label lblDireccion;
     }
 }

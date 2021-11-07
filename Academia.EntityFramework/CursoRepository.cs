@@ -58,6 +58,11 @@ namespace Academia.EntityFramework
                                                                    .Where(aluIns => aluIns.id_curso == idCurso && aluIns.id_alumno == idAlumno)
                                                                    .ToList();
                 context.alumnos_inscripciones.RemoveRange(inscripciones);
+
+                cursos curso = this.Get(idCurso);
+                curso.cupo++;
+                this.Update(curso);
+
                 context.SaveChanges();
 
             }

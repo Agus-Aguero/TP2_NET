@@ -5,11 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using Academia.Entities;
 using System.Data.Entity.Migrations;
+using System.Data.Entity;
+
 
 namespace Academia.EntityFramework
 {
     public class PlanRepository : GenericRepository<planes>
     {
+        public override IEnumerable<planes> GetAll()
+        {
+            using (var context = new Academia())
+            {
+                return context.planes.Include(plan => plan.especialidades).ToList();
+            }
+        }
+
         public override void Update(planes entityToUpdate)
         {
             using (var context = new Academia())

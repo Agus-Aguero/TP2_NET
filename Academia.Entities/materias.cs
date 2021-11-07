@@ -30,5 +30,12 @@ namespace Academia.Entities
         public virtual ICollection<cursos> cursos { get; set; }
 
         public virtual planes planes { get; set; }
+
+        [NotMapped]
+        public string desc_plan { 
+            get {
+                return this.planes.desc_plan;
+            } 
+        }
     }
 }

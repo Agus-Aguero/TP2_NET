@@ -21,6 +21,8 @@ namespace UI.Desktop
         public CursoDesktop()
         {
             InitializeComponent();
+            populatingComisiones();
+            populatingMaterias();
         }
         public CursoDesktop(ModoForm modo) : this()
         {
@@ -159,7 +161,7 @@ namespace UI.Desktop
             ComisionLogic comLogic = new ComisionLogic();
             var comisiones = comLogic.GetAll();
             this.comboComision.DataSource = comLogic.GetAll();
-            this.comboComision.DisplayMember = "id_comision";
+            this.comboComision.DisplayMember = "desc_comision";
             this.comboComision.ValueMember = "id_comision";
         }
 

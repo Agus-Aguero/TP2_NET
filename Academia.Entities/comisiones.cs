@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Academia.Entities
 {
@@ -28,5 +29,11 @@ namespace Academia.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cursos> cursos { get; set; }
+        [NotMapped]
+        public string desc_plan { get
+            {
+                return this.planes.desc_plan;
+            }
+        }
     }
 }

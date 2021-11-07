@@ -55,9 +55,9 @@ namespace UI.Desktop
             this.dgvMaterias.Columns.Add(colIdMateria);
 
             DataGridViewTextBoxColumn colIdPlan = new DataGridViewTextBoxColumn();
-            colIdPlan.Name = "Id Plan";
-            colIdPlan.HeaderText = "Id Plan";
-            colIdPlan.DataPropertyName = "id_plan";
+            colIdPlan.Name = "Plan";
+            colIdPlan.HeaderText = "Plan";
+            colIdPlan.DataPropertyName = "desc_plan";
             colIdPlan.DisplayIndex = 1;
             this.dgvMaterias.Columns.Add(colIdPlan);
 

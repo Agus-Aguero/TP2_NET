@@ -40,6 +40,7 @@ namespace UI.Desktop
             // servirá para las altas.
             _Modo = modo;
             ModuloLogic ModuloLogic = new ModuloLogic();
+            this.PersonaActual = new personas();
 
             this.Modulos = ModuloLogic.GetAll().ToList();
             ListBox listaModulos = new ListBox();
@@ -96,12 +97,14 @@ namespace UI.Desktop
             UsuarioLogic usuarioLogic = new UsuarioLogic();
 
             this.txtID.Text = this.PersonaActual.id_persona.ToString();
-            this.txtTelefono.Text = this.PersonaActual.nombre;
+            this.txtTelefono.Text = this.PersonaActual.telefono;
             this.txtApellido.Text = this.PersonaActual.apellido;
             this.datePickeFecNac.Value = this.PersonaActual.fecha_nac;
             this.txtEmail.Text = this.PersonaActual.email;
             this.txtLegajo.Text = this.PersonaActual.legajo.ToString();
             this.txtNombre.Text = this.PersonaActual.nombre;
+            this.txtDireccion.Text = this.PersonaActual.direccion;
+
 
             foreach (var item in this.PersonaActual.usuarios)
             {
@@ -140,6 +143,11 @@ namespace UI.Desktop
             this.PersonaActual.apellido = this.txtApellido.Text;
             this.PersonaActual.fecha_nac = this.datePickeFecNac.Value;
             this.PersonaActual.email = this.txtEmail.Text;
+            this.PersonaActual.telefono = this.txtTelefono.Text;
+            this.PersonaActual.direccion = this.txtDireccion.Text;
+
+
+
             if (!String.IsNullOrEmpty(this.txtLegajo.Text))
             {
                this.PersonaActual.legajo = Convert.ToInt32(this.txtLegajo.Text);

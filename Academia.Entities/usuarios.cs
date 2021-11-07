@@ -2,7 +2,7 @@ namespace Academia.Entities
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
- 
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class usuarios:Entity
     {
@@ -33,5 +33,28 @@ namespace Academia.Entities
         public virtual ICollection<modulos_usuarios> modulos_usuarios { get; set; }
 
         public virtual personas personas { get; set; }
+        
+        [NotMapped]
+        public string nombre { 
+            get {
+                return this.personas == null ? string.Empty : this.personas.nombre;
+            } 
+        }
+        [NotMapped]
+        public string email
+        {
+            get
+            {
+                return this.personas == null ? string.Empty : this.personas.email;
+            }
+        }
+        [NotMapped]
+        public string apellido
+        {
+            get
+            {
+                return this.personas == null ? string.Empty : this.personas.apellido;
+            }
+        }
     }
 }

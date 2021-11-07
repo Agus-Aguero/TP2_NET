@@ -18,10 +18,9 @@ namespace UI.Desktop
         public Usuarios()
         {
             InitializeComponent();
-           GenerarColumnas();
+            GenerarColumnas();
             this.dgvUsuarios.AutoGenerateColumns = false;
-             uLogic = new UsuarioLogic();
-
+            uLogic = new UsuarioLogic();
         }
 
         private void toolStripContainer1_RightToolStripPanel_Click(object sender, EventArgs e)
@@ -33,7 +32,6 @@ namespace UI.Desktop
         {
             this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.DataSource =null;
-            var usuarios = uLogic.GetAll();
             this.dgvUsuarios.DataSource = uLogic.GetAll();
         }
 
@@ -116,7 +114,7 @@ namespace UI.Desktop
             DataGridViewTextBoxColumn colClave = new DataGridViewTextBoxColumn();
             colClave.Name = "clave";
             colClave.HeaderText = "Clave";
-            colClave.DataPropertyName = "*****";
+            colClave.DataPropertyName = "clave";
             colClave.DisplayIndex = 2;
             this.dgvUsuarios.Columns.Add(colClave);
 
@@ -148,6 +146,15 @@ namespace UI.Desktop
             colHabilitado.DisplayIndex = 6;
             this.dgvUsuarios.Columns.Add(colHabilitado);
 
+        }
+
+        private void userGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvUsuarios.Columns[e.ColumnIndex].Index == 2 && e.Value != null)
+            {
+                dgvUsuarios.Rows[e.RowIndex].Tag = e.Value;
+                e.Value = new String('*', e.Value.ToString().Length);
+            }
         }
     }
 }

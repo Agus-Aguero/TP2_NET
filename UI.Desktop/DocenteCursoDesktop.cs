@@ -22,6 +22,9 @@ namespace UI.Desktop
         public DocenteCursoDesktop()
         {
             InitializeComponent();
+            populatingCursos();
+            populatingDocentes();
+            populatingTipoCargo();
         }
         public DocenteCursoDesktop(ModoForm modo) : this()
         {
@@ -127,7 +130,7 @@ namespace UI.Desktop
         {
             CursoLogic cLogic = new CursoLogic();
             this.comboCurso.DataSource = cLogic.GetAll();
-            this.comboCurso.DisplayMember = "id_curso";
+            this.comboCurso.DisplayMember = "desc_comision";
             this.comboCurso.ValueMember = "id_curso";
         }
 

@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Academia.cs" />
+    <Compile Include="ComisionRepository.cs" />
     <Compile Include="CursoRepository.cs" />
     <Compile Include="DocenteCursoRepository.cs" />
     <Compile Include="GenericRepository.cs" />

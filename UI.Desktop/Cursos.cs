@@ -30,6 +30,11 @@ namespace UI.Desktop
             personaAInscribir = persona;
             InitializeComponent();
             GenerarColumnas(true);
+            this.tsbEliminar.Visible = false;
+            this.tsbNuevo.Visible = false;
+            this.tstEditar.Visible = false;
+            this.toolStripButton1.Visible = false;
+
             this.dgvCursos.AutoGenerateColumns = false;
         }
 
@@ -126,8 +131,8 @@ namespace UI.Desktop
 
             DataGridViewTextBoxColumn colIComision = new DataGridViewTextBoxColumn();
             colIComision.Name = "comision";
-            colIComision.HeaderText = "ID Comisión";
-            colIComision.DataPropertyName = "id_comision";
+            colIComision.HeaderText = "Comisión";
+            colIComision.DataPropertyName = "desc_comision";
             colIComision.DisplayIndex = 1;
             this.dgvCursos.Columns.Add(colIComision);
 
@@ -185,7 +190,6 @@ namespace UI.Desktop
                     var inscripcion = new Inscripcion(personaAInscribir, idCurso, (bool)dgvCursos.CurrentRow.Cells[5].Value);
                     inscripcion.ShowDialog();
                     dgvCursos.CurrentRow.Cells[5].Value = inscripcion.Inscripto;
-
                 }
             } catch
             {

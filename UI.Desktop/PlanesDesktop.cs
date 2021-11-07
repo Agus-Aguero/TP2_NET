@@ -21,6 +21,7 @@ namespace UI.Desktop
         public PlanesDesktop()
         {
             InitializeComponent();
+            populatingEspecialidades();
         }
 
         public PlanesDesktop(ModoForm modo) : this()
