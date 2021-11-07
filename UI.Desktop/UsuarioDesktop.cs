@@ -13,6 +13,7 @@ namespace UI.Desktop
     {
         public usuarios UsuarioActual { get; set; }
         public static usuarios UsuarioGuardado { get; set; }
+        public   UsuarioLogic UsuarioLogic { get; set; }
         public bool  isPerson { get; set; }
         public IEnumerable<modulos>  Modulos { get; set; }
         
@@ -22,7 +23,9 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
-           
+            this.UsuarioLogic = new UsuarioLogic();
+
+
         }
         public UsuarioDesktop(ModoForm modo,bool isPerson) : this()
         {
@@ -35,7 +38,8 @@ namespace UI.Desktop
             ListBox listaModulos = new ListBox();
             listaModulos.DataSource = this.Modulos;
             this.isPerson = isPerson;
-       
+
+
 
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
@@ -112,9 +116,7 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             this.MapearADatos();
-            UsuarioLogic usuarioLogic = new UsuarioLogic();
-
-            usuarioLogic.Save(UsuarioActual);
+            this.UsuarioLogic.Save(UsuarioActual);
 
         }
 
@@ -127,6 +129,16 @@ namespace UI.Desktop
             {
                 estado = false;
                 error_msj += "usuarios\n";
+            }
+            else
+            {
+                if (this.UsuarioLogic.findByUserName(this.txtUsuario.Text)!=null)
+                {
+                    estado = false;
+                    error_msj = "";
+                    error_msj += "El Usuario ya es está registrado \n";
+                }
+
             }
 
           
