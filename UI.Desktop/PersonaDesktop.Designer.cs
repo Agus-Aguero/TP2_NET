@@ -196,6 +196,7 @@
             this.txtLegajo.AcceptsReturn = true;
             this.txtLegajo.Location = new System.Drawing.Point(588, 81);
             this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.ReadOnly = true;
             this.txtLegajo.Size = new System.Drawing.Size(174, 20);
             this.txtLegajo.TabIndex = 11;
             // 

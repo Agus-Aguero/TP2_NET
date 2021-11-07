@@ -93,6 +93,8 @@ namespace UI.Desktop
                 default:
                     break;
             }
+            UsuarioLogic usuarioLogic = new UsuarioLogic();
+
             this.txtID.Text = this.PersonaActual.id_persona.ToString();
             this.txtTelefono.Text = this.PersonaActual.nombre;
             this.txtApellido.Text = this.PersonaActual.apellido;
@@ -100,7 +102,6 @@ namespace UI.Desktop
             this.txtEmail.Text = this.PersonaActual.email;
             this.txtLegajo.Text = this.PersonaActual.legajo.ToString();
             this.txtNombre.Text = this.PersonaActual.nombre;
-            UsuarioLogic usuarioLogic = new UsuarioLogic();
 
             foreach (var item in this.PersonaActual.usuarios)
             {
@@ -139,7 +140,11 @@ namespace UI.Desktop
             this.PersonaActual.apellido = this.txtApellido.Text;
             this.PersonaActual.fecha_nac = this.datePickeFecNac.Value;
             this.PersonaActual.email = this.txtEmail.Text;
-            this.PersonaActual.legajo = Convert.ToInt32(this.txtLegajo.Text);
+            if (!String.IsNullOrEmpty(this.txtLegajo.Text))
+            {
+               this.PersonaActual.legajo = Convert.ToInt32(this.txtLegajo.Text);
+
+            }
             this.PersonaActual.nombre = this.txtNombre.Text;
             this.PersonaActual.id_plan =Convert.ToInt32( this.comboPlan.SelectedValue);
             this.PersonaActual.tipo_persona = (TipoPersona)this.comboTipoPersona.SelectedIndex;
@@ -179,11 +184,7 @@ namespace UI.Desktop
                 estado = false;
                 error_msj += "Telefono\n";
             }
-            if (this.txtLegajo.Text == String.Empty)
-            {
-                estado = false;
-                error_msj += "Telefono\n";
-            }
+           
 
             if (!IsValidEmail(this.txtEmail.Text)) //this.txtEmail.Text == String.Empty)
             {

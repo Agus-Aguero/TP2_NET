@@ -31,6 +31,7 @@ namespace Academia.Logic
         {
            return UsuarioRepository.findByUserName(username);
         }
+        
         #endregion
 
     }

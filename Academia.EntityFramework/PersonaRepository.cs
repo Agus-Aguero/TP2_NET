@@ -70,6 +70,30 @@ namespace Academia.EntityFramework
 
             }
         }
+        public override void Insert(personas entity)
+        {
+            entity.legajo = this.getLastLegajo();   
+            base.Insert(entity);
+        }
+        public int getLastLegajo()
+        {
+            int Legajo;
+            using (var context = new Academia())
+            {
+                var persona=context.personas.OrderByDescending(per => per.legajo).FirstOrDefault();
+                if (persona != null)
+                {
+                    Legajo = (int)(persona.legajo!=null ? persona.legajo+1 : 1);
+                }
+                else
+                {
+                    Legajo = 1;
+
+                }
+
+            }
+            return Legajo;
+        }
 
         public void UpdateMVC(personas persona)
         {
