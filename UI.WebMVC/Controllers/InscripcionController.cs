@@ -100,8 +100,15 @@ namespace UI.WebMVC.Controllers
                             break;
                     }
                 }
-                ViewBag.ErrorList = rowId;
-                TempData["Success"] = "Actualización de curso exitosa.";
+                TempData["errorList"] = rowId;
+                if(rowId.Count == 0)
+                {
+                    TempData["Success"] = "Actualización de curso exitosa.";
+
+                } else
+                {
+                    TempData["Fail"] = "Actualización de notas OK. Revise los registros indicados, puede que existan notas inválidas.";
+                }
                 return Redirect("/Curso/AlumnosInscriptos?idCurso="+idCurso);
 
             }

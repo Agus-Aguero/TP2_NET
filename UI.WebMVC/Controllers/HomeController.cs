@@ -51,8 +51,13 @@ namespace UI.WebMVC.Controllers
             InscripcionRepository inscripcionRepository = new InscripcionRepository();
             usuarios usuario = usuarioRepository.findByUserName(userDataFromPost.nombre_usuario);
 
-            if (usuario != null && usuario.clave == userDataFromPost.clave || usuario.personas.tipo_persona == TipoPersona.Admin)
+            if (usuario != null && usuario.clave == userDataFromPost.clave)
             {
+
+                if(usuario.personas.tipo_persona == TipoPersona.Admin)
+                {
+                    return Redirect("~/Usuario/Index");
+                }
                 if (usuario.personas.tipo_persona == TipoPersona.Alumno)
                 {
                     var inscripciones = inscripcionRepository.GetInscripcionesByAlumno((int)usuario.id_persona);
