@@ -45,9 +45,6 @@ namespace UI.Desktop
             this.Modulos = ModuloLogic.GetAll().ToList();
             ListBox listaModulos = new ListBox();
             listaModulos.DataSource = this.Modulos;
-            ((ListBox)ModuloListCheck).DataSource = this.Modulos;
-            ((ListBox)ModuloListCheck).DisplayMember = "desc_modulo";
-            ((ListBox)ModuloListCheck).ValueMember = "id_modulo";
             comboTipoPersona.DataSource = Enum.GetValues(typeof(TipoPersona));
             PlanesLogic Plan = new PlanesLogic();
             comboPlan.DataSource = Plan.GetAll().ToList();

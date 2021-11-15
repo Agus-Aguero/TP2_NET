@@ -56,7 +56,8 @@ namespace UI.WebMVC.Controllers
 
                 if(usuario.personas.tipo_persona == TipoPersona.Admin)
                 {
-                    return Redirect("~/Usuario/Index");
+                    ViewBag.ErrorMessage = "No pudimos validar su usuario y/o contraseña. Intente nuevamente.";
+                    return View("Index");
                 }
                 if (usuario.personas.tipo_persona == TipoPersona.Alumno)
                 {

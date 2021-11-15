@@ -37,7 +37,6 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtLegajo = new System.Windows.Forms.TextBox();
@@ -49,19 +48,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboPlan = new System.Windows.Forms.ComboBox();
             this.comboTipoPersona = new System.Windows.Forms.ComboBox();
+            this.chkHabilitado = new System.Windows.Forms.CheckBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblDireccion = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.ModuloListCheck = new System.Windows.Forms.CheckedListBox();
-            this.lblModulos = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.create = new System.Windows.Forms.ToolStripButton();
-            this.edit = new System.Windows.Forms.ToolStripButton();
-            this.delete = new System.Windows.Forms.ToolStripButton();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.lblDireccion = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -171,16 +167,6 @@
             this.txtEmail.Size = new System.Drawing.Size(306, 20);
             this.txtEmail.TabIndex = 6;
             // 
-            // chkHabilitado
-            // 
-            this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(3, 137);
-            this.chkHabilitado.Name = "chkHabilitado";
-            this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
-            this.chkHabilitado.TabIndex = 8;
-            this.chkHabilitado.Text = "Habilitado";
-            this.chkHabilitado.UseVisualStyleBackColor = true;
-            // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(588, 29);
@@ -274,9 +260,35 @@
             this.comboTipoPersona.Size = new System.Drawing.Size(121, 21);
             this.comboTipoPersona.TabIndex = 16;
             // 
+            // chkHabilitado
+            // 
+            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Location = new System.Drawing.Point(3, 137);
+            this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
+            this.chkHabilitado.TabIndex = 8;
+            this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.UseVisualStyleBackColor = true;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(588, 3);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(263, 20);
+            this.txtDireccion.TabIndex = 20;
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(423, 0);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.TabIndex = 21;
+            this.lblDireccion.Text = "Dirección";
+            // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(312, 487);
+            this.btnAceptar.Location = new System.Drawing.Point(303, 308);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
@@ -286,30 +298,13 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(417, 487);
+            this.btnCancelar.Location = new System.Drawing.Point(424, 308);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // ModuloListCheck
-            // 
-            this.ModuloListCheck.FormattingEnabled = true;
-            this.ModuloListCheck.Location = new System.Drawing.Point(177, 382);
-            this.ModuloListCheck.Name = "ModuloListCheck";
-            this.ModuloListCheck.Size = new System.Drawing.Size(405, 79);
-            this.ModuloListCheck.TabIndex = 3;
-            // 
-            // lblModulos
-            // 
-            this.lblModulos.AutoSize = true;
-            this.lblModulos.Location = new System.Drawing.Point(174, 354);
-            this.lblModulos.Name = "lblModulos";
-            this.lblModulos.Size = new System.Drawing.Size(47, 13);
-            this.lblModulos.TabIndex = 4;
-            this.lblModulos.Text = "Modulos";
             // 
             // toolStripContainer1
             // 
@@ -318,11 +313,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvUsuarios);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(774, 153);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(774, 105);
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
-            this.toolStripContainer1.Location = new System.Drawing.Point(12, 303);
+            this.toolStripContainer1.Location = new System.Drawing.Point(12, 172);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(774, 178);
+            this.toolStripContainer1.Size = new System.Drawing.Size(774, 130);
             this.toolStripContainer1.TabIndex = 6;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -341,19 +336,17 @@
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(774, 153);
+            this.dgvUsuarios.Size = new System.Drawing.Size(774, 105);
             this.dgvUsuarios.TabIndex = 1;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.create,
-            this.edit,
-            this.delete});
+            this.create});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(81, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(35, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // create
@@ -363,53 +356,15 @@
             this.create.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(23, 22);
-            this.create.Text = "toolStripButton1";
+            this.create.Text = "Agregar usuario";
             this.create.Click += new System.EventHandler(this.create_Click);
-            // 
-            // edit
-            // 
-            this.edit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.edit.Image = global::UI.Desktop.Properties.Resources.editIcon;
-            this.edit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(23, 22);
-            this.edit.Text = "toolStripButton2";
-            this.edit.Click += new System.EventHandler(this.edit_Click);
-            // 
-            // delete
-            // 
-            this.delete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.delete.Image = global::UI.Desktop.Properties.Resources.deleteIcon;
-            this.delete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(23, 22);
-            this.delete.Text = "toolStripButton3";
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(588, 3);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(263, 20);
-            this.txtDireccion.TabIndex = 20;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(423, 0);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
-            this.lblDireccion.TabIndex = 21;
-            this.lblDireccion.Text = "Dirección";
             // 
             // PersonaDektop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 518);
+            this.ClientSize = new System.Drawing.Size(798, 342);
             this.Controls.Add(this.toolStripContainer1);
-            this.Controls.Add(this.lblModulos);
-            this.Controls.Add(this.ModuloListCheck);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -427,7 +382,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -450,8 +404,6 @@
         private System.Windows.Forms.Label lblLegajo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label lblModulos;
-        public System.Windows.Forms.CheckedListBox ModuloListCheck;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboTipoPersona;
         private System.Windows.Forms.DateTimePicker datePickeFecNac;
@@ -461,8 +413,6 @@
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton create;
-        private System.Windows.Forms.ToolStripButton edit;
-        private System.Windows.Forms.ToolStripButton delete;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;

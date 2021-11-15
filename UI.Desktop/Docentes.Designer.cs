@@ -119,7 +119,7 @@ namespace UI.Desktop
             this.tsbEditar});
             this.tsDocentes.Location = new System.Drawing.Point(3, 0);
             this.tsDocentes.Name = "tsDocentes";
-            this.tsDocentes.Size = new System.Drawing.Size(35, 25);
+            this.tsDocentes.Size = new System.Drawing.Size(66, 25);
             this.tsDocentes.TabIndex = 0;
             // 
             // tsbEditar
@@ -129,7 +129,7 @@ namespace UI.Desktop
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
             this.tsbEditar.Size = new System.Drawing.Size(23, 22);
-            this.tsbEditar.Text = "toolStripButton1";
+            this.tsbEditar.Text = "Ver";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // Docentes
